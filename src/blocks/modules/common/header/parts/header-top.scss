@@ -1,0 +1,152 @@
+@use "vars"as vars;
+
+.header-top {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 0;
+
+    &__logo {
+        & .bgimage {
+            width: 156px;
+            height: 44px;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: contain;
+
+
+
+            @media screen and (min-width: vars.$w1200) {
+                width: 196px;
+                height: 56px;
+            }
+
+            @media screen and (min-width: vars.$w760) {
+                width: 164px;
+                height: 48px;
+            }
+        }
+    }
+
+    &__find {
+        flex-grow: 1;
+        display: none;
+
+        @media screen and (min-width: vars.$w1440) {
+            padding: 0 16px;
+        }
+
+        @media screen and (min-width: vars.$w576) {
+            display: block;
+        }
+    }
+
+    &__contact {
+
+        @media screen and (max-width: 830px) {
+            display: none;
+        }
+
+        &--email {
+            @media screen and (max-width: vars.$w1200) {
+                display: none;
+            }
+        }
+    }
+
+    &__msgr {
+
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+
+        @media screen and (min-width: vars.$w576) {
+            margin-left: 0;
+        }
+
+        & ul {
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        & .bgimage {
+            @include vars.bgimage-contain;
+            width: 32px;
+            min-width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--accent-02);
+            transition: 0.4s ease;
+        }
+    }
+
+}
+
+.search-field {
+
+    display: flex;
+    align-items: stretch;
+    background-color: var(--bg-02);
+    border-radius: 20px;
+
+    & input {
+        border: none;
+        background: transparent;
+        padding-left: 24px;
+        padding-right: 24px;
+        flex-grow: 1;
+    }
+
+    & .btn {
+        padding-inline: 0;
+        width: 56px;
+        min-width: 56px;
+        min-width: auto;
+
+        & svg {
+            margin-left: 0 !important;
+            width: 18px;
+            height: 18px
+        }
+    }
+}
+
+.header-contact {
+    &__title {
+        @include vars.font-18;
+        color: var(--accent-02);
+
+        & a {
+            color: var(--accent-02);
+        }
+    }
+
+    &__sub {
+        @include vars.font-14;
+        color: var(--accent-04);
+
+        & a {
+            color: var(--accent-03);
+        }
+    }
+}
+
+.ic-color-tg {
+    & .bgimage:not(:hover) {
+        background-color: #039BE5;
+    }
+}
+
+.ic-color-wa {
+    & .bgimage:not(:hover) {
+        background-color: #4CAF50;
+    }
+}
+
+.ic-color-vb {
+    & .bgimage:not(:hover) {
+        background-color: #7360F2;
+    }
+}

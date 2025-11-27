@@ -1,0 +1,49 @@
+mixin pagination()
+    ul.pagination__page
+        li.prev.control.disabled: span
+            +icon('ic_chevron-left')
+        li.active: a(href="#1") 1
+        li: a(href="#2") 2
+        li: a(href="#3") 3
+        li: a(href="#4") 4
+        li: span …
+        li: a(href="#8") 8
+        li.next.control: a(href="#2")
+            +icon('ic_chevron-right')
+
+
+mixin pagination-compact()
+    ul.pagination__page.compact
+        li.prev.control.disabled: span
+            +icon('ic_chevron-left')
+        li.active: a(href="#1") 1
+        li: a(href="#2") 2
+        li: a(href="#3") 3
+        li: a(href="#4") 4
+        li.next.control: a(href="#2")
+            +icon('ic_chevron-right')
+
+
+mixin pagination-showmore()
+    .pagination
+        .pagination__more
+            a(href='#')
+                button.btn.btn-light
+                    span Показать ещё 35
+
+        .pagination__page
+            ul
+                li.prev: span
+                    +icon('ic_arr-left', 36)
+                li.active: a(href="#1") 1
+                li: a(href="#2") 2
+                li: a(href="#3") 3
+                li: a(href="#3") 4
+                li: a(href="#3") 5
+                li: a(href="#3") 6
+                li: a(href="#3") 7
+                li: span ...
+
+                li.next: a(href="#2")
+                    +icon('ic_arr-right', 36)
+

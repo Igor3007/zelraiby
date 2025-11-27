@@ -1,0 +1,172 @@
+@use "variables";
+@use "../helpers/functions";
+
+@mixin img-contain {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 100%;
+    max-width: 90%;
+    width: auto !important;
+    height: auto;
+    margin: auto;
+}
+
+@mixin scrollbar() {
+
+    @-moz-document url-prefix() {
+        scrollbar-color: rgba(154, 185, 191, 0.5) var(--color-bg-3);
+        scrollbar-width: thin !important;
+    }
+
+    @media screen and (min-width: variables.$w992) {
+        &::-webkit-scrollbar {
+            width: 5px;
+            border-radius: 4px;
+            height: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: var(--color-bg-2);
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(154, 185, 191, 0.5);
+            border-radius: 4px;
+        }
+    }
+}
+
+@mixin layer($z) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: $z;
+}
+
+@mixin picture($h, $fit) {
+
+    position: relative;
+    display: block;
+    padding-top: $h;
+
+    & img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: $fit;
+        color: transparent;
+    }
+
+}
+
+@mixin box-square {
+    padding-top: 100%;
+    position: relative;
+    display: flex;
+}
+
+@mixin line-clamp($number) {
+    letter-spacing: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: $number;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@mixin bgimage_cover {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    transition: 0.3s ease;
+
+}
+
+@mixin bgimage_cover-scale {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    transition: 0.3s ease;
+    transform: scale(1.0004);
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+@mixin bgimage_contain {
+    position: relative;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+}
+ 
+
+@mixin splide-nav {
+     
+    align-items: center;
+
+    @media screen and (min-width: variables.$w576) {
+        display: flex;
+        gap: 8px;
+    }
+
+    &-prev,
+    &-next {
+
+        width: 56px;
+        height: 56px;
+        border: 1px solid transparent;
+        background-color: var(--accent);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        @media screen and (min-width: variables.$w1440) {
+            width: 56px;
+            height: 56px;
+        }
+
+        @media screen and (min-width: variables.$w1200) {
+            width: 50px;
+            height: 50px;
+        }
+
+        &:hover {
+            background-color: var(--accent-11);
+        }
+
+
+        & svg {
+            width: 14px;
+            height: 14px;
+            fill: #fff;
+        }
+
+        &[disabled] {
+            background-color: transparent;
+            border-color: var(--text-3);
+            pointer-events: none;
+
+            & svg {
+                fill: var(--text-3);
+            }
+        }
+    }
+}
+

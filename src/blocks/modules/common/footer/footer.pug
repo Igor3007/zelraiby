@@ -1,0 +1,83 @@
+mixin footer-category(data)
+    .footer-category
+        .footer-category__head=data.head
+        .footer-category__list
+            ul
+                each item in data.list
+                    li: a(href='#')= item
+        .footer-category__all
+            a(href='#')= data.all
+
+div(data-menu="container")
+.container
+    .footer
+        .footer__catalog
+            .footer__row
+                .footer__col
+                    +footer-category({
+                        head: 'Хвойные растения',
+                        list: [
+                            'Ель',
+                            'Кедр',
+                            'Кипарисовик',
+                            'Лиственница',
+                            'Метасеквойя',
+                            'Микробиота',
+                            'Пихта',
+                        ],
+                        all: 'Все хвойные деревья',
+                    })
+                .footer__col
+                    +footer-category({
+                        head: 'Лиственные деревья',
+                        list: [
+                            'Берёза',
+                            'Вяз',
+                            'Дуб',
+                            'Карагана',
+                            'Клён',
+                            'Липа',
+                        ],
+                        all: 'Все лиственные деревья',
+                    })
+                .footer__col
+                    +footer-category({
+                        head: 'Декоративные кустарники',
+                        list: [
+                            'Азалия',
+                            'Английские розы',
+                            'Дерен',
+                            'Клематис',
+                            'Роза',
+                            'Сирень',
+                            'Спирея',
+                        ],
+                        all: 'Все декоративные кустарники',
+                    })
+
+        .footer__contacts
+            .footer__row
+                .footer__col
+                    .footer__logo: a(href='#'): +bgimage('/img/common/logo.svg')
+                    .footer__sl Крупнейший современный питомник хвойных и лиственных растений, образованный в 1996 году
+                .footer__col
+                    .footer__email: a(href='mailto:info-zelrai@tut.by') info-zelrai@tut.by
+                    .footer__address 212037, Беларусь, Могилёвский район,заезд с трассы Е95
+                    .footer__worktime С 8:00 до 17:00, ПН-ПТ
+
+                .footer__col
+                    .footer__phones
+                        ul
+                            li: a(href='tel:+375296468686') +375 (29) 646-86-86
+                            li: a(href='tel:+375291272459') +375 (29) 127-24-59
+                            li: a(href='tel:+7268786438') +7 (926) 878-64-38
+                    .footer__msgr
+                        ul
+                            li.ic-color-tg: a(href='#'): +bgimage('/img/icons/msgr-tg.svg')
+                            li.ic-color-wa: a(href='#'): +bgimage('/img/icons/msgr-wa.svg')
+        .footer__bottom
+            .footer__copyright: span © Питомник растений «Зелёный рай», 2012-2025
+            .footer__policy: a(href='#') Политика конфиденциальности
+            .footer__develop
+                | Поддержка сайта: 
+                a(href='#') Promicom

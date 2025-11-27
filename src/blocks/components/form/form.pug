@@ -1,0 +1,114 @@
+mixin radio-group(options, data)
+    - var name = options?.name || crypto.randomUUID()
+    - var inline = options?.inline
+    - var legend = options?.legend
+    - var className = options?.class || ""
+    fieldset.input-group(class=[className, inline?"inline":""].join(" ").trim())
+        if legend
+            .input-group__title= legend
+        .input-group__inputs
+            each item,index in data
+                label(for=`${name}-${index}`)
+                    input(type="radio" id=`${name}-${index}` name=name value=item.value checked=item.selected)
+                    span.title= item.title
+
+mixin checkbox-group(options, data)
+    - var name = options?.name
+    - var inline = options?.inline
+    - var legend = options?.legend
+    fieldset.input-group(class = inline?"inline":null)
+        if legend
+            .input-group__title= legend
+        .input-group__inputs
+            each item,index in data
+                label(for=`${name}-${index}`)
+                    input(type="checkbox" id=`${name}-${index}` value=item.value checked=item.selected)
+                    span.title= item.title
+
+mixin select-field(data)
+    -var multiple = data?.multiple ? "multiple" : false
+    -var pluralTemplate = data?.pluralTemplate || false
+    select(placeholder=data.placeholder multiple=multiple data-pluraltpl=pluralTemplate)
+        each item in data.options
+            option= item
+
+mixin select-range(data)
+    -var options = data?.options || []
+    -var label = data?.label
+    .select-range
+        select(data-range="from", data-find="false", data-prefix=`${label} от: `)
+            each option in options
+                option(value=option)= option
+        select(data-range="to", data-find="false" data-prefix="до: ")
+            each option in data.options
+                option(value=option)= option
+
+mixin select-range-ext(data)
+    -var placeholder = data?.placeholder || " "
+    .select-range-ext
+        .select-styled.wrapper
+            span= placeholder
+        .select-list
+
+mixin select-range-units(data)
+    -var placeholder = data?.placeholder || ""
+    -var units = data?.units || []
+    -var name = data?.name || crypto.randomUUID()
+    -var maska = data?.maska || undefined
+    .select-units(data-placeholder=placeholder)
+        .select-units__head._head
+            span= placeholder
+            +icon('ic_arrow-down', 10)
+        .select-units__body._body
+            .prefixed-input.select-units__input._from
+                span от
+                input(type="text" name=`${name}_from` data-maska=maska)
+                .clear ×
+            .prefixed-input.select-units__input._to
+                span до
+                input(type="text" name=`${name}_to` data-maska=maska)
+                .clear ×
+            .select-units__units._units
+                each unit, index in units
+                    label
+                        span= unit[1]
+                        input(type="radio" name=`${name}_units` value=unit[0] data-unit=unit[1] checked=(index === 0))
+
+mixin select-range-ext(data)
+    -var placeholder = data?.placeholder || ""
+    -var name = data?.name || crypto.randomUUID()
+    -var postfix = data?.postfix || ""
+    -var maska = data?.maska || undefined
+    .select-units(data-placeholder=placeholder data-postfix=postfix)
+        .select-units__head._head
+            span= placeholder
+            +icon('ic_arrow-down', 10)
+        .select-units__body._body
+            .prefixed-input.select-units__input._from
+                span от
+                input(type="text" name=`${name}_from` data-maska=maska)
+                .clear ×
+            .prefixed-input.select-units__input._to
+                span до
+                input(type="text" name=`${name}_to` data-maska=maska)
+                .clear ×
+
+mixin select-extended(data)
+    - var multiple = data.multiple || false;
+    - var placeholder = data.placeholder || false;
+    - var className = data.class || false;
+    - var options = data.options
+    select(placeholder=placeholder multiple=multiple class=className)
+        each item in options
+            option(value=item.value)= item.title
+
+mixin prefixed-input(options)
+    -var type = options?.type || "text"
+    -var placeholder = options?.placeholder || null
+    -var formatted = options?.format
+    -var maska = options?.maska || false
+    .prefixed-input
+        if block
+            block
+        input(type=type, placeholder=placeholder, class={formatted : formatted}, data-maska = maska)
+        .clear ×

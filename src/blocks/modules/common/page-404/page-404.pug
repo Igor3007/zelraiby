@@ -1,0 +1,32 @@
+include ../../../../views/helpers/mixins
+include ../../index
+
+mixin page-404
+    section.section-page-404
+        .container
+            .page-404
+                .page-404__text
+                    .page-404__title
+                        .subtitle.body-16-reg Ошибка 404:
+                        h2 Страница не найдена
+                    .page-404__content
+                        .body-18-reg Всё в порядке, вы всегда можете заказать звонок или вернуться на главную:
+                        .btn-wrapper
+                            button.btn.btn-green(data-tpl="callback")
+                                +icon("ic_phone")
+                                span Заказать звонок
+                            a.btn.btn-line(href="/")
+                                +icon("ic_arrow-left-2")
+                                span Вернуться на главную
+                    .page-404__footer
+                        .body-16-24-reg Кроме того, в случае возникновения любых вопросов просто позвоните по телефону ниже и наши специалисты проконсультируют вас совершенно бесплатно:
+                        a.super-link(href="tel:+74952525250") +7 (495) 25-25-250
+    section.page-404-dark-bg
+        +recently-viewed()
+        +form-question({
+            title:"Затрудняетесь с выбором?",
+            description:"Эксперты «Метриум Премиум» помогут вам и сэкономят время без предоплаты и комиссии!",
+            class: "slim"
+        })
+
+

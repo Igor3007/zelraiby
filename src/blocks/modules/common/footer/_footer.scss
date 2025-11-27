@@ -1,0 +1,103 @@
+@use "../../../../styles/vars";
+
+footer {
+    background-color: var(--bg-01);
+}
+
+.footer {
+
+    padding: 30px 0;
+
+    &__catalog {
+        display: none;
+    }
+
+    &__logo {
+
+        padding-bottom: 16px;
+
+        & .bgimage {
+            width: 224px;
+            height: 44px;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: contain;
+        }
+    }
+
+    &__sl {
+        color: var(--accent-04);
+        @include vars.font-14;
+
+        padding-bottom: 12px;
+    }
+
+    &__eamil {
+        & a {
+            color: var(--accent-02);
+            font-weight: 600;
+        }
+    }
+
+    &__address {
+        color: var(--accent-02);
+        padding: 12px 0;
+    }
+
+    &__phones {
+        padding: 12px 0;
+    }
+
+    &__worktime {
+        color: var(--accent-04);
+    }
+
+    &__phones {
+
+        padding-bottom: 12px;
+
+        & li {
+            & a {
+                @include vars.font-h4;
+                color: var(--accent-02);
+            }
+        }
+    }
+
+    &__contacts {
+        border-bottom: 1px solid var(--border-02);
+        padding-bottom: 16px;
+    }
+
+    &__msgr {
+
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+
+        @media screen and (min-width: vars.$w576) {
+            margin-left: 0;
+        }
+
+        & ul {
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        & .bgimage {
+            @include vars.bgimage-contain;
+            width: 32px;
+            min-width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--accent-02);
+            transition: 0.4s ease;
+        }
+    }
+
+    &__bottom {
+        padding-top: 16px;
+    }
+}

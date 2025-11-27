@@ -1,0 +1,412 @@
+@use "../../styles/vars";
+
+.get-to {
+    display: flex;
+    margin-inline: var(--container-out);
+    padding-inline: var(--container-padding);
+    overflow-x: auto;
+
+    ul {
+        display: flex;
+        margin-top: 12px;
+
+        li {
+            display: flex;
+            gap: 4px;
+            color: var(--accent-11);
+            align-items: center;
+
+            &:not(:last-child) {
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 4px;
+                    height: 4px;
+                    background-color: var(--accent-14);
+                    border-radius: 50%;
+                    margin-inline: 4px 8px;
+                }
+            }
+        }
+    }
+
+    span {
+        white-space: nowrap;
+    }
+
+    &__map {
+        display: flex;
+        margin-left: 24px;
+        color: var(--accent-11);
+        margin-top: 12px;
+    }
+}
+
+html:has(.cityplace) {
+    scroll-padding-top: 130px;
+
+    @include vars.from('xl') {
+        scroll-padding-top: 200px;
+    }
+}
+
+.cityplace {
+
+    &__list {
+        & .minicard {
+            &__prop {
+                opacity: 1 !important;
+            }
+        }
+    }
+
+    .page-title {
+        background-color: var(--bg);
+
+        @include vars.from('md') {
+            padding-bottom: 40px;
+        }
+    }
+
+    &-wrp {
+        background: var(--bg);
+    }
+
+    &__grid {
+        @include vars.from('lg') {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0 32px;
+        }
+    }
+
+    &__sticky-wrp {
+        grid-row: span 3;
+    }
+
+    .gallery-big,
+    &__content,
+    &__anchors {
+        grid-column: 1 / 3;
+    }
+
+    &__content {
+        article {
+            h4:not(:first-child) {
+                margin-top: 24px;
+            }
+
+            &+article {
+                margin-top: 32px;
+            }
+        }
+    }
+
+    .gallery-big {
+        margin-bottom: 16px;
+    }
+
+    &__content {
+        h4 {
+            font: 400 clamp(20px, 4vw, 28px)/1.6 vars.$font-captions;
+            letter-spacing: 0.04em;
+        }
+    }
+
+    &__anchors {
+        margin-inline: var(--container-out);
+        overflow-x: auto;
+        margin-block: 24px;
+        background-color: var(--white);
+        position: sticky;
+        top: var(--hgt-header);
+        z-index: 30;
+
+        @include vars.from('md') {
+            background-color: transparent;
+            margin-inline: -12px;
+        }
+    }
+
+    .sticky-content {
+        @include vars.from('md') {
+            top: var(--hgt-header);
+            position: sticky;
+        }
+    }
+
+    &__description {
+        background: var(--white);
+        padding: 16px;
+        border-radius: 16px;
+        font: 400 15px/24px vars.$font-default;
+
+        @include vars.from('md') {
+            padding: 32px;
+            font: 400 18px/28px vars.$font-default;
+        }
+
+        p {
+            letter-spacing: 0.02em;
+            hyphens: auto;
+        }
+
+        .dotted-list {
+            @include vars.from('xl') {
+                columns: 2;
+                column-gap: 32px;
+            }
+        }
+
+        .detail-apartment & {
+            @include vars.from('md') {
+                padding: 32px;
+                font: 400 16px/24px vars.$font-default;
+            }
+        }
+    }
+
+    &__filter {
+        background: var(--white);
+        padding: 16px;
+        border-radius: 16px;
+        margin-top: 24px;
+
+        @include vars.from('md') {
+            padding: 32px;
+            margin-top: 32px;
+        }
+
+        h4 {
+            margin-bottom: 16px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 8px;
+
+            .checkbox {
+                height: 36px;
+                align-self: center;
+            }
+
+            @include vars.from('md') {
+                gap: 12px;
+                margin-top: 22px;
+            }
+        }
+    }
+
+    &__list {
+        margin-top: 24px;
+        background: var(--white);
+        padding: 16px;
+        border-radius: 16px;
+
+        @include vars.from('md') {
+            margin-top: 16px;
+        }
+
+        &-content {
+            display: grid;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        &-header {
+            @include vars.from('xl') {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .list-header__controls {
+            @include vars.from('xl') {
+                flex-grow: 0;
+            }
+        }
+
+        .list-header__controls-sort {
+            min-width: 100%;
+
+            @include vars.from('xl') {
+                min-width: 400px;
+            }
+        }
+    }
+
+    &__list-done {
+        margin-top: 24px;
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    &__list-footer {
+        button {
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        .pagination__page {
+            margin-top: 16px;
+            justify-content: center;
+        }
+    }
+
+    &__count {
+        font: 400 16px/1.5 vars.$font-default;
+        color: var(--text-2);
+
+        @include vars.before('xl') {
+            margin-bottom: 8px;
+        }
+
+        @include vars.from('md') {
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+
+    &__map-block {
+        background: var(--white);
+        padding: 16px;
+        border-radius: 16px;
+        margin-top: 24px;
+
+        @include vars.from('md') {
+            margin-top: 32px;
+        }
+
+        @include vars.from('xl') {
+            padding: 32px;
+        }
+
+        h4 {
+            margin-bottom: 16px;
+
+            @include vars.from('xl') {
+                margin-bottom: 24px;
+            }
+        }
+
+        .map-static {
+            height: auto;
+            max-height: 480px;
+            aspect-ratio: .733;
+            border-radius: 12px;
+            overflow: hidden;
+
+            @include vars.before('md') {
+                .ymaps3x0--controls {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__map-legend {
+        .dotted-list {
+            @include vars.from('xl') {
+                margin-top: -10px;
+                margin-bottom: 24px;
+                columns: 2;
+                column-gap: 50px;
+            }
+
+            li {
+                font: 500 16px/1.5 vars.$font-default;
+                margin-bottom: 16px;
+                letter-spacing: .02em;
+            }
+        }
+    }
+}
+
+.detail-apartment {
+    .cityplace {
+        &__description {
+            margin-top: 8px;
+            margin-bottom: 30px;
+
+            p {
+                margin-top: 12px;
+                margin-bottom: 0;
+            }
+
+            h4 {
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    .link-more {
+        display: inline-flex;
+        gap: 4px;
+        font: 500 16px/1.5 vars.$font-default;
+        color: var(--accent-11);
+        align-items: center;
+        margin-top: 16px;
+        letter-spacing: .02em;
+
+        @include vars.hover {
+            color: var(--accent);
+        }
+
+        .icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    .recently-viewed.similar {
+        @include vars.from('md') {
+            padding-top: 96px;
+        }
+    }
+
+    .section-special-offers {
+        background: var(--bg);
+
+        @include vars.from('md') {
+            padding-top: 50px;
+            padding-bottom: 36px;
+        }
+    }
+
+    .section-form-question.pre-footer {
+        padding-bottom: 48px;
+        border-bottom: 1px solid var(--accent-13);
+
+        @include vars.from('md') {
+            padding-bottom: 96px;
+        }
+    }
+
+    .form-question {
+        margin: 0;
+    }
+
+}
+
+.page-header {
+    margin-block: 24px;
+
+    @include vars.from('md') {
+        margin-block: 32px;
+    }
+}
+
+.city-places-all,
+.city-place {
+    .section-form-question {
+        padding-bottom: 48px;
+        border-bottom: 1px solid var(--accent-14);
+
+        @include vars.from('md') {
+            padding-bottom: 96px;
+        }
+    }
+}

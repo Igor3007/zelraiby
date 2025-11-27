@@ -1,0 +1,130 @@
+@use "../../../styles/vars";
+@use "../../../styles/helpers/functions";
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @media screen and (max-width: vars.$w480) {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    &__page {
+        display: flex;
+        gap: 8px;
+        li {
+            background: var(--accent-12);
+            color: var(--text-2);
+            border-radius: 12px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: .3s;
+            @include vars.hover {
+                background: var(--accent-13);
+            }
+            &:has(span) {
+                pointer-events: none;
+            }
+
+            &.active {
+                background: var(--accent-11);
+                color: var(--white);
+                pointer-events: none;
+            }
+
+            &.control {
+                background: var(--accent-21);
+                border-color: var(--accent-21);
+                color: var(--white);
+                @include vars.hover {
+                    background: var(--accent-11);
+                    border-color: var(--accent-11);
+                }
+                &.disabled {
+                    background: transparent;
+                    border-color: var(--text-3);
+                    color: var(--text-3);
+                    pointer-events: none;
+                }
+            }
+        }
+
+        a, span {
+            display: flex;
+            width: 46px;
+            height: 54px;
+            align-items: center;
+            justify-content: center;
+            color: inherit;
+            font: 400 18px/28px vars.$font-default;
+            letter-spacing: .02em;
+            @include vars.from('lg') {
+                width: 54px;
+            }
+        }
+    }
+
+    &__page.compact {
+        span,
+        a {
+            height: 42px;
+        }
+    }
+
+    &__more {
+
+        width: 100%;
+
+        @media screen and (max-width: vars.$w480) {
+            padding-bottom: 24px;
+
+        }
+
+        & .btn {
+            width: 100%;
+            background-color: var(--accent);
+            color: #fff;
+            margin: 0 auto;
+            max-width: 275px;
+            font-family: var(--font-montserrat);
+            font-size: 17px;
+
+            letter-spacing: -3%;
+
+            @media screen and (min-width: vars.$w992) {
+                max-width: 500px;
+            }
+
+            @include vars.hover {
+                background-color: var(--bg);
+                color: var(--accent);
+            }
+
+        }
+    }
+
+    &--showmore {
+        & .pagination {
+            &__page {
+                width: auto;
+            }
+        }
+    }
+
+    &__total {
+        color: #000;
+        white-space: nowrap;
+
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.card-review__project * {
+    margin: 0;
+}

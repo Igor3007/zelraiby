@@ -1,0 +1,35 @@
+.container
+  .header-top-fixed
+    .header-top
+      .header-top__logo
+        a(href='#'): +bgimage('/img/common/logo.svg')
+      .header-top__find
+        form(action='#' method='POST')
+          .search-field
+            input(type="text" placeholder="Найти в каталоге...")
+            button.btn: +icon('ic_search')
+      .header-top__contact
+        .header-contact
+          .header-contact__title: a(href='tel:+375 (29) 646-86-86') +375 (29) 646-86-86
+          .header-contact__sub C 8:00 до 17:00, ПН-ПТ
+
+      .header-top__contact.header-top__contact--email
+        .header-contact
+          .header-contact__title: a(href='tel:+7 (926) 878-65-38') +7 (926) 878-65-38
+          .header-contact__sub: a(href='mailto:info-zelrai@tut.by') info-zelrai@tut.by
+
+      .header-top__msgr
+        ul
+          li.ic-color-tg: a(href='#'): +bgimage('/img/icons/msgr-tg.svg')
+          li.ic-color-wa: a(href='#'): +bgimage('/img/icons/msgr-wa.svg')
+          
+    .header-nav
+      .header-nav__catalog
+        button.btn
+          +icon('ic_catalog')
+          span Каталог
+      .header-nav__menu
+        nav
+          ul
+            each item in mainMenu
+              li: a(href='#')= item.text 

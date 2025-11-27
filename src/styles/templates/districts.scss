@@ -1,0 +1,245 @@
+@use "../../styles/vars";
+
+.districts-popup {
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    @include vars.from('md') {
+        width: 708px;
+    }
+    @include vars.from('lg') {
+        width: 900px;
+        height: 91vh;
+    }
+    @include vars.from('xl') {
+        width: 1024px;
+    }
+    @media screen and (min-width: 1680px) {
+        width: 1600px;
+    }
+
+
+    &__title {
+        font: 400 clamp(24px, 4vw, 36px)/1.5 vars.$font-captions;
+        margin-block: 4px 35px;
+    }
+
+    &__body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    &__districts {
+        flex-grow: 1;
+    }
+
+    .input-filter {
+        display: flex;
+        width: 100%;
+        position: relative;
+        background: var(--accent-12);
+        padding: 14px 16px;
+        border-radius: 12px;
+        font: 400 18px/1 vars.$font-default;
+        margin-bottom: 24px;
+
+        @include vars.from('md') {
+            margin-bottom: 32px;
+        }
+
+        &:focus-within {
+            outline: 2px solid var(--accent-11);
+        }
+
+        .icon {
+            color: var(--text-3);
+            margin-right: 8px;
+        }
+
+        input {
+            border: none;
+            flex: 1;
+            background: transparent;
+            color: var(--text-2);
+        }
+
+        button {
+            padding: 0;
+            line-height: 0;
+            font-size: 1.5em;
+            border: none;
+            background: none;
+            color: var(--text-3);
+            cursor: pointer;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: vars.$red;
+                }
+            }
+        }
+
+    }
+
+    h4 {
+        font: 400 clamp(20px, 3.5vw, 28px)/1.6 vars.$font-captions;
+        margin-bottom: 16px;
+    }
+
+    h5 {
+        font: 400 16px/1.5 vars.$font-default;
+        margin-bottom: 12px;
+    }
+
+    .btn-wrapper {
+        background: white;
+        padding-block: 12px;
+
+        display: flex;
+        gap: 16px;
+        z-index: 2;
+
+        @include vars.before('md') {
+            padding-inline: var(--container-padding);
+            margin-inline: var(--container-out);
+            margin-bottom: var(--container-out);
+            flex-direction: column;
+            box-shadow: 0px -4px 20px 0px #0000001F;
+            position: sticky;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            button {
+                width: 100%;
+                font-size: 16px;
+                height: 52px;
+
+                &.btn-reset {
+                    height: 36px;
+
+                    span {
+                        padding-top: 1px;
+                    }
+                }
+
+            }
+        }
+
+        .icon {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+.district-popup {
+    .af-popup {
+        &__wrp {
+            justify-content: flex-end;
+        }
+
+        &__container {
+            margin: 0;
+            @include vars.from('xxl') {
+                margin-bottom: 16px;
+            }
+        }
+
+        &__content {
+            @include vars.before('xxl') {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+    }
+}
+
+
+
+#instants {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    li {
+        font: 400 16px/1.5 vars.$font-default;
+        color: var(--text-2);
+        padding: 8px 16px;
+        background: var(--accent-12);
+        border-radius: 20px;
+        cursor: pointer;
+
+        &:hover {
+            background: var(--accent-14);
+        }
+    }
+}
+
+#areas {
+    column-count: 2;
+    column-gap: 32px;
+    @include vars.from('md') {
+        column-count: 3;
+    }
+    @include vars.from('xl') {
+        width: calc(75% - 8px);
+    }
+
+    & > li {
+        margin-bottom: 8px;
+    }
+}
+
+#districts {
+    @include vars.from('md') {
+        column-count: 3;
+        column-gap: 32px;
+    }
+    @include vars.from('xl') {
+        column-count: 4;
+    }
+
+    .no-result {
+        display: none;
+        font: 400 18px/28px vars.$font-default;
+        column-span: all;
+    }
+
+    ul {
+        break-inside: avoid;
+
+        &:not(:has(.district:not(.hidden))) {
+            // для списков в котором каждый .district имеет .hidden (нет таких, которые не имеют)
+            display: none;
+        }
+    }
+
+    &:not(:has(.district:not(.hidden))) {
+        // для контейнера районов, в котором все районы скрыты
+        .no-result {
+            display: block !important;
+        }
+    }
+
+    li.letter {
+        font: 500 18px/28px vars.$font-default;
+        margin-bottom: 16px;
+    }
+
+    li.district {
+        margin-bottom: 16px;
+
+        &.hidden {
+            display: none;
+        }
+    }
+}
