@@ -1,6 +1,9 @@
- 
+import {
+    MaskInput
+} from "maska";
+
 document.addEventListener('DOMContentLoaded', function (event) {
-   
+
     /* =================================================
     css variable
     =================================================*/
@@ -330,7 +333,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         window.MainMenu = new MainMenu(document)
     }
 
- 
+
 
 
 }); //dcl

@@ -37,10 +37,10 @@
 @mixin font-h4() {
     font-size: 18px;
     line-height: 133%;
-    font-weight: 600;
+    font-weight: 700;
 
-    @media screen and (min-width: variables.$w576) {
-        font-size: 28px;
+    @media screen and (min-width: variables.$w992) {
+        font-size: 24px;
     }
 }
 
@@ -49,6 +49,11 @@
 @mixin font-14 {
     font-size: 14px;
     line-height: 142%;
+}
+
+@mixin font-16 {
+    font-size: 16px;
+    line-height: 150%;
 }
 
 @mixin font-18 {
@@ -64,4 +69,10 @@
     }
 
 
+}
+
+@mixin font-20 {
+    font-size: 20px;
+    line-height: 160%;
+    font-weight: 600;
 }

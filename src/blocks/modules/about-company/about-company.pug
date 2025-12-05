@@ -1,0 +1,17 @@
+mixin about-company
+    section.section-about-company
+        .container
+            .about-company
+                .about-company__left
+                    .about-company__image: +picture('/img/common/video-img.jpg')
+                .about-company__right
+                    .about-company__main
+                        .about-company__h2 «Зелёный рай» — <span>современный питомник растений выбирай!</span>
+                        .about-company__text
+                            p «Зеленый рай» в Могилеве — крупнейший современный питомник хвойных и лиственных растений, образованный в 1996 году. «Зелёный рай» — это большое, правильно организованное хозяйство и просто чудесная ландшафтная зона.
+                            p Год за годом питомник набирает новые мощности. В настоящее время хозяйство расположено на 50 га земельных угодий. Из них 2,0 га занимают производственные орошаемые площади под контейнерное выращивание саженцев и 35 га занимают растения в грунте. Питомник растений оснащен современной технической базой.
+                        .about-company__button
+                            a(href='#'): button.btn 
+                                span Подробнее о компании
+                                +icon('ic_chevron-right')
+                    .about-company__pic: +picture('/img/common/video-img.jpg')

@@ -7,5 +7,24 @@ block variables
 
 block main
 
+    include ../blocks/modules/about-company/about-company
+    include ../blocks/modules/best-offers/best-offers
+    include ../blocks/modules/first-block/first-block
+    include ../blocks/modules/form-order/form-order
+    include ../blocks/modules/seotext-block/seotext-block
+    include ../blocks/modules/stories-block/stories-block
+    include ../blocks/modules/team-block/team-block
+    include ../blocks/modules/tile-category/tile-category
+
+    +first-block
+    +stories-block
+    +tile-category
+    +best-offers
+    +about-company
+    +team-block
+    +form-order
+    +seotext-block
+    
+
 block scripts
     script(src="/js/index.js") 

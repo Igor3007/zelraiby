@@ -1,0 +1,62 @@
+mixin card-member(data)
+    .card-member.eff-respective
+        .card-member__image: +picture(data.image)
+        .card-member__main
+            .card-member__name= data.name
+            .card-member__desc= data.desc
+            .card-member__phone= data.phone
+            .card-member__email= data.email
+
+mixin team-block
+
+    -
+        const member_list = [
+            {
+                image: '/img/team/img-0',
+                name: 'Наталья',
+                desc: 'Менеджер по продажам',
+                phone: '+7 (926) 878-65-38',
+                email: 'natalya-zelrai@tut.by',
+            },
+            {
+                image: '/img/team/img',
+                name: 'Виктория',
+                desc: 'Менеджер по работе с клиентами',
+                phone: '+7 (926) 878-65-40',
+                email: 'viktoria-zelrai@tut.by',
+            },
+            {
+                image: '/img/team/img-1',
+                name: 'Татьяна',
+                desc: 'Менеджер по работе с клиентами',
+                phone: '+7 (926) 878-65-42',
+                email: 'tatyana-zelrai@tut.by',
+            },
+            {
+                image: '/img/team/img-2',
+                name: 'Екатерина',
+                desc: 'Менеджер по работе с клиентами',
+                phone: '+7 (926) 878-65-44',
+                email: 'ekaterina-zelrai@tut.by',
+            },
+            {
+                image: '/img/team/img-3',
+                name: 'Евгения',
+                desc: 'Менеджер по работе с клиентами',
+                phone: '+7 (926) 878-65-46',
+                email: 'evgeniya-zelrai@tut.by',
+            },
+          
+        ]
+
+    section.section-team-block
+        .container
+            .team-block.animate
+                .team-block__title Наша команда
+                .team-block__subtitle Профессиональные менеджеры помогут вам подобрать подходящие саженцы и растения
+                .team-block__list
+                    .splide(data-slider="team")
+                        .splide__track
+                            .splide__list
+                                each item in member_list
+                                    .splide__slide: +card-member(item)

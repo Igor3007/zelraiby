@@ -1,0 +1,241 @@
+@use "../../../styles/vars";
+
+.section-best-offers {
+    background-color: var(--bg);
+    padding: 29px 0;
+
+    @media screen and (min-width: vars.$w760) {
+        padding: 48px 0;
+    }
+
+    @media screen and (min-width: vars.$w1440) {
+        padding: 63px 0;
+    }
+
+    & .is-hide {
+        display: none
+    }
+}
+
+
+.best-offers {
+    &__title {
+        padding-bottom: 12px;
+        @include vars.font-h2;
+
+        @media screen and (min-width: vars.$w760) {
+            padding-bottom: 24px;
+
+        }
+
+        @media screen and (min-width: vars.$w1440) {
+            padding-bottom: 34px;
+        }
+    }
+
+    &__tabs {
+        padding: 8px 0;
+        border-radius: 8px;
+        display: flex;
+        overflow-x: auto;
+        margin-bottom: 24px;
+
+        @media screen and (max-width: vars.$w480) {
+            margin-right: -16px;
+        }
+
+        @media screen and (min-width: vars.$w992) {
+            background-color: #fff;
+            margin-bottom: 36px;
+            border-radius: 17px;
+        }
+
+        @media screen and (min-width: vars.$w1200) {
+            padding: 12px;
+        }
+
+        & ul {
+            display: flex;
+            margin: 0 -5px;
+
+            @media screen and (min-width: vars.$w1200) {
+                margin: 0;
+            }
+
+            & li {
+                white-space: nowrap;
+                padding: 0 5px;
+
+                @media screen and (min-width: vars.$w1200) {
+                    padding: 0;
+
+                    &:first-child {
+                        & span {
+                            border-radius: 12px 0 0 12px;
+                        }
+                    }
+
+                    &:last-child {
+                        & span {
+                            border-radius: 0 12px 12px 0;
+                        }
+                    }
+                }
+
+                & span {
+                    background-color: #fff;
+                    display: inline-flex;
+                    min-height: 36px;
+                    align-items: center;
+                    padding: 5px 12px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: 0.3s ease;
+                    color: var(--text-2);
+
+                    &:hover {
+                        background-color: var(--bg);
+                    }
+
+                    @media screen and (min-width: vars.$w1200) {
+                        padding: 16px 32px;
+                        border-radius: 0;
+                        font-size: 16px;
+                        letter-spacing: .02em;
+                        font-weight: 400;
+                        background-color: var(--bg);
+
+                        &:hover {
+                            background-color: var(--accent-13);
+                            color: var(--text-1);
+                        }
+                    }
+
+                    @media screen and (min-width: vars.$w1440) {
+                        padding: 18px 32px;
+                        font-size: 18px;
+                    }
+                }
+
+                &.is-active {
+                    & span {
+                        background-color: var(--accent-11);
+                        color: #fff;
+
+                        &:hover {
+                            background-color: var(--accent-11);
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__slider {
+        padding-bottom: 16px;
+
+        @media screen and (min-width: vars.$w1200) {
+            padding-bottom: 60px;
+        }
+
+        & .splide {
+            &__track {
+                overflow: visible;
+            }
+
+            &__slide {
+                &:nth-child(2) {
+                    & .minicard {
+                        animation-delay: 0.1s;
+                    }
+                }
+
+                &:nth-child(3) {
+                    & .minicard {
+                        animation-delay: 0.15s;
+                    }
+                }
+
+                &:nth-child(4) {
+                    & .minicard {
+                        animation-delay: 0.2s;
+                    }
+                }
+            }
+
+            &__pagination {
+                position: relative;
+                padding: 28px 0 8px;
+            }
+        }
+    }
+
+
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+
+        & .btn {
+            @media screen and (max-width: vars.$w480) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__more {
+        @media screen and (max-width: vars.$w480) {
+            width: 100%;
+        }
+    }
+
+    &__nav {
+        display: none;
+        @include vars.splide-nav;
+
+        @media screen and (min-width: vars.$w760) {
+            display: flex;
+        }
+    }
+
+    @keyframes to-fade-minicard {
+
+        from {
+            transform: translateX(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    & .minicard {
+        opacity: 0;
+        animation: to-fade-minicard 0.4s ease forwards;
+    }
+
+    & .toggle-currency {
+
+        padding-left: 16px;
+
+        @media screen and (min-width: vars.$w1200) {
+            margin-left: auto !important;
+        }
+
+        & li {
+            & span {
+                font-weight: 400 !important;
+
+                @media screen and (min-width: vars.$w1200) {
+                    font-size: 18px;
+                    padding-left: 23px;
+                    padding-right: 23px;
+                }
+            }
+        }
+    }
+
+
+}

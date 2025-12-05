@@ -1,0 +1,25 @@
+mixin form-order
+    section.section-form-order
+        .container
+            .form-order
+                .form-order__title
+                .form-order__desc
+                .form-order__form
+                    form(action='#' method='POST')
+                        .form
+                            .form__item
+                                .form__subitem
+                                    label Ваше имя:
+                                    input(type="text" name="" placeholder="")
+                                .form__subitem
+                                    label Номер телефона:
+                                    input(type="text" name="" placeholder="")
+                                .form__subitem
+                                    label Сообщение (необязательно):
+                                    input(type="text" name="" placeholder="")
+                                .form__subitem
+                                    button.btn(type="submit") Отправить заявку
+                            .form__item
+                                .form__subitem
+                                    +checkbox('Нажимая на кнопку «Отправить заявку», я соглашаюсь с <a href="/policy.html">Политикой конфиденциальности</a>')
+                            

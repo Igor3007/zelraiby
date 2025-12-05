@@ -1,0 +1,19 @@
+mixin story-card(data)
+    .story-card
+        .story-card__preview
+            +picture('/img/favicons/apple-touch-icon-114x114.png')
+        .story-card__title=data.title
+
+mixin stories-block
+    section.section-stories-block
+        .container
+            .stories-block
+                .stories-block__slider
+                    .splide
+                        .splide__track
+                            .splide__list
+                                each item in [1,1,1,1,1,1,1,1,1,1,]
+                                    .splide__item: +story-card({
+                                        title: 'Новые хвойные у нас'
+                                    })
+

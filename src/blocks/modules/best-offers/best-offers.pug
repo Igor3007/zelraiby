@@ -1,0 +1,72 @@
+include ../minicard/minicard.pug
+
+mixin  best-offers
+
+    -
+        const bestOffers = [
+            {
+                image: '/img/objects/img-block-1',
+                filterId: '1',
+                id: '1'
+            },
+            {
+                image: '/img/objects/img-block-2',
+                filterId: '1',
+                id: '2'
+            },
+            {
+                image: '/img/objects/img-block-3',
+                filterId: '2',
+                id: '13'
+            },
+            {
+                image: '/img/objects/img-block-4',
+                filterId: '3',
+                id: '1342'
+            },
+            {
+                image: '/img/objects/img-block-5',
+                filterId: '4',
+                id: '5431'
+            },
+            {
+                image: '/img/objects/img-block-6',
+                filterId: '5',
+                id: '6571'
+            },
+
+        ]
+
+    section.section-best-offers
+        .container
+            .best-offers
+                .best-offers__title Новые предложения
+                .best-offers__tabs
+                    ul
+                        li(data-filter="1").is-active: span Квартиры
+                        li(data-filter="2"): span Новостройки
+                        li(data-filter="3"): span Дома на Новой Риге
+                        li(data-filter="4"): span Дома на Рублёвке
+                        li(data-filter="5"): span Участки
+
+                    ul.toggle-currency
+                        li(data-currency="rub").is-active: span ₽
+                        li(data-currency="usd"): span $
+                        li(data-currency="eur"): span €
+
+                .best-offers__slider
+                    .splide(data-slider="offers")
+                        .splide__track
+                            .splide__list.splide__list--offers
+                                each item in bestOffers
+                                    .splide__slide(data-filter-id=item.filterId)
+                                        +minicard(item)
+                .best-offers__bottom
+                    .best-offers__more
+                        a(href='#')
+                            button.btn.btn-green
+                                +icon('ic_house')
+                                span Смотреть все предложения
+                    .best-offers__nav
+                        .best-offers__nav-prev(data-slider-prev="offers"): +icon('ic_arr-left')
+                        .best-offers__nav-next(data-slider-next="offers"): +icon('ic_arr-right')
