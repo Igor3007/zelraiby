@@ -4,7 +4,7 @@ mixin catalog-widjet
             .catalog-widjet__title Каталог саженцев и растений
             .catalog-widjet__desc Благодаря широкому выбору вы всегда сможете выбрать достойное решение для реализации любой задумки
         .catalog-widjet__image
-            +picture('/')
+            +picture('/img/common/img-frame')
 
 mixin first-block
     section.section-first-block
@@ -12,6 +12,7 @@ mixin first-block
             .first-block
                 .first-block__left
                     .first-block__video
+                        .video-responsive: video(poster="/img/common/img-big.jpg")
                     .first-block__digits
                         .first-digits
                             .first-digits__item
@@ -30,3 +31,4 @@ mixin first-block
                         +catalog-widjet
                     .first-block__buttons
                         .first-block__call: button.btn Связаться с нами
+                        .first-block__cat: button.btn Перейти в каталог
