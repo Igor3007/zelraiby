@@ -4,7 +4,11 @@
     display: flex;
     align-items: center;
     gap: 24px;
-    padding: 20px 0;
+    padding: 12px 0;
+
+    @media screen and (min-width: vars.$w480) {
+        padding: 20px 0;
+    }
 
     &__logo {
         & .bgimage {

@@ -16,13 +16,13 @@ mixin first-block
                     .first-block__digits
                         .first-digits
                             .first-digits__item
-                                .first-digits__label 29 лет
+                                .first-digits__label: span 29 лет
                                 .first-digits__desc опыта работы в сфере питомников растений
                             .first-digits__item
-                                .first-digits__label 70 га
+                                .first-digits__label: span 70 га
                                 .first-digits__desc земельный угодий во владении хозяйства
                             .first-digits__item
-                                .first-digits__label Более 300
+                                .first-digits__label: span Более 300
                                 .first-digits__desc видов саженцев и растений выращиваем
                 .first-block__right
                     .first-block__h1: h1 Питомник растений «Зелёный рай»
@@ -30,5 +30,8 @@ mixin first-block
                     .first-block__widget
                         +catalog-widjet
                     .first-block__buttons
+                        .first-block__cat
+                            button.btn.btn-dark 
+                                span Перейти в каталог
+                                +icon('ic_leaf')
                         .first-block__call: button.btn Связаться с нами
-                        .first-block__cat: button.btn Перейти в каталог

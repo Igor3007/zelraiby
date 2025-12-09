@@ -109,7 +109,6 @@ html:has(.cityplace) {
     &__content {
         h4 {
             font: 400 clamp(20px, 4vw, 28px)/1.6 vars.$font-captions;
-            letter-spacing: 0.04em;
         }
     }
 

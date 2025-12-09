@@ -3,7 +3,7 @@
 .section-page-404 {
     margin-top: 64px;
     background-image: url(/img/404.jpg);
-    background-color: rgba(255,255,255,.3);
+    background-color: rgba(255, 255, 255, .3);
     background-blend-mode: lighten;
     background-size: contain;
     background-repeat: no-repeat;
@@ -35,10 +35,12 @@
         font: 400 clamp(14px, 3.5vw, 16px)/1.75 vars.$font-default;
         letter-spacing: .02em;
     }
+
     .body-18-reg {
         font: 400 clamp(16px, 4vw, 18px)/1.67 vars.$font-default;
         letter-spacing: .02em;
     }
+
     .body-16-24-reg {
         font: 400 clamp(14px, 3.5vw, 16px)/1.5 vars.$font-default;
         letter-spacing: .02em;
@@ -61,6 +63,7 @@
         display: flex;
         gap: 12px;
         margin-top: 16px;
+
         @include vars.before('md') {
             flex-direction: column;
         }
@@ -77,8 +80,8 @@
     .super-link {
         margin-top: 8px;
         font: 400 36px/48px vars.$font-captions;
-        letter-spacing: .04em;
         color: var(--accent-21);
+
         @include vars.hover {
             color: var(--accent-22);
         }

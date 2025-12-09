@@ -1,9 +1,88 @@
 @use 'vars'as vars;
 
-.video-responsive {
 
+.first-block {
+
+    padding-top: 16px;
+
+    &__h1 {
+        & h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--accent-02);
+            margin-bottom: 9px;
+        }
+    }
+
+    &__desc {
+        padding-bottom: 10px;
+        @include vars.font-16;
+        font-weight: 600;
+        color: var(--accent-02);
+    }
+
+    &__video {
+        margin-top: 5px;
+
+        & video {
+            outline: 5px solid var(--accent);
+            border: 5px solid var(--accent-02);
+            border-radius: 32px;
+        }
+    }
+
+    &__digits {
+        display: none;
+
+        @media screen and (min-width: vars.$w760) {
+            display: block;
+        }
+    }
+
+    &__widget {
+        display: none;
+
+        @media screen and (min-width: vars.$w760) {
+            display: block;
+        }
+    }
+
+    &__buttons {
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+
+        @media screen and (min-width: vars.$w576) {
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        & div {
+            width: 100%;
+        }
+
+        & .btn {
+            width: 100%;
+        }
+    }
+
+    &__digits {
+        padding: 24px 0;
+    }
+
+    &__widget {
+        padding: 24px 0;
+    }
+}
+
+.video-responsive {
     position: relative;
-    padding-top: 58%;
+    padding-top: 70%;
+
+    @media screen and (min-width: vars.$w576) {
+        padding-top: 58%;
+    }
 
     & video {
         display: block;
@@ -11,5 +90,66 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
+    }
+}
+
+
+
+.first-digits {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -12px;
+    color: var(--accent-03);
+
+    &__item {
+        width: 33.33%;
+        padding: 12px;
+    }
+
+    &__label {
+        @include vars.font-h3;
+
+        & span {
+            position: relative;
+            z-index: 1;
+
+            &::before {
+                content: '';
+                height: 8px;
+                background-color: rgba(173, 235, 103, 0.30);
+                display: block;
+                position: absolute;
+                bottom: 5px;
+                left: 0;
+                width: calc(100% + 10px);
+                z-index: -1;
+            }
+        }
+    }
+
+    &__desc {
+        @include vars.font-16;
+        color: var(--accent-02);
+    }
+}
+
+
+.catalog-widjet {
+    background: var(--bg-02);
+    padding: 16px;
+    display: flex;
+    gap: 24px;
+    padding-left: 32px;
+    border-radius: 32px;
+
+    &__title {
+        @include vars.font-h4;
+        color: var(--accent-02);
+        padding-bottom: 12px
+    }
+
+    &__desc {
+        @include vars.font-16;
+        color: var(--accent-04);
     }
 }
