@@ -5,12 +5,30 @@
 
     padding-top: 16px;
 
+    @media screen and (min-width: vars.$w992) {
+        display: flex;
+        gap: 32px;
+        padding: 48px 0;
+    }
+
+    &__left {
+        @media screen and (min-width: vars.$w992) {
+            width: calc(50% + 0px);
+        }
+    }
+
+    &__right {
+        @media screen and (min-width: vars.$w992) {
+            width: calc(50% - 0px);
+        }
+    }
+
     &__h1 {
         & h1 {
-            font-size: 32px;
-            font-weight: 700;
+            @include vars.font-h1;
             color: var(--accent-02);
             margin-bottom: 9px;
+            margin-top: 0;
         }
     }
 
@@ -19,6 +37,10 @@
         @include vars.font-16;
         font-weight: 600;
         color: var(--accent-02);
+
+        @media screen and (min-width: vars.$w1440) {
+            font-size: 18px;
+        }
     }
 
     &__video {
@@ -67,12 +89,39 @@
         }
     }
 
+    &__cat {
+        @media screen and (min-width: vars.$w1440) {
+            display: none;
+        }
+    }
+
+    &__call {
+        & .btn {
+            @media screen and (min-width: vars.$w1200) {
+                height: 68px;
+                font-size: 18px;
+            }
+
+            @media screen and (min-width: vars.$w1440) {
+                height: 104px;
+                font-size: 32px;
+                border-radius: 32px;
+            }
+        }
+    }
+
     &__digits {
         padding: 24px 0;
+
+
     }
 
     &__widget {
         padding: 24px 0;
+
+        @media screen and (min-width: vars.$w1200) {
+            padding: 20px 0 28px;
+        }
     }
 }
 
@@ -109,6 +158,10 @@
     &__label {
         @include vars.font-h3;
 
+        @media screen and (min-width: vars.$w992) and (max-width: vars.$w1440) {
+            font-size: 24px;
+        }
+
         & span {
             position: relative;
             z-index: 1;
@@ -130,6 +183,10 @@
     &__desc {
         @include vars.font-16;
         color: var(--accent-02);
+
+        @media screen and (min-width: vars.$w992) and (max-width: vars.$w1440) {
+            font-size: 14px;
+        }
     }
 }
 
@@ -141,6 +198,24 @@
     gap: 24px;
     padding-left: 32px;
     border-radius: 32px;
+    align-items: center;
+
+    &__image {
+
+        width: 34%;
+
+        & img {
+            border-radius: 12px;
+
+            @media screen and (min-width: vars.$w1200) {
+                border-radius: 24px;
+            }
+        }
+    }
+
+    &__main {
+        width: 66%;
+    }
 
     &__title {
         @include vars.font-h4;

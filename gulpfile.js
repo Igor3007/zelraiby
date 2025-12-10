@@ -1,10 +1,13 @@
 "use strict";
 
 import gulp from "gulp";
-import {paths} from "./gulp-tasks/config.js";
+import {
+    paths
+} from "./gulp-tasks/config.js";
 import {
     clean,
     copyFonts,
+    copyStatic,
     copyJSON,
     jsDev,
     jsProd,
@@ -42,6 +45,7 @@ gulp.task('watch', function () {
     gulp.watch(paths.webp.watch, gulp.parallel(webpDev));
     gulp.watch(paths.fonts.watch, gulp.parallel(copyFonts));
     gulp.watch(paths.json.watch, gulp.parallel(copyJSON));
+    gulp.watch(paths.json.watch, gulp.parallel(copyStatic));
 })
 
 gulp.task(
@@ -49,7 +53,7 @@ gulp.task(
     gulp.series(
         clean,
         stylesDev,
-        gulp.parallel(viewsDev, jsDev, copyFonts, copyJSON, favicons, imagesDev, webpDev, spritesDev, htmlTemplates),
+        gulp.parallel(viewsDev, jsDev, copyFonts, copyJSON, copyStatic, favicons, imagesDev, webpDev, spritesDev, htmlTemplates),
         gulp.parallel('browser-sync', 'watch')
     )
 );
@@ -59,6 +63,6 @@ gulp.task(
     gulp.series(
         clean,
         stylesProd,
-        gulp.parallel(viewsProd, copyFonts, copyJSON, jsProd, favicons, imagesDev, webpProd, spritesProd, htmlTemplates)
+        gulp.parallel(viewsProd, copyFonts, copyJSON, copyStatic, jsProd, favicons, imagesDev, webpProd, spritesProd, htmlTemplates)
     )
 );

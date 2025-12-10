@@ -2,8 +2,12 @@
 
 @mixin font-h1() {
     font-size: 32px;
-    font-weight: 400;
-    line-height: 125%;
+    font-weight: 700;
+    line-height: 116%;
+
+    @media screen and (min-width: variables.$w1440) {
+        font-size: 48px;
+    }
 }
 
 @mixin font-h2() {
