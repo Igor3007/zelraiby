@@ -4,6 +4,7 @@
 .first-block {
 
     padding-top: 16px;
+    padding-bottom: 32px;
 
     @media screen and (min-width: vars.$w992) {
         display: flex;
@@ -12,12 +13,19 @@
     }
 
     &__left {
+
+        padding-bottom: 24px;
+
         @media screen and (min-width: vars.$w992) {
             width: calc(50% + 0px);
+            padding-bottom: 0;
         }
     }
 
     &__right {
+
+
+
         @media screen and (min-width: vars.$w992) {
             width: calc(50% - 0px);
         }

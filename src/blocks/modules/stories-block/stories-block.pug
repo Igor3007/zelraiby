@@ -1,8 +1,64 @@
+-
+    const stories = [
+        {
+            'image': '/img/stories/shorts-block',
+            'text': 'Новые хвойные у нас',
+        },
+        {
+            'image': '/img/stories/shorts-block-1',
+            'text': 'Широкий ассортимент',
+        },
+        {
+            'image': '/img/stories/shorts-block-2',
+            'text': 'Лиственные кустарники',
+        },
+        {
+            'image': '/img/stories/shorts-block-3',
+            'text': 'Отзыв довольного клиента',
+        },
+        {
+            'image': '/img/stories/shorts-block-4',
+            'text': 'Готовы к вам',
+        },
+        {
+            'image': '/img/stories/shorts-block-5',
+            'text': 'Лучшие условия',
+        },
+        {
+            'image': '/img/stories/shorts-block-6',
+            'text': 'Более 20 лет опыта',
+        },
+        {
+            'image': '/img/stories/shorts-block-7',
+            'text': 'Идеальный уход за растениями',
+        },
+        {
+            'image': '/img/stories/shorts-block-8',
+            'text': 'Новинки сезона',
+        },
+        {
+            'image': '/img/stories/shorts-block-9',
+            'text': 'Работаем для вас',
+        },
+        {
+            'image': '/img/stories/shorts-block-8',
+            'text': 'Новинки сезона',
+        },
+        {
+            'image': '/img/stories/shorts-block-9',
+            'text': 'Работаем для вас',
+        }
+    ]
+
+
+
+
+
 mixin story-card(data)
     .story-card
         .story-card__preview
-            +picture('/img/favicons/apple-touch-icon-114x114.png')
-        .story-card__title=data.title
+            +picture(data.image)
+        .story-card__title=data.text
 
 mixin stories-block
     section.section-stories-block
@@ -12,8 +68,6 @@ mixin stories-block
                     .splide(data-slider="stories")
                         .splide__track
                             .splide__list
-                                each item in [1,1,1,1,1,1,1,1,1,1,]
-                                    .splide__item: +story-card({
-                                        title: 'Новые хвойные у нас'
-                                    })
+                                each item in stories
+                                    .splide__slide: +story-card(item)
 

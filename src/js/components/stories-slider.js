@@ -1,34 +1,42 @@
 import Splide from "@splidejs/splide";
+import {
+    getTopArrowButtons
+} from "./splide_ext";
 
 export function storiesSlider() {
 
     if (document.querySelector('[data-slider="stories"]')) {
-
-
         document.querySelectorAll('[data-slider="stories"]').forEach(slider => {
             slider['splide'] = new Splide(slider, {
 
-                perPage: 10,
+                fixedWidth: 112,
                 perMove: 1,
-                gap: 32,
+                gap: 16,
                 pagination: false,
                 breakpoints: {
                     1440: {
                         gap: 24,
                     },
                     1024: {
-                        perPage: 3,
+
                         gap: 20
                     },
                     768: {
-                        fixedWidth: 300,
-                        perPage: 1,
                         pagination: true,
                     },
                 },
 
-                arrowPath: 'M13.531 8.523a1.835 1.835 0 012.567 0l10.37 10.213c.71.698.71 1.83 0 2.528l-10.37 10.213a1.835 1.835 0 01-2.566 0 1.768 1.768 0 010-2.528L22.618 20l-9.088-8.949a1.768 1.768 0 010-2.528z'
+                arrowPath: 'M16.204 12.396a1 1 0 011.4-.192l5.618 4.267a4.391 4.391 0 010 7.058l-5.617 4.267a1 1 0 11-1.21-1.592l5.617-4.268c1.317-1 1.317-2.872 0-3.872l-5.616-4.268a1 1 0 01-.192-1.4z'
             });
+
+            slider['splide'].on('mounted', (e) => {
+                // top for nan button
+                getTopArrowButtons(slider['splide'].root)
+            })
+
+            slider['splide'].on('resize', (e) => {
+                getTopArrowButtons(slider['splide'].root)
+            })
 
             slider['splide'].mount();
         })

@@ -1,0 +1,84 @@
+@use 'vars'as vars;
+
+.card-category {
+    background-color: var(--bg-02);
+    border-radius: 20px;
+    padding: 18px 20px;
+    display: flex;
+    color: var(--accent-02);
+    height: 100%;
+
+    &__title {
+        @include vars.font-h4;
+        padding-bottom: 8px;
+    }
+
+    &__icon {
+
+        margin-bottom: -20px;
+        align-self: flex-end;
+
+        & span {
+            width: 112px;
+            height: 112px;
+            @include vars.bgimage-contain;
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 120px);
+        padding-right: 12px;
+    }
+
+    &__desc {
+        margin-top: auto;
+        font-size: 13px;
+    }
+
+}
+
+.tile-category {
+
+    &__title {
+        padding-bottom: 24px;
+    }
+
+    &__list {
+        margin: -4px;
+        padding-bottom: 24px;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    &__item {
+        padding: 4px;
+        flex-basis: 280px;
+        flex-grow: 1;
+    }
+
+    &__all {
+
+        & a {
+            width: 100%;
+        }
+
+        & .btn {
+            width: 100%;
+        }
+    }
+
+    &__head {
+        & .tile-category {
+            &__all {
+                display: none;
+
+                @media screen and (min-width: vars.$w760) {
+                    display: block;
+                }
+            }
+        }
+    }
+}
