@@ -15,9 +15,10 @@
     font-size: 24px;
     font-weight: 700;
     line-height: 133%;
+    color: var(--accent-02);
 
     @media screen and (min-width: variables.$w1440) {
-        font-size: 48px;
+        font-size: 40px;
     }
 
     @media screen and (min-width: variables.$w992) {

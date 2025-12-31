@@ -11,7 +11,10 @@ mixin tile-category
             .tile-category
                 .tile-category__head
                     .tile-category__title: h2 Выберите подходящую вам категорию
-                    .tile-category__all: a(href='#') Смотреть все растения
+                    .tile-category__all
+                        a(href='#') 
+                            span Смотреть все растения
+                            +icon('ic_arr_round')
                 .tile-category__list
                     .tile-category__item
                         +card-category({
@@ -23,13 +26,13 @@ mixin tile-category
                         +card-category({
                             title: 'Лиственные деревья',
                             desc: 'Берёза, вяз, дуб, ива, карагана, клён и др.',
-                            icon: '/img/icons/cat02.svg',
+                            icon: '/img/icons/cat01.svg',
                         })
                     .tile-category__item
                         +card-category({
                             title: 'Декоративные кустарники',
                             desc: 'Азалия, актинидия, барбарис, бересклет и др.',
-                            icon: '/img/icons/cat01.svg',
+                            icon: '/img/icons/cat02.svg',
                         })
 
                 .tile-category__all
