@@ -1,0 +1,9 @@
+.section-seotext-block {
+    padding: 40px;
+}
+
+.seotext-block {
+    &__text .formated-text {
+        column-count: 2;
+    }
+}

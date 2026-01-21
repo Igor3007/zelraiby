@@ -5,33 +5,39 @@ mixin  best-offers
     -
         const bestOffers = [
             {
-                image: '/img/objects/img-block-1',
+                image: '/img/objects/img-0',
+                title: 'Саженцы ели сербской Карел',
                 filterId: '1',
                 id: '1'
             },
             {
-                image: '/img/objects/img-block-2',
+                image: '/img/objects/img-1',
+                title: 'Саженцы туи западной Брабант',
                 filterId: '1',
                 id: '2'
             },
             {
-                image: '/img/objects/img-block-3',
+                image: '/img/objects/img-2',
+                title: 'Цветы гортензии древовидной Баунти',
                 filterId: '2',
                 id: '13'
             },
             {
-                image: '/img/objects/img-block-4',
+                image: '/img/objects/img-3',
+                title: 'Цветы дерена белого Гушольти',
                 filterId: '3',
                 id: '1342'
             },
             {
-                image: '/img/objects/img-block-5',
-                filterId: '4',
+                image: '/img/objects/img-4',
+                title: 'Саженцы ели обыкн. Купрессена ',
+                filterId: '3',
                 id: '5431'
             },
             {
-                image: '/img/objects/img-block-6',
-                filterId: '5',
+                image: '/img/objects/img-2',
+                title: 'Цветы дерена белого Гушольти',
+                filterId: '2',
                 id: '6571'
             },
 
@@ -40,19 +46,18 @@ mixin  best-offers
     section.section-best-offers
         .container
             .best-offers
-                .best-offers__title Новые предложения
+                .best-offers__title Великолепные растения из питомника
                 .best-offers__tabs
                     ul
-                        li(data-filter="1").is-active: span Квартиры
-                        li(data-filter="2"): span Новостройки
-                        li(data-filter="3"): span Дома на Новой Риге
-                        li(data-filter="4"): span Дома на Рублёвке
-                        li(data-filter="5"): span Участки
+                        li(data-filter="1").is-active: span Хиты продаж
+                        li(data-filter="2"): span Новинки
+                        li(data-filter="3"): span Акции
 
-                    ul.toggle-currency
-                        li(data-currency="rub").is-active: span ₽
-                        li(data-currency="usd"): span $
-                        li(data-currency="eur"): span €
+                    .best-offers__nav
+                        .best-offers__nav-prev(data-slider-prev="offers"): +icon('ic_arr_round-left')
+                        .best-offers__nav-next(data-slider-next="offers"): +icon('ic_arr_round')
+
+                    
 
                 .best-offers__slider
                     .splide(data-slider="offers")
@@ -62,11 +67,16 @@ mixin  best-offers
                                     .splide__slide(data-filter-id=item.filterId)
                                         +minicard(item)
                 .best-offers__bottom
-                    .best-offers__more
+
+                    .best-offers__action
+                        a(href='#')
+                            button.btn.btn-dark
+                                span Получить консультацию
+
+                    .best-offers__select
                         a(href='#')
                             button.btn.btn-green
-                                +icon('ic_house')
-                                span Смотреть все предложения
-                    .best-offers__nav
-                        .best-offers__nav-prev(data-slider-prev="offers"): +icon('ic_arr-left')
-                        .best-offers__nav-next(data-slider-next="offers"): +icon('ic_arr-right')
+                                span Выбрать растения
+                                +icon('ic_leaf')
+
+                    

@@ -42,9 +42,6 @@ export class FilterOffeers {
         this.slider.refresh();
         this.slider.go(0);
 
-        initSliderMinicard(splideList);
-        initMinicardEvents(splideList);
-        initWishLists(splideList);
 
         if (this.currentCurrency) {
             this.changeCurrency({

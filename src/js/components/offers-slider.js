@@ -1,5 +1,6 @@
 import { FilterOffeers } from "./filter-offers";
-import { SplideNavHelper } from "./splide-nav-helper";
+import { SplideNavHelper, SLIDER_ARROW_PATH } from "./splide-nav-helper";
+import Splide from "@splidejs/splide";
 
 export function offersSlider() {
     document
@@ -10,43 +11,25 @@ export function offersSlider() {
                arrows: false,
                arrowPath: SLIDER_ARROW_PATH,
                pagination: false,
-               gap: 36,
+               gap: 12,
                start: 0,
-               fixedWidth: '510px',
+               fixedWidth: '343px',
                perMove: 1,
                flickMaxPages: 1,
                flickPower: 100,
                offsetPagination: 2,
                breakpoints: {
                    480: {
-                       gap: 8,
                        fixedWidth: '87.9vw',
                        pagination: true,
                    },
 
                    640: {
-                       gap: 8,
-                       fixedWidth: '400px',
+                       fixedWidth: '343px',
                        pagination: true,
                    },
 
-                   767: {
-                       gap: 8,
-                       fixedWidth: '440px',
-                       offsetPagination: false
-                   },
-
-                   992: {
-                       gap: 12,
-                       fixedWidth: '440px',
-                       offsetPagination: false
-                   },
-
-                   1360: {
-                       gap: 24,
-                       fixedWidth: '410px',
-                       offsetPagination: false
-                   },
+                   
 
 
                }
@@ -87,10 +70,6 @@ export function offersSlider() {
 
            slider['Splide'].mount();
        })
-
-
-initSliderMinicard(document);
-initMinicardEvents(document)
 
 }
 
