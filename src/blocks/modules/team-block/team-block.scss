@@ -5,7 +5,7 @@
     padding: 45px 0;
 
     @media screen and (min-width: vars.$w1440) {
-        padding: 65px 0;
+        padding: 63px 0;
     }
 
     &--list {
@@ -80,18 +80,48 @@
 }
 
 .team-block {
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+    }
+
     &__title {
-        @include vars.font-h1;
+        @include vars.font-h2;
         padding-bottom: 0.2em;
     }
 
     &__subtitle {
         padding-bottom: 16px;
         color: var(--color-text-02);
-        padding-bottom: 49px;
+        padding-bottom: 32px;
     }
 
-    &__list {}
+    &__list {
+        padding-bottom: 20px;
+    }
+
+    &__bottom {
+        & .btn {
+            @media screen and (min-width: vars.$w1440) {
+                min-width: 343px;
+            }
+        }
+    }
+
+    &__nav {
+        display: none;
+        @include vars.splide-nav;
+        margin-left: auto;
+
+        & svg {
+            fill: var(--accent-02);
+        }
+
+        @media screen and (min-width: vars.$w760) {
+            display: flex;
+        }
+    }
 
     & .splide {
 
@@ -100,6 +130,7 @@
 
         &__track {
             margin-right: -16px;
+            overflow: visible;
 
             @media screen and (min-width: vars.$w576) {
                 margin-right: 0;
@@ -203,6 +234,12 @@
                 }
             }
         }
+
+        &__slide {
+            &:not(.is-visible) {
+                opacity: 0.5;
+            }
+        }
     }
 
 }
@@ -212,26 +249,68 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding: 0 20px 20px 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-image: linear-gradient(0deg, rgba(239, 247, 230, 1) 0%, rgba(239, 247, 230, 0.1) 100%);
 
     &__image {
+
+        max-width: 89%;
+
         & picture {
-            background-color: #222;
-            @include vars.picture(130%, cover);
+
+            @include vars.picture(149%, cover);
+
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                @include vars.layer(3);
+                border: 6px solid rgba(173, 235, 103, 0.3);
+                border-radius: 20px;
+
+            }
+
+            & img {
+                border-radius: 20px;
+                display: block;
+                overflow: hidden;
+            }
+
+
         }
+
+
+
+
     }
 
     &__main {
-        padding: 22px 24px;
+        padding: 15px 0px;
         background-color: var(--color-bg-01);
         flex-grow: 1
     }
 
     &__name {
-        @include vars.font-h4;
-        padding-bottom: 16px;
+        @include vars.font-20;
+        color: var(--accent-02);
     }
 
     &__desc {
-        color: var(--color-text-02);
+        color: var(--accent-04);
+        font-size: 14px;
+        padding-bottom: 10px
+    }
+
+    &__phone {
+        @include vars.font-18;
+        color: var(--accent-03);
+    }
+
+    &__email {
+        @include vars.font-16;
+        color: var(--accent-02);
+        font-weight: 600;
     }
 }

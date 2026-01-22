@@ -3,7 +3,7 @@ mixin about-company
         .container
             .about-company
                 .about-company__left
-                    .about-company__image: +picture('/img/common/video-img.jpg')
+                    .about-company__media: +picture('/img/common/video-img')
                 .about-company__right
                     .about-company__main
                         .about-company__h2 «Зелёный рай» — <span>современный питомник растений выбирай!</span>
@@ -14,4 +14,4 @@ mixin about-company
                             a(href='#'): button.btn 
                                 span Подробнее о компании
                                 +icon('ic_chevron-right')
-                    .about-company__pic: +picture('/img/common/video-img.jpg')
+                    .about-company__pic: +picturePng('/img/team/img-director')

@@ -10,16 +10,19 @@ mixin form-order
                             .form__item
                                 .form__subitem
                                     label Ваше имя:
-                                    input(type="text" name="" placeholder="")
+                                    input(type="text" name="" required placeholder="Введите имя")
                                 .form__subitem
                                     label Номер телефона:
-                                    input(type="text" name="" placeholder="")
+                                    input(type="text" data-maska="+375(##)###-##-##" name="" required placeholder="Введите телефон")
                                 .form__subitem
                                     label Сообщение (необязательно):
-                                    input(type="text" name="" placeholder="")
-                                .form__subitem
-                                    button.btn(type="submit") Отправить заявку
+                                    input(type="text" name="" placeholder="Текст сообщения")
+                                .form__subitem.form__subitem--submit
+                                    button.btn(type="submit")
+                                        span Отправить заявку
+                                        +icon('ic_arrow-min')
                             .form__item
                                 .form__subitem
-                                    +checkbox('Нажимая на кнопку «Отправить заявку», я соглашаюсь с <a href="/policy.html">Политикой конфиденциальности</a>')
+                                    .form__note
+                                        +checkbox('Нажимая на кнопку «Отправить заявку», я соглашаюсь с <a href="/policy.html">Политикой конфиденциальности</a>')
                             

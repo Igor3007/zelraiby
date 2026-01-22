@@ -1,9 +1,49 @@
+@use 'vars';
+
 .section-seotext-block {
     padding: 40px;
 }
 
 .seotext-block {
     &__text .formated-text {
-        column-count: 2;
+
+        & h1,
+        & h2,
+        & h3,
+        & h4 {
+            color: var(--accent-02);
+        }
+
+        & .col2 {
+            @media screen and (min-width: vars.$w576) {
+                column-count: 2;
+                color: var(--accent-02);
+            }
+
+
+            & p:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__all{
+
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--accent-02);
+        font-weight: 600;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+    & svg {
+        width: 14px;
+        fill: var(--accent-02);
+        margin-top: 2px;
+    }
     }
 }

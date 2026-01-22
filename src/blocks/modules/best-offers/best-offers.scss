@@ -77,7 +77,7 @@
                     min-height: 36px;
                     align-items: center;
                     padding: 5px 12px;
-                    border-radius: 8px;
+                    border-radius: 30px;
                     cursor: pointer;
                     transition: 0.3s ease;
                     color: var(--text-2);
@@ -131,6 +131,28 @@
         }
 
         & .splide {
+
+
+            @media screen and (max-width: vars.$w576) {
+                &:not(.is-initialized) {
+                    visibility: visible;
+
+                    & .splide {
+                        &__list {
+                            flex-wrap: wrap;
+                            gap: 8px;
+                        }
+
+                        &__slide {
+                            opacity: 1;
+                            width: calc(50% - 4px);
+                        }
+                    }
+
+
+                }
+            }
+
             &__track {
                 overflow: visible;
             }
@@ -167,16 +189,20 @@
         }
     }
 
-
+    &__select,
+    &__action {
+        @media screen and (max-width: vars.$w480) {
+            width: 100%;
+        }
+    }
 
     &__bottom {
         display: flex;
         justify-content: flex-end;
+        flex-wrap: wrap;
         gap: 12px;
 
         & .btn {
-
-
 
             @media screen and (min-width: vars.$w1200) {
                 min-width: 343px;
