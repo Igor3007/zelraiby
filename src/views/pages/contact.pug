@@ -1,0 +1,23 @@
+extends ../layouts/main
+
+block variables
+    include ../../data/data.pug
+    - const title = "zelrai.by"
+
+
+block main
+
+    include ../../blocks/modules/contactPage/contact-block/contact-block
+    include ../../blocks/modules/contactPage/contact-form/contact-form
+    include ../../blocks/components/breadcrumbs/breadcrumbs
+
+    .container
+        +breadcrumbs([
+            {title: 'Контакты'}
+        ])
+    +contact-block
+    +contact-form
+
+
+block scripts
+    script(src="/js/index.js")
