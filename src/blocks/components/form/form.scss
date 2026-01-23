@@ -13,7 +13,8 @@
     & input[type="number"],
     & input[type="password"],
     & input[type="email"],
-    & input[type="tel"] {
+    & input[type="tel"],
+    & textarea {
 
         background-color: var(--bg-02);
         font-size: 16px;
@@ -63,6 +64,24 @@
             }
         }
 
+    }
+
+    & textarea {
+        line-height: 1.5;
+        min-height: 120px;
+        resize: none!important;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        margin-bottom: 20px;
+        @media screen and (min-width: vars.$w1200) {
+            min-height: 140px;
+        }
+        &::placeholder {
+            color: var(--accent-04);
+            opacity: 1;
+            text-shadow: none;
+            font-weight: 400;
+        }
     }
 
     & input[disabled] {
@@ -115,34 +134,6 @@
         background-size: 1em auto;
         background-repeat: no-repeat;
         background-position: 96% center;
-    }
-
-    & textarea {
-        min-height: 129px;
-        max-width: 100%;
-        resize: vertical;
-        width: 100%;
-        font-size: 15px;
-        padding: functions.rem_(15);
-        line-height: 140%;
-        outline: none !important;
-        border: 2px solid transparent;
-        border-radius: 8px;
-        transition: 0.3s ease;
-        font-weight: 500;
-        color: #2F3030;
-
-
-        &::placeholder {
-            color: #2F3030;
-            opacity: 1;
-            text-shadow: none;
-        }
-
-        &:focus {
-            outline: none;
-
-        }
     }
 
     &.is-validate {

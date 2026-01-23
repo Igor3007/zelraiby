@@ -29,13 +29,23 @@ mixin contactCall
                 .item__name Адрес питомника:
                 .item__info: p 212037, Беларусь, Могилёвский район, заезд с трассы Е95
             .item
-                button.btn.btn-green
+                button.btn
                     span Построить маршрут
                     +icon('ic_map')
 
 
 mixin contactMaps
-    .contactMaps Maps
+    .contactMaps
+        iframe.contacts__map-img(
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A5c10949b76afc2d1ec3542d89966a0e6134c2e669aa60e4c5662b7d0582720f4&amp;source=constructor&z=12"
+            frameborder="0"
+            width="100%"
+            height="100%"
+            allowfullscreen="true"
+            aria-label="Карта расположения"
+            loading="lazy"
+        )
+
 
 mixin contact-block
     section.sectionContactBlock
@@ -45,6 +55,6 @@ mixin contact-block
                 +contactCall
                 .sectionContactBlock__content_photo
                     span: +icon('ic_check_big')
-                    +picture('/img/common/img-contactPage')
+                    +picture2('img-contactPage')
                 +contactMaps
 
