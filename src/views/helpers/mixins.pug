@@ -1,14 +1,13 @@
 
 mixin picture2(url)
   picture
-    source(srcset='/img/'+url+'.webp' type="image/webp" media='(min-width: 1200px)')
-    source(srcset='/img/crop/w1200/'+url+'.webp' type="image/webp" media='(min-width: 767px)')
-    source(srcset='/img/crop/w760/'+url+'.webp' type="image/webp" media='(min-width: 480px)')
+    source(srcset='/img/common/'+url+'.webp' type="image/webp" media='(min-width: 993px)')
+    source(srcset='/img/common/w760/'+url+'.webp' type="image/webp" media='(min-width: 480px)')
+    source(srcset='/img/common/'+url+'.webp' type="image/webp" )
 
-    source(srcset='/img/'+url+'.jpg' type="image/jpeg" media='(min-width: 1200px)')
-    source(srcset='/img/crop/w1200/'+url+'.jpg' type="image/jpeg" media='(min-width: 767px)')
-    source(srcset='/img/crop/w760/'+url+'.jpg' type="image/jpeg" media='(min-width: 480px)')
-    img(src='/img/crop/w480/'+url+'.jpg ' loading='lazy' alt='Image')
+    source(srcset='/img/common/'+url+'.jpg' type="image/jpeg" media='(min-width: 993px)')
+    source(srcset='/img/common/w760/'+url+'.jpg' type="image/jpeg" media='(min-width: 480px)')
+    img(src='/img/common/'+url+'.jpg ' loading='lazy' alt='Image')
 
 mixin picture(url)
   picture
