@@ -1,0 +1,28 @@
+mixin contact-form
+    section.sectionFormContact
+        .container
+            .form-order
+                .form-order__title Есть вопросы? Пишите, мы ответим!
+                .form-order__desc В рабочее время отвечаем в течение 15 минут.
+                .form-order__form
+                    form(action='#' method='POST')
+                        .form
+                            .form__item
+                                .form__subitem
+                                    label Ваше имя:
+                                    input(type="text" name="" placeholder="Введите имя")
+                                .form__subitem
+                                    label Номер телефона:
+                                    input(type="text" name="" placeholder="Введите телефон")
+                                .form__subitem
+                                    label Электронная почта (необязательно):
+                                    input(type="text" name="" placeholder="Введите почту")
+                                .form__subitem
+                                    label Сообщение или вопрос:
+                                    textarea(name="" placeholder="Текст сообщения")
+
+                            .form__item
+                                .form__subitem
+                                    button.btn(type="submit") Отправить заявку
+                                .form__subitem
+                                    +checkbox('Нажимая на кнопку «Отправить заявку», я соглашаюсь с <a href="/policy.html">Политикой конфиденциальности</a>')

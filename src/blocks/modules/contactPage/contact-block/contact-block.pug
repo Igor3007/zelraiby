@@ -1,0 +1,50 @@
+mixin contactCall
+    .contactCall
+        .contactCall__title: h2 Свяжитесь с нами
+        .contactCall__line
+            .item
+                .item__name Телефоны в Беларуси:
+                .item__info
+                    a(href='tel:+7 (926) 878-65-38') +7 (926) 878-65-38
+                    a(href='tel:+7 (926) 878-65-38') +7 (926) 878-65-38
+            .item
+                .item__name Телефон в России:
+                .item__info
+                    a(href='tel:+7 (926) 878-65-38') +7 (926) 878-65-38
+            .item
+                .item__name Мессенджеры:
+                .item__infoMsgr
+                    .ic-color-tg: a(href='#'): +bgimage('/img/icons/msgr-tg.svg')
+                    .ic-color-wa: a(href='#'): +bgimage('/img/icons/msgr-wa.svg')
+        .contactCall__line2
+            .item
+                .item__name Электронная почта:
+                .item__info.mail
+                    a(href='mailto:info-zelrai@tut.by') info-zelrai@tut.by
+            .item
+                .item__name Время работы:
+                .item__info: p Работаем в будние дни с 8:00 до 17:00, в субботу и воскресенье — с 9:00 до 15:00.
+        .contactCall__line3
+            .item
+                .item__name Адрес питомника:
+                .item__info: p 212037, Беларусь, Могилёвский район, заезд с трассы Е95
+            .item
+                button.btn.btn-green
+                    span Построить маршрут
+                    +icon('ic_map')
+
+
+mixin contactMaps
+    .contactMaps Maps
+
+mixin contact-block
+    section.sectionContactBlock
+        .container
+            .sectionContactBlock__h1: h1 Контакты
+            .sectionContactBlock__content
+                +contactCall
+                .sectionContactBlock__content_photo
+                    span: +icon('ic_check_big')
+                    +picture('/img/common/img-contactPage')
+                +contactMaps
+

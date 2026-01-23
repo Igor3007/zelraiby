@@ -1,0 +1,213 @@
+@use 'vars'as vars;
+
+.sectionContactBlock {
+    padding-bottom: 100px;
+    &__h1 {
+        & h1 {
+            @include vars.font-h1;
+            color: var(--accent-02);
+        }
+    }
+    &__content {
+        gap: 32px;
+        display: grid;
+        grid-template-columns: 1fr;
+        @media screen and (min-width: vars.$w992) {
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto auto auto;
+            grid-auto-flow: row dense;
+        }
+
+        &_photo {
+            grid-row: span 2;
+            padding: 32px 8px 32px 32px;
+            position: relative;
+            max-height: max-content;
+
+            &::before {
+                content: '';
+                height: 128px;
+                width: 128px;
+                border-radius: 24px;
+                background-color: var(--accent-02);
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 0;
+            }
+            & span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                border-radius: 24px;
+                background-color: var(--accent-01);
+                width: 88px;
+                height: 88px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                svg {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+            & picture {
+                outline: 8px solid var(--accent);
+                border: 8px solid var(--accent-02);
+                border-radius: 32px;
+                overflow: hidden;
+                z-index: 1;
+                position: relative;
+                max-height: 400px;
+                @media screen and (min-width: vars.$w992) {
+                    max-height: 600px;
+                }
+            }
+        }
+    }
+    .contactCall{
+        background: var(--bg-01);
+        padding: 24px;
+        border-radius: 24px;
+        @media screen and (min-width: vars.$w760) {
+            padding: 32px;
+        }
+        &__title{
+            h2{
+                @include vars.font-h2;
+                color: var(--accent-02);
+                margin-bottom: 9px;
+                margin-top: 0;
+            }
+        }
+        &__line{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            @media screen and (min-width: vars.$w680) and (max-width: vars.$w992) {
+                gap: 0;
+                justify-content: flex-end;
+                .item{
+                    min-width: 50%;
+                    flex: inherit;
+                }
+                &>div{
+                    &:last-child{
+                        margin-top: -16px;
+                    }
+                }
+            }
+
+            .item{
+                min-width: 260px;
+                flex: 1;
+            }
+        }
+        &__line2{
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            padding: 24px 0;
+            gap: 24px;
+            @media screen and (min-width: vars.$w760) {
+                flex-wrap: nowrap;
+                padding: 32px 0;
+                gap: 32px;
+            }
+            .item{
+                min-width: 140px;
+            }
+        }
+        &__line3{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            .item{
+                flex: 1;
+                .btn{
+                    width: 100%;
+                }
+            }
+            @media screen and (min-width: vars.$w760) {
+                flex-wrap: nowrap;
+                .item{
+                    flex: inherit;
+                }
+            }
+        }
+        .item{
+            &__name{
+                @include vars.font-14;
+                color: var(--accent-04);
+                padding-bottom: 6px;
+            }
+            &__info{
+                &.mail{
+                    a{
+                        display: block;
+                        @include vars.font-16;
+                        color: var(--accent-03);
+                    }
+                }
+                a{
+                    display: block;
+                    @include vars.font-h4;
+                    color: var(--accent-03);
+                }
+                p{
+                    padding: 0;
+                    margin: 0;
+                    @include vars.font-14;
+                    color: var(--accent-02);
+                    @media screen and (min-width: vars.$w760) {
+                        @include vars.font-16;
+                    }
+                }
+            }
+            &__infoMail{
+
+            }
+            &__infoMsgr{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 8px;
+                & .bgimage {
+                    @include vars.bgimage-contain;
+                    width: 32px;
+                    min-width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    background-color: var(--accent-02);
+                    transition: 0.4s ease;
+                }
+                .ic-color-tg {
+                    & .bgimage:not(:hover) {
+                        background-color: #039BE5;
+                    }
+                }
+
+                .ic-color-wa {
+                    & .bgimage:not(:hover) {
+                        background-color: #4CAF50;
+                    }
+                }
+            }
+        }
+    }
+    .contactMaps{
+        min-height: 460px;
+        border-radius: 24px;
+        background: var(--bg-01);
+        @media screen and (min-width: vars.$w992) {
+            min-height: 600px;
+        }
+    }
+}
