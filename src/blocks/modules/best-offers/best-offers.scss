@@ -9,7 +9,7 @@
     }
 
     @media screen and (min-width: vars.$w1440) {
-        padding: 63px 0;
+        padding: 36px 0;
     }
 
     & .is-hide {
@@ -24,12 +24,12 @@
         @include vars.font-h2;
 
         @media screen and (min-width: vars.$w760) {
-            padding-bottom: 24px;
+            padding-bottom: 6px;
 
         }
 
         @media screen and (min-width: vars.$w1440) {
-            padding-bottom: 34px;
+            padding-bottom: 6px;
         }
     }
 
@@ -46,17 +46,18 @@
 
         @media screen and (min-width: vars.$w992) {
             background-color: #fff;
-            margin-bottom: 36px;
+            margin-bottom: 9px;
             border-radius: 17px;
         }
 
         @media screen and (min-width: vars.$w1200) {
-            padding: 12px;
+            padding: 12px 0;
         }
 
         & ul {
             display: flex;
             margin: 0 -5px;
+            gap: 6px;
 
             @media screen and (min-width: vars.$w1200) {
                 margin: 0;
@@ -68,18 +69,6 @@
 
                 @media screen and (min-width: vars.$w1200) {
                     padding: 0;
-
-                    &:first-child {
-                        & span {
-                            border-radius: 12px 0 0 12px;
-                        }
-                    }
-
-                    &:last-child {
-                        & span {
-                            border-radius: 0 12px 12px 0;
-                        }
-                    }
                 }
 
                 & span {
@@ -88,42 +77,44 @@
                     min-height: 36px;
                     align-items: center;
                     padding: 5px 12px;
-                    border-radius: 8px;
+                    border-radius: 30px;
                     cursor: pointer;
                     transition: 0.3s ease;
                     color: var(--text-2);
+                    border: 1px solid var(--border-02);
 
                     &:hover {
                         background-color: var(--bg);
                     }
 
                     @media screen and (min-width: vars.$w1200) {
-                        padding: 16px 32px;
-                        border-radius: 0;
+                        padding: 11px 32px 12px 32px;
+                        border-radius: 50px;
                         font-size: 16px;
                         letter-spacing: .02em;
                         font-weight: 400;
                         background-color: var(--bg);
 
                         &:hover {
-                            background-color: var(--accent-13);
-                            color: var(--text-1);
+                            background-color: var(--accent);
+                            color: var(--accent-02);
                         }
                     }
 
                     @media screen and (min-width: vars.$w1440) {
-                        padding: 18px 32px;
-                        font-size: 18px;
+                        padding: 11px 20px 13px 20px;
+                        font-size: 16px;
                     }
                 }
 
                 &.is-active {
                     & span {
-                        background-color: var(--accent-11);
+                        background-color: var(--accent-02);
+                        border-color: var(--accent-02);
                         color: #fff;
 
                         &:hover {
-                            background-color: var(--accent-11);
+                            background-color: var(--accent-02);
                             color: #fff;
                         }
                     }
@@ -136,15 +127,42 @@
         padding-bottom: 16px;
 
         @media screen and (min-width: vars.$w1200) {
-            padding-bottom: 60px;
+            padding-bottom: 34px;
         }
 
         & .splide {
+
+
+            @media screen and (max-width: vars.$w576) {
+                &:not(.is-initialized) {
+                    visibility: visible;
+
+                    & .splide {
+                        &__list {
+                            flex-wrap: wrap;
+                            gap: 8px;
+                        }
+
+                        &__slide {
+                            opacity: 1;
+                            width: calc(50% - 4px);
+                        }
+                    }
+
+
+                }
+            }
+
             &__track {
                 overflow: visible;
             }
 
             &__slide {
+
+                &:not(.is-visible) {
+                    opacity: 0.5;
+                }
+
                 &:nth-child(2) {
                     & .minicard {
                         animation-delay: 0.1s;
@@ -171,13 +189,25 @@
         }
     }
 
-
+    &__select,
+    &__action {
+        @media screen and (max-width: vars.$w480) {
+            width: 100%;
+        }
+    }
 
     &__bottom {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 12px;
 
         & .btn {
+
+            @media screen and (min-width: vars.$w1200) {
+                min-width: 343px;
+            }
+
             @media screen and (max-width: vars.$w480) {
                 width: 100%;
             }
@@ -193,6 +223,11 @@
     &__nav {
         display: none;
         @include vars.splide-nav;
+        margin-left: auto;
+
+        & svg {
+            fill: var(--accent-02);
+        }
 
         @media screen and (min-width: vars.$w760) {
             display: flex;

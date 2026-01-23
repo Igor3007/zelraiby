@@ -1,0 +1,112 @@
+@use "vars"as vars;
+
+.minicard {
+
+    background-color: var(--bg-01);
+    border-radius: 24px;
+    padding: 12px;
+
+    @media screen and (min-width: vars.$w480) {
+        padding: 16px;
+        border-radius: 32px;
+    }
+
+    &__image {
+        & picture {
+            @include vars.picture(128%, cover);
+        }
+
+        & img {
+            border-radius: 16px;
+
+            @media screen and (min-width: vars.$w480) {
+                border-radius: 24px;
+            }
+        }
+    }
+
+    &__name {
+        display: flex;
+        gap: 12px;
+        padding-bottom: 2px;
+
+        @media screen and (min-width: vars.$w480) {
+            padding-bottom: 16px;
+        }
+    }
+
+    &__title {
+        & a {
+            @include vars.font-18;
+        }
+    }
+
+    &__btn {
+
+        margin-left: auto;
+        display: none;
+
+        @media screen and (min-width: vars.$w480) {
+            display: block;
+        }
+
+        & .btn {
+            width: 56px;
+            height: 56px;
+            padding: 5px;
+            min-width: 56px;
+
+            & svg {
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    &__price {
+
+        display: flex;
+        align-items: center;
+        gap: 0;
+        flex-wrap: wrap;
+        padding-bottom: 8px;
+
+        @media screen and (min-width: vars.$w480) {
+            gap: 12px;
+        }
+
+        &-current {
+            @include vars.font-h4;
+            color: var(--accent-03)
+        }
+
+        &-old {
+            @include vars.font-16;
+            text-decoration: line-through;
+            color: var(--accent-04);
+        }
+    }
+
+    &__prop {
+        @include vars.font-16;
+
+        & small {
+            @include vars.font-16;
+            margin-right: 10px;
+        }
+
+        & span {
+            font-weight: 600;
+            display: block;
+
+            @media screen and (min-width: vars.$w480) {
+                display: inline;
+            }
+        }
+    }
+
+    &__main {
+        padding: 18px 0px 6px 9px;
+    }
+}

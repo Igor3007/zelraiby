@@ -1,4 +1,4 @@
-@use "../../../styles/vars";
+@use "vars";
 @use "../../../styles/helpers/functions";
 
 @forward "select-range-units";
@@ -15,48 +15,60 @@
     & input[type="email"],
     & input[type="tel"] {
 
-        font-size: 14px;
+        background-color: var(--bg-02);
+        font-size: 16px;
         line-height: 15px;
-        padding: 10px functions.rem_(15);
+        padding: 10px 20px;
         box-sizing: border-box;
         width: auto;
         flex-grow: 1;
-
-        border-radius: 8px;
-        border: 1px solid #B1B1B1;
+        border-radius: 20px;
+        border: 2px solid transparent;
         width: 100%;
-        color: #222;
-        height: 50px;
+        color: var(--accent-02);
+        height: 48px;
+        transition: 0.3s ease;
 
-        @media screen and (min-width: vars.$w576) {
+        @media screen and (min-width: vars.$w1200) {
             height: 56px;
         }
 
-
         &::placeholder {
-            color: #333;
+            color: var(--accent-04);
             opacity: 1;
             text-shadow: none;
             font-weight: 400;
         }
 
-        &:focus {
-            border-color: var(--accent);
+        &:hover {
+            border-color: var(--border-02);
             outline: 0;
         }
 
-        //  &:required {
-        //      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0zLjMgOGwuMTE2LTMuMDU2LTIuNzE1IDEuNjRMMCA1LjQxNiAyLjg2MSA0IDAgMi41ODNsLjctMS4xNjYgMi43MTYgMS42MzlMMy4zIDBoMS40MDJsLS4xMTcgMy4wNTZMNy4zIDEuNDE2IDggMi41ODQgNS4xMzkgNCA4IDUuNDE3bC0uNyAxLjE2Ni0yLjcxNi0xLjYzOUw0LjcgOEgzLjI5OXoiIGZpbGw9IiMwMUFGRDIiLz48L3N2Zz4=);
-        //      background-repeat: no-repeat;
-        //      background-position: calc(100% - 16px) center;
-        //      padding-right: 32px;
-        //  }
+        &:focus {
+            color: var(--accent-02);
+            border-color: var(--accent-02);
+            background-color: transparent;
+            outline: 0;
+        }
+
+        /* Стиль применяется ТОЛЬКО когда пользователь взаимодействовал с полем */
+
+
+        &:user-invalid:focus {
+            border-color: var(--red-01);
+
+            &::before {
+                content: 'Неверные данные';
+            }
+        }
+
     }
 
     & input[disabled] {
-        background-color: #eee;
+        background-color: var(--accent-04);
         cursor: not-allowed;
-        color: var(--color-borders-2);
+        color: var(--accent-04);
     }
 
     & input[data-mac-mask] {
@@ -91,7 +103,8 @@
 
     & .af-select[aria-valid="false"] {
         border-color: #FC4646;
-        background-color: rgba(249, 66, 88, 0.12);;
+        background-color: rgba(249, 66, 88, 0.12);
+        ;
     }
 
     & input[type="password"][aria-valid="true"],
@@ -134,7 +147,8 @@
 
     &.is-validate {
         & input:invalid {
-            background-color: rgba(249, 66, 88, 0.12);;
+            background-color: rgba(249, 66, 88, 0.12);
+            ;
         }
     }
 
@@ -154,30 +168,33 @@
 
     &__note {
 
-        font-size: 14px;
+
         color: var(--gray-36, #5B5B5B);
         width: 100%;
         line-height: 150%;
+        padding-top: 18px;
 
         & span {
             cursor: pointer;
         }
 
-        & a {
-            color: var(--accent);
-            text-decoration: underline;
+        & label {
+            font-size: 14px;
 
-            &:hover {
-                text-decoration: none
+            @media screen and (min-width: vars.$w480) {
+                font-size: 16px;
             }
         }
+
+
+
 
         &--col2 {
             display: flex;
             justify-content: space-between;
             flex-direction: column;
 
-            & > span {
+            &>span {
                 cursor: pointer;
                 padding-bottom: 10px;
 
@@ -205,11 +222,11 @@
         @media screen and (min-width: vars.$w760) {
             flex-direction: row;
             align-items: center;
-            margin: -10px;
+            margin: -10px -6px;
             width: calc(100% + 20px);
         }
 
-        & > .form__item {
+        &>.form__item {
             margin: 0;
             flex-direction: column;
             width: 100%;
@@ -230,6 +247,7 @@
         display: flex;
         flex-wrap: wrap;
         position: relative;
+        align-items: flex-end;
 
         &--leftlabel {
             max-width: 240px;
@@ -258,8 +276,14 @@
             }
         }
 
+        &>label {
+            font-size: 16px;
+            color: var(--accent-02);
+            padding-bottom: 10px;
+        }
+
         @media screen and (min-width: vars.$w760) {
-            padding: 11px 10px;
+            padding: 11px 6px;
             margin-bottom: 0;
         }
     }
@@ -344,6 +368,7 @@
         & .select-options li {
             max-width: none;
             cursor: pointer;
+
             &.disabled {
                 pointer-events: none;
                 opacity: 0.5;
@@ -432,11 +457,11 @@
 
 
     /* active state */
-    & input:focus ~ label,
-    & input[area-valid] ~ label,
-    & textarea:focus ~ label,
-    & textarea[area-valid=true] ~ label,
-    & textarea[area-valid=false] ~ label {
+    & input:focus~label,
+    & input[area-valid]~label,
+    & textarea:focus~label,
+    & textarea[area-valid=true]~label,
+    & textarea[area-valid=false]~label {
         top: 8px;
         font-size: 12px;
         height: 15px;
@@ -444,8 +469,8 @@
         color: var(--accent);
     }
 
-    & textarea[area-valid=false] ~ .bar,
-    & input[area-valid=false] ~ .bar {
+    & textarea[area-valid=false]~.bar,
+    & input[area-valid=false]~.bar {
 
         &::before,
         &::after {
@@ -454,14 +479,14 @@
         }
     }
 
-    & textarea[area-valid=false] ~ .tooltip,
-    & input[area-valid=false] ~ .tooltip {
+    & textarea[area-valid=false]~.tooltip,
+    & input[area-valid=false]~.tooltip {
 
         color: vars.$red;
     }
 
-    & textarea:focus[area-valid=false] ~ .bar,
-    & input:focus[area-valid=false] ~ .bar {
+    & textarea:focus[area-valid=false]~.bar,
+    & input:focus[area-valid=false]~.bar {
 
         &::before,
         &::after {
@@ -475,8 +500,8 @@
         margin-top: 12px;
     }
 
-    & textarea[area-valid=true] ~ .tooltip,
-    & input[area-valid=true] ~ .tooltip {
+    & textarea[area-valid=true]~.tooltip,
+    & input[area-valid=true]~.tooltip {
         width: 13px;
         height: 13px;
         display: block;
@@ -728,6 +753,7 @@
 
         @include vars.from('md') {
             padding-block: 14px;
+
             &:hover {
                 background-color: var(--accent-14);
             }
@@ -796,6 +822,7 @@
         font-size: inherit !important;
         line-height: inherit !important;
         padding-left: 8px !important;
+
         &::placeholder {
             color: var(--text-2) !important;
         }
@@ -832,8 +859,8 @@
         min-width: 40%;
         max-width: 50%;
     }
+
     .prefix {
         white-space: nowrap;
     }
 }
-

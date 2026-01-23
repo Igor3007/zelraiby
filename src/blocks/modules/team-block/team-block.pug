@@ -52,7 +52,11 @@ mixin team-block
     section.section-team-block
         .container
             .team-block.animate
-                .team-block__title Наша команда
+                .team-block__head
+                    .team-block__title Наша команда
+                    .team-block__nav
+                        .team-block__nav-prev(data-slider-prev="team"): +icon('ic_arr_round-left')
+                        .team-block__nav-next(data-slider-next="team"): +icon('ic_arr_round')
                 .team-block__subtitle Профессиональные менеджеры помогут вам подобрать подходящие саженцы и растения
                 .team-block__list
                     .splide(data-slider="team")
@@ -60,3 +64,5 @@ mixin team-block
                             .splide__list
                                 each item in member_list
                                     .splide__slide: +card-member(item)
+                .team-block__bottom
+                    a(href='#'): button.btn.btn-green Получить консультацию
