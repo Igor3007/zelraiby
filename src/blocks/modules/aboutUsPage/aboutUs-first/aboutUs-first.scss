@@ -1,0 +1,157 @@
+@use 'vars'as vars;
+
+.sectionAboutUsFirst {
+    padding-bottom: 32px;
+    @media screen and (min-width: vars.$w760) {
+        padding-bottom: 76px;
+    }
+    &__h1 {
+        & h1 {
+            @include vars.font-h1;
+        }
+    }
+    &__title{
+        font: 600 16px/22px var(--font-wix);
+        @media screen and (min-width: vars.$w760) {
+            font: 600 18px/24px var(--font-wix);
+        }
+    }
+    &__text{
+        font: 400 14px/20px var(--font-wix);
+        @media screen and (min-width: vars.$w760) {
+            font: 400 16px/24px var(--font-wix);
+        }
+    }
+    &__quote{
+        margin-top: 16px;
+        background: var(--bg-01);
+        border-radius: 32px;
+        padding: 16px;
+        @media screen and (min-width: vars.$w760) {
+            padding: 32px;
+        }
+        &_text{
+            padding-bottom: 16px;
+            text-align: left;
+            font: 400 16px/22px var(--font-wix);
+            @media screen and (min-width: vars.$w760) {
+                font: 400 18px/24px var(--font-wix);
+            }
+        }
+        &_name{
+            text-align: right;
+            font: 600 14px/20px var(--font-wix);
+            @media screen and (min-width: vars.$w760) {
+                font: 600 16px/24px var(--font-wix);
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 32px;
+        color: var(--accent-02);
+        @media screen and (min-width: vars.$w992) {
+            flex-direction: row;
+        }
+        &_info{
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 16px;
+            @media screen and (min-width: vars.$w992) {
+                width: 70%;
+            }
+        }
+        &_img{
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+            @media screen and (min-width: vars.$w992) {
+                width: 30%;
+            }
+            &:after{
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 60%;
+                background: var(--bg-02);
+                border-radius: 120px 32px 32px 0;
+                z-index: 0;
+            }
+            picture{
+                position: relative;
+                z-index: 1;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                @media screen and (min-width: vars.$w992) {
+                    right: -84px;
+                }
+            }
+        }
+    }
+    &__items{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 16px;
+        background: var(--bg-01);
+        border-radius: 32px;
+        padding: 16px;
+        gap: 16px;
+        @media screen and (min-width: vars.$w760) {
+            padding: 32px;
+        }
+
+        .item{
+            width: calc(100% - 16px);
+            @media screen and (min-width: vars.$w576) {
+                width: calc(50% - 16px);
+            }@media screen and (min-width: vars.$w992) {
+                width: calc(25% - 16px);
+            }
+            &__title{
+                @include vars.font-h3;
+                color: var(--accent-03);
+                padding-bottom: 4px;
+                @media screen and (max-width: vars.$w992) {
+                    font-size: 24px;
+                }
+
+                & span {
+                    position: relative;
+                    z-index: 1;
+
+                    &::before {
+                        content: '';
+                        height: 8px;
+                        background-color: rgba(173, 235, 103, 0.30);
+                        display: block;
+                        position: absolute;
+                        bottom: 5px;
+                        left: 0;
+                        width: calc(100% + 10px);
+                        z-index: -1;
+                    }
+                }
+            }
+            &__text{
+                max-width: 166px;
+                @include vars.font-16;
+                color: var(--accent-02);
+
+                @media screen and (max-width: vars.$w992) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

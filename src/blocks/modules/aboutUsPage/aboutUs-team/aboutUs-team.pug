@@ -1,0 +1,51 @@
+include ../../team-block/team-block
+include ../aboutUs-form/aboutUs-form
+
+mixin aboutUs-team
+    -
+        const member_list = [
+            {
+                image: '/img/team/img-0',
+                name: 'Наталья',
+                desc: 'Менеджер по продажам',
+                phone: '+7 (926) 878-65-38',
+                email: 'natalya-zelrai@tut.by',
+            },
+            {
+                image: '/img/team/img',
+                name: 'Виктория',
+                desc: 'Менеджер по работе с клиентами',
+                phone: '+7 (926) 878-65-40',
+                email: 'viktoria-zelrai@tut.by',
+            },
+            {
+                image: '/img/team/img-1',
+                name: 'Татьяна',
+                desc: 'Менеджер по работе с клиентами',
+                phone: '+7 (926) 878-65-42',
+                email: 'tatyana-zelrai@tut.by',
+            },
+            {
+                image: '/img/team/img-2',
+                name: 'Екатерина',
+                desc: 'Менеджер по работе с клиентами',
+                phone: '+7 (926) 878-65-44',
+                email: 'ekaterina-zelrai@tut.by',
+            },
+            {
+                image: '/img/team/img-3',
+                name: 'Евгения',
+                desc: 'Менеджер по работе с клиентами',
+                phone: '+7 (926) 878-65-46',
+                email: 'evgeniya-zelrai@tut.by',
+            },
+
+        ]
+    section.sectionAboutUsTeam
+        .container
+            .sectionAboutUsTeam__title Наша команда
+            .sectionAboutUsTeam__text Профессиональные менеджеры помогут вам подобрать подходящие саженцы и растения
+            .sectionAboutUsTeam__content
+                each item in member_list
+                     +card-member(item)
+                +aboutUs-form

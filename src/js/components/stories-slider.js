@@ -8,7 +8,6 @@ export function storiesSlider() {
     if (document.querySelector('[data-slider="stories"]')) {
         document.querySelectorAll('[data-slider="stories"]').forEach(slider => {
             slider['splide'] = new Splide(slider, {
-
                 fixedWidth: 112,
                 perMove: 1,
                 gap: 16,
@@ -18,11 +17,10 @@ export function storiesSlider() {
                         gap: 24,
                     },
                     1024: {
-
                         gap: 20
                     },
                     768: {
-                        pagination: true,
+                        pagination: false,
                     },
                 },
 

@@ -1,0 +1,27 @@
+extends ../layouts/main
+
+block variables
+    include ../../data/data.pug
+    - const title = "zelrai.by"
+
+
+block main
+
+    include ../../blocks/modules/aboutUsPage/aboutUs-first/aboutUs-first
+    include ../../blocks/modules/aboutUsPage/aboutUs-photo/aboutUs-photo
+    include ../../blocks/modules/aboutUsPage/aboutUs-team/aboutUs-team
+    include ../../blocks/modules/aboutUsPage/aboutUs-faq/aboutUs-faq
+    include ../../blocks/components/breadcrumbs/breadcrumbs
+
+    .container
+        +breadcrumbs([
+            {title: 'О компании'}
+        ])
+    +aboutUs-first
+    +aboutUs-photo
+    +aboutUs-team
+    +aboutUs-faq
+
+
+block scripts
+    script(src="/js/index.js")
