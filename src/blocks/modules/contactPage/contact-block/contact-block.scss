@@ -20,39 +20,44 @@
 
         &_photo {
             grid-row: span 2;
-            padding: 32px 8px 32px 32px;
+
             position: relative;
             max-height: max-content;
-
-            &::before {
-                content: '';
-                height: 88px;
-                width: 88px;
-                border-radius: 24px;
-                background-color: var(--accent-02);
-                display: block;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                z-index: 0;
-            }
-            & span {
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 2;
-                border-radius: 24px;
-                background-color: var(--accent-01);
-                width: 88px;
-                height: 88px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                svg {
-                    width: 48px;
-                    height: 48px;
+            .photo{
+                padding: 32px 8px 32px 32px;
+                position: relative;
+                & span {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 2;
+                    border-radius: 24px;
+                    background-color: var(--accent-01);
+                    width: 88px;
+                    height: 88px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    svg {
+                        width: 48px;
+                        height: 48px;
+                    }
+                }
+                &::before {
+                    content: '';
+                    height: 88px;
+                    width: 88px;
+                    border-radius: 24px;
+                    background-color: var(--accent-02);
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 0;
                 }
             }
+
+
             & picture {
                 outline: 8px solid var(--accent);
                 border: 8px solid var(--accent-02);
@@ -64,6 +69,7 @@
                 @media screen and (min-width: vars.$w992) {
                     max-height: 600px;
                 }
+
             }
         }
     }
@@ -98,7 +104,7 @@
                 }
                 &>div{
                     &:last-child{
-                        margin-top: -16px;
+                        margin-top: -26px;
                     }
                 }
             }

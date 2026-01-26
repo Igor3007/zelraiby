@@ -22,7 +22,7 @@
         ul
           li.ic-color-tg: a(href='#'): +bgimage('/img/icons/msgr-tg.svg')
           li.ic-color-wa: a(href='#'): +bgimage('/img/icons/msgr-wa.svg')
-          
+
     .header-nav
       .header-nav__catalog
         button.btn
@@ -32,4 +32,4 @@
         nav
           ul
             each item in mainMenu
-              li: a(href='#')= item.text 
+              li: a(href=item.link)= item.text

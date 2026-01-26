@@ -1,0 +1,12 @@
+@use 'vars'as vars;
+
+.sectionAboutUsFAQ{
+    &__title {
+        @include vars.font-h2;
+        padding-bottom: 0.2em;
+    }
+    &__text {
+        color: var(--color-text-02);
+        padding-bottom: 32px;
+    }
+}

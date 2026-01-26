@@ -1,0 +1,57 @@
+mixin aboutUs-photo
+    -
+        const photoItems = [
+            {
+                image: '/img/objects/img-0',
+                id: '1'
+            },
+            {
+                image: '/img/objects/img-1',
+                id: '2'
+            },
+            {
+                image: '/img/objects/img-2',
+                id: '13'
+            },
+            {
+                image: '/img/objects/img-3',
+                id: '1342'
+            },
+            {
+                image: '/img/objects/img-4',
+                id: '5431'
+            },
+            {
+                image: '/img/objects/img-2',
+                id: '6571'
+            },
+
+        ]
+
+    section.sectionAboutUsPhoto
+        .container
+            .best-offers
+                .best-offers__tabs
+                    .best-offers__title Фото из питомника
+                    .best-offers__nav
+                        .best-offers__nav-prev(data-slider-prev="offers"): +icon('ic_arr_round-left')
+                        .best-offers__nav-next(data-slider-next="offers"): +icon('ic_arr_round')
+                .best-offers__slider
+                    .splide(data-slider="aboutUs")
+                        .splide__track
+                            .splide__list
+                                each item in photoItems
+                                    .splide__slide(data-filter-id=item.filterId)
+                                        .sectionAboutUsPhoto__image: +picture(item.image)
+
+
+                .best-offers__bottom
+                    .best-offers__action
+                        a(href='#')
+                            button.btn.btn-green
+                                span Получить консультацию
+                    .best-offers__select
+                        a(href='#')
+                            button.btn.btn-dark
+                                span Перейти в каталог
+                                +icon('ic_leaf')

@@ -19,10 +19,14 @@
     }
 
     &__desc {
-        @include vars.font-18;
+        @include vars.font-14;
         font-weight: 400 !important;
         color: var(--accent-04);
-        padding-bottom: 30px;
+        padding-bottom: 16px;
+        @media screen and (min-width: vars.$w760) {
+            @include vars.font-18;
+            padding-bottom: 30px;
+        }
     }
 
     &__form {

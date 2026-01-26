@@ -1,0 +1,48 @@
+@use 'vars'as vars;
+
+.sectionAboutUsTeam {
+    padding-bottom: 76px;
+    &__title {
+        @include vars.font-h2;
+        padding-bottom: 0.2em;
+    }
+    &__text {
+        color: var(--color-text-02);
+        padding-bottom: 32px;
+    }
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* 4 равные колонки */
+        grid-template-rows: auto auto; /* 2 строки */
+        grid-gap: 10px;
+        @media screen and (min-width: vars.$w375) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+        @media screen and (min-width: vars.$w576) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media screen and (min-width: vars.$w760) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        &>div{
+            grid-column: span 1;
+            &:last-child{
+                grid-column: span 1;
+                @media screen and (min-width: vars.$w375) {
+                    grid-column: span 2;
+                }
+                @media screen and (min-width: vars.$w576) {
+                    grid-column: span 3;
+                }
+
+            }
+        }
+        @media screen and (max-width: vars.$w576) {
+            .card-member{
+                padding: 0 10px 10px 10px;
+            }
+        }
+
+    }
+}

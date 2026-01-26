@@ -1,0 +1,24 @@
+mixin aboutUs-form
+    .aboutUsForm
+        .form-order
+            .form-order__title Оставьте заявку, и мы скоро с вами свяжемся!
+            .form-order__desc В рабочее время отвечаем в течение 15 минут.
+            .form-order__form
+                form(action='#' method='POST')
+                    .form
+                        .form__item
+                            .form__subitem
+                                label Ваше имя:
+                                input(type="text" name="" placeholder="Введите имя")
+                            .form__subitem
+                                label Номер телефона:
+                                input(type="text" name="" placeholder="Введите телефон")
+                            .form__subitem
+                                label Сообщение или вопрос:
+                                textarea(name="" placeholder="Текст сообщения")
+
+                        .form__item_submit
+                            button.btn(type="submit")
+                                span Отправить заявку
+                                +icon('ic_arrow-min')
+                            +checkbox('Нажимая на кнопку «Отправить заявку», я соглашаюсь с <a href="/policy.html">Политикой конфиденциальности</a>')
