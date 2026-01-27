@@ -1,0 +1,22 @@
+extends ../layouts/main
+
+block variables
+    include ../../data/data.pug
+    - const title = "zelrai.by"
+
+
+block main
+
+    include ../../blocks/modules/optomPage/optom-first/optom-first
+    include ../../blocks/modules/optomPage/optom-catalog/optom-catalog
+    include ../../blocks/modules/optomPage/optom-info/optom-info
+    include ../../blocks/modules/optomPage/optom-size/optom-size
+
+    +optom-first
+    +optom-catalog
+    +optom-info
+    +optom-size
+
+
+block scripts
+    script(src="/js/index.js")

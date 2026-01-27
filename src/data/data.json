@@ -3,7 +3,7 @@
     {"text": "Цены", "link": "#"},
     {"text": "Акции", "link": "#"},
     {"text": "Доставка и оплата", "link": "#"},
-    {"text": "Саженцы оптом", "link": "#"},
+    {"text": "Саженцы оптом", "link": "/optom.html"},
     {"text": "О компании", "link": "/aboutUs.html"},
     {"text": "Контакты", "link": "/contact.html"}
    ]

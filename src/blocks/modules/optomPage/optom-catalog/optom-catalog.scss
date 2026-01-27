@@ -1,0 +1,55 @@
+@use 'vars'as vars;
+
+.sectionOptomCatalog {
+    padding-bottom: 60px;
+    @media screen and (min-width: vars.$w991) {
+        padding-bottom: 100px;
+    }
+    &__title {
+        @include vars.font-h2;
+        padding-bottom: 0.2em;
+    }
+    &__text {
+        color: var(--accent-04);
+        font: 400 16px/24px var(--font-wix);
+        padding-bottom: 48px;
+    }
+    &__content{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 24px;
+        padding-bottom: 48px;
+        .item{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: calc(50% - 12px);
+            gap: 12px;
+            picture{
+                transform: scale(1.2);
+            }
+            @media screen and (min-width: vars.$w480) {
+                picture{
+                    transform: scale(1);
+                }
+            }
+            @media screen and (min-width: vars.$w760) {
+                width: calc(33% - 24px);
+            }
+            @media screen and (min-width: vars.$w992) {
+                width: calc(25% - 24px);
+            }
+
+            &__name{
+                color: var(--gray-0);
+                font: 600 14px/20px var(--font-wix);
+                text-align: center;
+                @media screen and (min-width: vars.$w992) {
+                    font: 600 18px/28px var(--font-wix);
+                }
+            }
+        }
+    }
+}
