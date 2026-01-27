@@ -1,0 +1,122 @@
+@use 'vars'as vars;
+
+.sectionOptomInfo {
+    padding-bottom: 60px;
+    @media screen and (min-width: vars.$w760) {
+        padding-bottom: 100px;
+    }
+    .container{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 24px;
+        @media screen and (min-width: vars.$w760) {
+            flex-direction: row;
+        }
+    }
+    &__item{
+        background: var(--bg-02);
+        border: 6px solid var(--accent-01);
+        border-radius: 24px;
+        padding: 16px;
+        width: 100%;
+        @media screen and (min-width: vars.$w760) {
+            padding: 24px;
+        }
+        &_title{
+            @include vars.font-h4;
+            padding-bottom: 12px;
+            text-align: center;
+        }
+        &_content{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 8px;
+            .item{
+                text-align: center;
+                &__text{
+                    @include vars.font-14;
+                    color: var(--accent-04);
+                }
+                a{
+                    display: block;
+                    @include vars.font-h4;
+                    color: var(--accent-03);
+                    padding: 3px 0;
+                }
+            }
+        }
+        &_infoMsgr{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding-top: 16px;
+            & .bgimage {
+                @include vars.bgimage-contain;
+                width: 36px;
+                min-width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background-color: var(--accent-02);
+                transition: 0.4s ease;
+            }
+            .ic-color-tg {
+                & .bgimage:not(:hover) {
+                    background-color: #039BE5;
+                }
+            }
+
+            .ic-color-wa {
+                & .bgimage:not(:hover) {
+                    background-color: #4CAF50;
+                }
+            }
+        }
+    }
+    //padding-bottom: 76px;
+    //&__title {
+    //    @include vars.font-h2;
+    //    padding-bottom: 0.2em;
+    //}
+    //&__text {
+    //    color: var(--color-text-02);
+    //    padding-bottom: 32px;
+    //}
+    //&__content {
+    //    display: grid;
+    //    grid-template-columns: repeat(1, 1fr); /* 4 равные колонки */
+    //    grid-template-rows: auto auto; /* 2 строки */
+    //    grid-gap: 10px;
+    //    @media screen and (min-width: vars.$w375) {
+    //        grid-template-columns: repeat(2, 1fr);
+    //        grid-gap: 20px;
+    //    }
+    //    @media screen and (min-width: vars.$w576) {
+    //        grid-template-columns: repeat(3, 1fr);
+    //    }
+    //    @media screen and (min-width: vars.$w760) {
+    //        grid-template-columns: repeat(4, 1fr);
+    //    }
+    //    &>div{
+    //        grid-column: span 1;
+    //        &:last-child{
+    //            grid-column: span 1;
+    //            @media screen and (min-width: vars.$w375) {
+    //                grid-column: span 2;
+    //            }
+    //            @media screen and (min-width: vars.$w576) {
+    //                grid-column: span 3;
+    //            }
+    //
+    //        }
+    //    }
+    //    @media screen and (max-width: vars.$w576) {
+    //        .card-member{
+    //            padding: 0 10px 10px 10px;
+    //        }
+    //    }
+    //
+    //}
+}

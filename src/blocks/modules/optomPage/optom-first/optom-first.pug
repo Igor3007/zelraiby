@@ -1,0 +1,49 @@
+include ../../../components/breadcrumbs/breadcrumbs
+
+mixin optom-first
+    -
+        const info_list = [
+            {
+                icon: 'ic-opt-1',
+                desc: 'Мы предлагаем большой выбор растений и саженцев',
+            },
+            {
+                icon: 'ic-opt-2',
+                desc: 'Мы предлагаем большой выбор растений и саженцев',
+            },
+            {
+                icon: 'ic-opt-3',
+                desc: 'Мы предлагаем большой выбор растений и саженцев',
+            },
+            {
+                icon: 'ic-opt-4',
+                desc: 'Мы предлагаем большой выбор растений и саженцев',
+            },
+
+        ]
+    section.sectionOptomFirst
+        .container
+            .sectionOptomFirst__block
+                +breadcrumbs([
+                    {title: 'Саженцы оптом'}
+                ])
+                .sectionOptomFirst__title: h1 Оптовикам и партнёрам
+                .sectionOptomFirst__items
+                    .item
+                        +icon('ic-list')
+                        .item__text Строительным компаниям
+                    .item
+                        +icon('ic-list')
+                        .item__text Ландшафтным дизайнерам
+                    .item
+                        +icon('ic-list')
+                        .item__text Любителям-садоводам
+                .sectionOptomFirst__info
+                    .btn Получить оптовый прайс
+                    .text Оформить заказ можно также по телефону:
+                        a(href='tel:+375 (29) 646-86-86') +375 (29) 646-86-86
+                .sectionOptomFirst__content
+                    each item in info_list
+                         .item
+                             +icon(item.icon)
+                             .item__text= item.desc

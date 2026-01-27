@@ -1,0 +1,64 @@
+mixin optom-catalog
+    -
+        const catalog_list = [
+            {
+                image: '/img/catalogOpt/img-catalog-1',
+                name: 'Ель колючая',
+            },
+            {
+                image: '/img/catalogOpt/img-catalog-2',
+                name: 'Можжевельник',
+            },
+            {
+                image: '/img/catalogOpt/img-catalog-3',
+                name: 'Сосна',
+            },
+            {
+                image: '/img/catalogOpt/img-catalog-4',
+                name: 'Туя западная',
+            },
+            {
+                image: '/img/catalogOpt/img-catalog-5',
+                name: 'Берёза',
+            },
+            {
+                image: '/img/catalogOpt/img-catalog-6',
+                name: 'Вяз',
+            },
+            {
+                image: '/img/catalogOpt/img-catalog-7',
+                name: 'Клён',
+            },
+            {
+                image: '/img/catalogOpt/img-catalog-8',
+                name: 'Ива',
+            },
+            {
+                image: '/img/catalogOpt/img-catalog-9',
+                name: 'Бонсай',
+            },
+            {
+                image: '/img/catalogOpt/img-catalog-10',
+                name: 'Азалия',
+            },
+            {
+                image: '/img/catalogOpt/img-catalog-11',
+                name: 'Роза флорибунда',
+            },
+            {
+                image: '/img/catalogOpt/img-catalog-12',
+                name: 'Декоративные кустарники',
+            },
+
+        ]
+    section.sectionOptomCatalog
+        .container
+            .sectionOptomCatalog__title Большой ассортимент хвойных, лиственных и элитных растений
+            .sectionOptomCatalog__text Коллекция питомника составляет более 300 наименований вечнозеленых растений, лиственных деревьев и кустарников. Среди них:
+            .sectionOptomCatalog__content
+                each item in catalog_list
+                     .item
+                         .item__image: +picture(item.image)
+                         .item__name= item.name
+            .btn Получить оптовый прайс
+
