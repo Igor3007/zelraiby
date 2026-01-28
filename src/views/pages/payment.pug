@@ -1,0 +1,25 @@
+extends ../layouts/main
+
+block variables
+    include ../../data/data.pug
+    - const title = "zelrai.by"
+
+
+block main
+
+    include ../../blocks/modules/paymentPage/payment-block/payment-block
+    include ../../blocks/modules/paymentPage/payment-faq/payment-faq
+    include ../../blocks/modules/paymentPage/payment-form/payment-form
+    include ../../blocks/components/breadcrumbs/breadcrumbs
+
+    .container
+        +breadcrumbs([
+            {title: 'Доставка и оплата'}
+        ])
+    +payment-block
+    +payment-faq
+    +payment-form
+
+
+block scripts
+    script(src="/js/index.js")

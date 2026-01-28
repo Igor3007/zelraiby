@@ -2,7 +2,7 @@
    "mainMenu": [
     {"text": "Цены", "link": "#"},
     {"text": "Акции", "link": "#"},
-    {"text": "Доставка и оплата", "link": "#"},
+    {"text": "Доставка и оплата", "link": "/payment.html"},
     {"text": "Саженцы оптом", "link": "/optom.html"},
     {"text": "О компании", "link": "/aboutUs.html"},
     {"text": "Контакты", "link": "/contact.html"}

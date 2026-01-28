@@ -1,0 +1,27 @@
+mixin payment-form
+    section.sectionFormPayment
+        .container
+            .form-order
+                .form-order__title Рассчитать стоимость
+                .form-order__desc Поможем выбрать самый выгодный и удобный для вас вариант. В рабочее время отвечаем в течение 15 минут.
+                .form-order__form
+                    form(action='#' method='POST')
+                        .form
+                            .form__item
+                                .form__subitem
+                                    label Ваше имя:
+                                    input(type="text" name="" required placeholder="Введите имя")
+                                .form__subitem
+                                    label Номер телефона:
+                                    input(type="text" data-maska="+375(##)###-##-##" name="" required placeholder="Введите телефон")
+                                .form__subitem
+                                    label Сообщение (необязательно):
+                                    input(type="text" name="" placeholder="Текст сообщения")
+                                .form__subitem.form__subitem--submit
+                                    button.btn(type="submit")
+                                        span Отправить заявку
+                                        +icon('ic_arrow-min')
+                            .form__item
+                                .form__subitem
+                                    .form__note
+                                        +checkbox('Нажимая на кнопку «Отправить заявку», я соглашаюсь с <a href="/policy.html">Политикой конфиденциальности</a>')

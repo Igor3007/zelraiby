@@ -10,6 +10,9 @@
     border-radius: 32px;
 
     @media screen and (min-width: vars.$w576) {
+        padding: 32px;
+    }
+    @media screen and (min-width: vars.$w992) {
         padding: 48px;
     }
 
@@ -19,7 +22,7 @@
     }
 
     &__desc {
-        @include vars.font-14;
+        @include vars.font-16;
         font-weight: 400 !important;
         color: var(--accent-04);
         padding-bottom: 16px;
@@ -41,12 +44,12 @@
 
             &__subitem {
 
-                @media screen and (min-width: vars.$w760) and (max-width: vars.$w1200) {
+                @media screen and (min-width: vars.$w992) and (max-width: vars.$w1200) {
                     width: 50%;
                 }
 
                 &--submit {
-                    @media screen and (min-width: vars.$w760) {
+                    @media screen and (min-width: vars.$w992) {
                         max-width: 310px;
                     }
                 }

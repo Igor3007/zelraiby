@@ -72,6 +72,7 @@ footer {
     &__address {
         color: var(--accent-02);
         padding: 12px 0;
+        max-width: 344px;
     }
 
     &__phones {
@@ -107,7 +108,7 @@ footer {
 
     &__contacts {
         border-bottom: 1px solid var(--border-02);
-        padding-bottom: 16px;
+        padding-bottom: 46px;
 
         @media screen and (min-width: vars.$w760) and (max-width: vars.$w1200) {
             & .footer {
@@ -163,7 +164,7 @@ footer {
     }
 
     &__msgr {
-
+        margin-top: 24px;
         display: flex;
         align-items: center;
         margin-left: auto;
@@ -190,10 +191,16 @@ footer {
     }
 
     &__bottom {
-        padding-top: 22px;
+        padding: 48px 0 28px;
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
+         a {
+            color: var(--accent-02);
+            &:hover {
+                color: var(--accent-03);
+            }
+        }
     }
 
     &__copyright {
@@ -255,6 +262,12 @@ footer {
         & ul {
             & li {
                 padding: 8px 0;
+                & a {
+                    color: var(--accent-02);
+                    &:hover {
+                        color: var(--accent-03);
+                    }
+                }
             }
         }
     }
@@ -265,6 +278,9 @@ footer {
         & a {
             font-weight: 600;
             color: var(--accent-02);
+            &:hover {
+                color: var(--accent-03);
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 @use 'vars'as vars;
 
 .sectionOptomCatalog {
-    padding-bottom: 60px;
+    padding-bottom: 50px;
     @media screen and (min-width: vars.$w991) {
         padding-bottom: 100px;
     }

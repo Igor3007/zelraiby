@@ -1,7 +1,10 @@
 @use 'vars'as vars;
 
 .sectionContactBlock {
-    padding-bottom: 76px;
+    padding-bottom: 44px;
+    @media screen and (min-width: vars.$w760) {
+        padding-bottom: 76px;
+    }
     &__h1 {
         & h1 {
             @include vars.font-h1;
@@ -12,7 +15,9 @@
         gap: 32px;
         display: grid;
         grid-template-columns: 1fr;
+        padding-top: 8px;
         @media screen and (min-width: vars.$w992) {
+            padding-top: 24px;
             grid-template-columns: 2fr 1fr;
             grid-template-rows: auto auto auto;
             grid-auto-flow: row dense;
@@ -65,9 +70,9 @@
                 overflow: hidden;
                 z-index: 1;
                 position: relative;
-                max-height: 400px;
+                max-height: 440px;
                 @media screen and (min-width: vars.$w992) {
-                    max-height: 600px;
+                    max-height: 650px;
                 }
 
             }
@@ -77,11 +82,17 @@
         background: var(--bg-01);
         padding: 24px;
         border-radius: 24px;
-        @media screen and (min-width: vars.$w760) {
+        @media screen and (min-width: vars.$w992) {
             padding: 32px;
         }
         &__title{
-            padding-bottom: 28px;
+            padding-bottom: 8px;
+            @media screen and (min-width: vars.$w680) {
+                padding-bottom: 14px;
+            }
+            @media screen and (min-width: vars.$w992) {
+                padding-bottom: 28px;
+            }
             h2{
                 @include vars.font-h2;
                 color: var(--accent-02);
@@ -120,8 +131,11 @@
             justify-content: flex-start;
             flex-wrap: wrap;
             padding: 24px 0;
-            gap: 24px;
-            @media screen and (min-width: vars.$w760) {
+            gap: 8px;
+            @media screen and (min-width: vars.$w680) {
+                gap: 24px;
+            }
+            @media screen and (min-width: vars.$w992) {
                 flex-wrap: nowrap;
                 padding: 32px 0;
                 gap: 32px;
@@ -143,7 +157,7 @@
                     width: 100%;
                 }
             }
-            @media screen and (min-width: vars.$w760) {
+            @media screen and (min-width: vars.$w992) {
                 flex-wrap: nowrap;
                 .item{
                     flex: inherit;
@@ -161,13 +175,11 @@
                     a{
                         display: block;
                         @include vars.font-16;
-                        color: var(--accent-03);
                     }
                 }
                 a{
                     display: block;
                     @include vars.font-h4;
-                    color: var(--accent-03);
                     padding: 3px 0;
                 }
                 p{
@@ -196,17 +208,6 @@
                     border-radius: 50%;
                     background-color: var(--accent-02);
                     transition: 0.4s ease;
-                }
-                .ic-color-tg {
-                    & .bgimage:not(:hover) {
-                        background-color: #039BE5;
-                    }
-                }
-
-                .ic-color-wa {
-                    & .bgimage:not(:hover) {
-                        background-color: #4CAF50;
-                    }
                 }
             }
         }

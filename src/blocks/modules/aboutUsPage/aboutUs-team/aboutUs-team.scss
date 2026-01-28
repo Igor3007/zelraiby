@@ -1,7 +1,10 @@
 @use 'vars'as vars;
 
 .sectionAboutUsTeam {
-    padding-bottom: 76px;
+    padding-bottom: 50px;
+    @media screen and (min-width: vars.$w760) {
+        padding-bottom: 100px;
+    }
     &__title {
         @include vars.font-h2;
         padding-bottom: 0.2em;
@@ -17,7 +20,8 @@
         grid-gap: 10px;
         @media screen and (min-width: vars.$w375) {
             grid-template-columns: repeat(2, 1fr);
-            grid-gap: 20px;
+            row-gap : 32px;
+            column-gap: 12px;
         }
         @media screen and (min-width: vars.$w576) {
             grid-template-columns: repeat(3, 1fr);

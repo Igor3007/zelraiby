@@ -13,7 +13,7 @@
     &__title{
         font: 600 16px/22px var(--font-wix);
         @media screen and (min-width: vars.$w760) {
-            font: 600 18px/24px var(--font-wix);
+            font: 600 18px/28px var(--font-wix);
         }
     }
     &__text{
@@ -56,6 +56,7 @@
         color: var(--accent-02);
         @media screen and (min-width: vars.$w992) {
             flex-direction: row;
+            gap: 48px;
         }
         &_info{
             width: 100%;
@@ -72,7 +73,7 @@
             margin: 0 auto;
             position: relative;
             @media screen and (min-width: vars.$w992) {
-                width: 30%;
+                width: 27%;
             }
             &:after{
                 content: '';
@@ -109,6 +110,7 @@
         gap: 16px;
         @media screen and (min-width: vars.$w760) {
             padding: 32px;
+            margin-top: 32px;
         }
 
         .item{
@@ -144,7 +146,7 @@
                 }
             }
             &__text{
-                max-width: 166px;
+                max-width: 200px;
                 @include vars.font-16;
                 color: var(--accent-02);
 

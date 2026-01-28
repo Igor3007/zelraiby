@@ -1,0 +1,76 @@
+mixin paymentBlock
+    .paymentBlock
+        .paymentBlock__title: h3 Самовывоз из питомника
+        .paymentBlock__text Любите выбирать растения сами? Хотите сразу забрать понравившиеся саженцы — тогда приезжайте в наш питомник!Вы можете лично прогуляться по аллеям, посмотреть каждое растение, выбрать самые крепкие и здоровые саженцы. После этого просто оплатите их на месте и заберите с собой. Это быстро, удобно и надёжно!
+        .paymentBlock__text Ждем вас за вашим идеальным садом!
+        .paymentBlock__content
+            .paymentBlock__content_title Свяжитесь с нами для уточнения деталей по посещению питомника и самовывозу:
+            .paymentBlock__content_social
+                .item__info
+                    a(href='tel:+375 (29) 646-86-86') +375 (29) 646-86-86
+                    a(href='tel:+375 (29) 127-24-59') +375 (29) 127-24-59
+                .item__infoMsgr
+                    .ic-color-tg: a(href='#'): +bgimage('/img/icons/msgr-tg.svg')
+                    .ic-color-wa: a(href='#'): +bgimage('/img/icons/msgr-wa.svg')
+            .paymentBlock__content_text 212037, Беларусь, Могилёвский район, заезд с трассы Е95
+            .paymentBlock__content_text2 Работаем в будние дни с 8:00 до 17:00, в субботу и воскресенье — с 9:00 до 15:00.
+
+
+mixin paymentBlock2
+    .paymentBlock
+        .paymentBlock__title: h3 Самовывоз из офиса в Москве
+        .paymentBlock__text Вам не нужно ждать доставки. Приезжайте в наш офис в подходящее время (в рабочие часы) и забирайте растения, как вам удобно!
+        .paymentBlock__content
+            .paymentBlock__content_title Свяжитесь с нами для уточнения деталей самовывоза:
+            .paymentBlock__content_social
+                .item__info
+                    a(href='tel:+7 (926) 878-64-38') +7 (926) 878-64-38
+                .item__infoMsgr
+                    .ic-color-tg: a(href='#'): +bgimage('/img/icons/msgr-tg.svg')
+                    .ic-color-wa: a(href='#'): +bgimage('/img/icons/msgr-wa.svg')
+            .paymentBlock__content_text 212037, Беларусь, Могилёвский район, заезд с трассы Е95
+            .paymentBlock__content_text2 Работаем в будние дни с 8:00 до 17:00, в субботу и воскресенье — с 9:00 до 15:00.
+
+
+mixin paymentBlock3
+    .paymentBlock
+        .paymentBlock__title: h3 Доставка по Беларуси и России
+        .paymentBlock__text Хотите купить высококлассные саженцы, но мы далеко? Наш питомник с заботой доставляет саженцы по всей Беларуси и России.
+        .paymentBlock__text Мы организовали быстрый и бережный сервис доставки, чтобы любимые растения доехали до вас в идеальном состоянии, готовые к посадке. Мы тщательно упаковываем каждый саженец и отправляем его в кратчайшие сроки.
+        .paymentBlock__item
+            +icon('ic-list')
+            p
+                span Широкая география:
+                = 'Доставляем в любой уголок Беларуси и России.'
+        .paymentBlock__item
+            +icon('ic-list')
+            p
+                span Надежная упаковка:
+                = 'Гарантируем, что растения перенесут дорогу без стресса.'
+        .paymentBlock__item
+            +icon('ic-list')
+            p
+                span Оперативная отправка:
+                = 'Отправляем заказы сразу после комплектации.'
+
+        .paymentBlock__text Заказывайте растения из нашего каталога и получайте их с комфортом!
+
+
+
+
+mixin payment-block
+    section.sectionPaymentBlock
+        .container
+            .sectionPaymentBlock__h1: h1 Доставка и оплата
+            .sectionPaymentBlock__content
+                .sectionPaymentBlock__content_info
+                    +paymentBlock
+                    +paymentBlock2
+                    +paymentBlock3
+                .sectionPaymentBlock__content_photo
+                    .photo
+                        +picture2('img-payment')
+                    button.btn
+                        span Подробнее о компании
+                        +icon('ic_arr_round')
+
