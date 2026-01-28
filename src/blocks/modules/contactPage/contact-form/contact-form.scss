@@ -1,14 +1,19 @@
 @use 'vars'as vars;
 
 .sectionFormContact{
-    padding-bottom: 100px;
+    padding-bottom: 50px;
+    @media screen and (min-width: vars.$w992) {
+        padding-bottom: 100px;
+    }
 
     .form__item_submit{
         gap: 12px;
         display: flex;
         flex-direction: column;
+
+
     }
-    @media screen and (min-width: vars.$w760) {
+    @media screen and (min-width: vars.$w992) {
         .form__item{
             flex-wrap: wrap;
             justify-content: space-between;

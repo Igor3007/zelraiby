@@ -1,0 +1,41 @@
+@use 'vars'as vars;
+
+.sectionFormPayment{
+    padding-bottom: 50px;
+    @media screen and (min-width: vars.$w992) {
+        padding-bottom: 100px;
+    }
+
+    //.form__item_submit{
+    //    gap: 12px;
+    //    display: flex;
+    //    flex-direction: column;
+    //}
+    //@media screen and (min-width: vars.$w760) {
+    //    .form__item{
+    //        flex-wrap: wrap;
+    //        justify-content: space-between;
+    //        .form__subitem{
+    //            width: 30%;
+    //        }
+    //        &>div{
+    //            &:last-child{
+    //                width: 100%;
+    //            }
+    //        }
+    //    }
+    //    .form__item_submit{
+    //        display: flex;
+    //        flex-direction: row;
+    //        align-items: center;
+    //        justify-content: flex-start;
+    //        gap: 32px;
+    //        .btn{
+    //            width: 100%;
+    //            max-width: 300px;
+    //        }
+    //
+    //    }
+    //}
+
+}

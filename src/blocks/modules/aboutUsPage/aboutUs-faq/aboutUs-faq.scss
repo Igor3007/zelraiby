@@ -7,6 +7,9 @@
     }
     &__text {
         color: var(--color-text-02);
-        padding-bottom: 32px;
+        padding-bottom: 8px;
+        @media screen and (min-width: vars.$w576) {
+            padding-bottom: 32px;
+        }
     }
 }

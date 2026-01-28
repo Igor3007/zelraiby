@@ -10,16 +10,16 @@ mixin contact-form
                             .form__item
                                 .form__subitem
                                     label Ваше имя:
-                                    input(type="text" name="" placeholder="Введите имя")
+                                    input(type="text" maxlength="25" name="" placeholder="Введите имя")
                                 .form__subitem
                                     label Номер телефона:
-                                    input(type="text" name="" placeholder="Введите телефон")
+                                    input(type="text" data-maska="+375 (##) ###-##-##" maxlength="25" name="" placeholder="Введите телефон")
                                 .form__subitem
                                     label Электронная почта (необязательно):
-                                    input(type="text" name="" placeholder="Введите почту")
+                                    input(type="email" maxlength="25" name="" placeholder="Введите почту")
                                 .form__subitem
                                     label Сообщение или вопрос:
-                                    textarea(name="" placeholder="Текст сообщения")
+                                    textarea(name="" maxlength="500" placeholder="Текст сообщения")
 
                             .form__item_submit
                                 button.btn(type="submit")

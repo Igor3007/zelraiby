@@ -3,8 +3,20 @@
 .sectionAboutUsPhoto {
     padding-bottom: 32px;
     .best-offers__tabs {
-    margin-bottom: 12px;
-}
+        margin-bottom: 12px;
+    }
+    //.best-offers__bottom{
+    //    .btn{
+    //        width: 458px;
+    //    }
+    //}
+    @media screen and (min-width: vars.$w992) {
+        .best-offers__bottom{
+            .btn{
+                width: 458px;
+            }
+        }
+    }
     @media screen and (min-width: vars.$w760) {
         padding-bottom: 76px;
     }

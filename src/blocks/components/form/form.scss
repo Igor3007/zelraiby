@@ -69,13 +69,14 @@
 
     & textarea {
         line-height: 1.5;
-        min-height: 120px;
+        min-height: 48px;
         resize: none!important;
-        padding-top: 16px;
-        padding-bottom: 16px;
+        padding: 10px 20px;
         margin-bottom: 20px;
-        @media screen and (min-width: vars.$w1200) {
+        @media screen and (min-width: vars.$w480) {
             min-height: 140px;
+            padding-top: 16px;
+            padding-bottom: 16px;
         }
         &::placeholder {
             color: var(--accent-04);
@@ -144,7 +145,6 @@
         }
     }
 
-
     & div.error {
         color: #F94258;
         font-size: 13px;
@@ -152,19 +152,19 @@
         width: 100%;
         line-height: 140%;
         font-weight: 400;
-
         @media screen and (min-width: vars.$w760) {
             font-size: 15px;
         }
     }
 
     &__note {
-
-
         color: var(--gray-36, #5B5B5B);
         width: 100%;
         line-height: 150%;
-        padding-top: 18px;
+        padding-top: 8px;
+        @media screen and (min-width: vars.$w992) {
+            padding-top: 18px;
+        }
 
         & span {
             cursor: pointer;
@@ -177,8 +177,6 @@
                 font-size: 16px;
             }
         }
-
-
 
 
         &--col2 {
@@ -227,8 +225,6 @@
                 flex-direction: row;
             }
         }
-
-
     }
 
     &__subitem {

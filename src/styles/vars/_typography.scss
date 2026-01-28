@@ -4,7 +4,6 @@
     font-size: 32px;
     font-weight: 700;
     line-height: 120%;
-
     @media screen and (min-width: variables.$w1440) {
         font-size: 48px;
         line-height: 116%;
@@ -16,6 +15,7 @@
     font-weight: 700;
     line-height: 133%;
     color: var(--accent-02);
+
 
     @media screen and (min-width: variables.$w1440) {
         font-size: 40px;
@@ -32,9 +32,13 @@
 }
 
 @mixin font-h3() {
-    font-size: 32px;
     font-weight: 700;
     line-height: 125%;
+    font-size: 24px;
+    color: var(--accent-03);
+    @media screen and (min-width: variables.$w760) {
+        font-size: 32px;
+    }
 }
 
 @mixin font-h4() {

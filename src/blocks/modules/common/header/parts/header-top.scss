@@ -124,6 +124,9 @@
 
         & a {
             color: var(--accent-02);
+            &:hover{
+                color: var(--accent-03);
+            }
         }
     }
 
@@ -131,26 +134,23 @@
         @include vars.font-14;
         color: var(--accent-04);
 
-        & a {
-            color: var(--accent-03);
-        }
     }
 }
 
 .ic-color-tg {
     & .bgimage:not(:hover) {
-        background-color: #039BE5;
+        background-color: #039BE5!important;
     }
 }
 
 .ic-color-wa {
     & .bgimage:not(:hover) {
-        background-color: #4CAF50;
+        background-color: #4CAF50!important;
     }
 }
 
 .ic-color-vb {
     & .bgimage:not(:hover) {
-        background-color: #7360F2;
+        background-color: #7360F2!important;
     }
 }
