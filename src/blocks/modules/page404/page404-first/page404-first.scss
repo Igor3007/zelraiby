@@ -1,0 +1,67 @@
+@use 'vars'as vars;
+
+
+.section404First{
+    padding-top: 48px;
+    padding-bottom: 50px;
+    @media screen and (min-width: vars.$w760) {
+        padding-bottom: 128px;
+    }
+  &__block{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      max-width: 832px;
+      margin: 0 auto;
+      @media screen and (min-width: vars.$w760) {
+          gap: 32px;
+      }
+      &_img{}
+      &_title{
+          font: 700 32px/36px var(--font-wix);
+          text-align: center;
+          @media screen and (min-width: vars.$w480) {
+              font: 700 52px/56px var(--font-wix);
+              padding-bottom: 4px;
+              padding-top: 12px;
+          }
+          @media screen and (min-width: vars.$w992) {
+              font: 700 64px/76px var(--font-wix);
+          }
+      }
+      &_text{
+          font: 400 16px/24px var(--font-wix);
+          text-align: center;
+          @media screen and (min-width: vars.$w760) {
+              font: 400 18px/28px var(--font-wix);
+          }
+          @media screen and (max-width: vars.$w760) {
+              br{
+                  display: none;
+              }
+          }
+      }
+      &_btns{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 12px;
+          a{
+              flex: 1;
+          }
+          .btn {
+              svg{
+                  width: 18px;
+                  height: 18px;
+              }
+              width: 100%;
+              @media screen and (max-width: vars.$w760) {
+                  max-width: 328px;
+              }
+          }
+      }
+  }
+}
