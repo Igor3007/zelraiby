@@ -23,13 +23,14 @@
             padding: 0 0 4px;
             li{
                 a{
+                    color: var(--accent-01);
                     &:hover{
                         svg{
-                            fill: var(--accent-03);
+                            fill: var(--accent-01);
                         }
                     }
                     &:before{
-                        opacity: .2;
+                        opacity: .4;
                         background-color: var(--accent-01);
                     }
                 }
@@ -69,6 +70,9 @@
             align-items: center;
             justify-content: flex-start;
             gap: 12px;
+            svg{
+                fill: var(--accent-01);
+            }
             &__text{
                 color: var(--white);
                 font: 600 16px/24px var(--font-wix);

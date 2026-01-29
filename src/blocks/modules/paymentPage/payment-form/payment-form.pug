@@ -10,13 +10,13 @@ mixin payment-form
                             .form__item
                                 .form__subitem
                                     label Ваше имя:
-                                    input(type="text" name="" required placeholder="Введите имя")
+                                    input(type="text" maxlength="25" name="" required placeholder="Введите имя")
                                 .form__subitem
                                     label Номер телефона:
-                                    input(type="text" data-maska="+375(##)###-##-##" name="" required placeholder="Введите телефон")
+                                    input(type="text" maxlength="25" data-maska="+375(##)###-##-##" name="" required placeholder="Введите телефон")
                                 .form__subitem
                                     label Сообщение (необязательно):
-                                    input(type="text" name="" placeholder="Текст сообщения")
+                                    input(type="text" maxlength="160" name="" placeholder="Текст сообщения")
                                 .form__subitem.form__subitem--submit
                                     button.btn(type="submit")
                                         span Отправить заявку
@@ -24,4 +24,4 @@ mixin payment-form
                             .form__item
                                 .form__subitem
                                     .form__note
-                                        +checkbox('Нажимая на кнопку «Отправить заявку», я соглашаюсь с <a href="/policy.html">Политикой конфиденциальности</a>')
+                                        +checkbox('Нажимая на кнопку «Отправить заявку», я соглашаюсь с <a href="/policy.html">Политикой конфиденциальности</a>', 'policy', {required: true})

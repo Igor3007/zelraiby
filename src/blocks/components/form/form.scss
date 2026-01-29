@@ -19,7 +19,7 @@
         background-color: var(--bg-02);
         font-size: 16px;
         line-height: 15px;
-        padding: 10px 20px;
+        padding: 12px 16px;
         box-sizing: border-box;
         width: auto;
         flex-grow: 1;
@@ -30,9 +30,10 @@
         height: 48px;
         transition: 0.3s ease;
 
-        @media screen and (min-width: vars.$w1200) {
+        @media screen and (min-width: vars.$w760) {
             height: 56px;
             border-radius: 20px;
+            padding: 16px 24px;
         }
 
         &::placeholder {
@@ -71,12 +72,13 @@
         line-height: 1.5;
         min-height: 48px;
         resize: none!important;
-        padding: 10px 20px;
-        margin-bottom: 20px;
-        @media screen and (min-width: vars.$w480) {
+        padding: 10px 16px;
+        margin-bottom: 10px;
+        @media screen and (min-width: vars.$w760) {
             min-height: 140px;
             padding-top: 16px;
             padding-bottom: 16px;
+            margin-bottom: 24px;
         }
         &::placeholder {
             color: var(--accent-04);
