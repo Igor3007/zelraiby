@@ -1,5 +1,5 @@
-mixin form-order
-    section.section-form-order
+mixin price-form
+    section.sectionFormPrice
         .container
             .form-order
                 .form-order__title Оставьте заявку, и мы скоро с вами свяжемся!
@@ -16,7 +16,7 @@ mixin form-order
                                     input(type="text" maxlength="25" data-maska="+375(##)###-##-##" name="" required placeholder="Введите телефон")
                                 .form__subitem
                                     label Сообщение (необязательно):
-                                    input(type="text" name="" maxlength="160" placeholder="Текст сообщения")
+                                    input(type="text" maxlength="160" name="" placeholder="Текст сообщения")
                                 .form__subitem.form__subitem--submit
                                     button.btn(type="submit")
                                         span Отправить заявку

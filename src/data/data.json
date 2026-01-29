@@ -1,6 +1,6 @@
 {
    "mainMenu": [
-    {"text": "Цены", "link": "#"},
+    {"text": "Цены", "link": "/price.html"},
     {"text": "Акции", "link": "#"},
     {"text": "Доставка и оплата", "link": "/payment.html"},
     {"text": "Саженцы оптом", "link": "/optom.html"},

@@ -50,11 +50,8 @@
                 }
             }
             @media screen and (max-width: vars.$w375) {
-                &:last-child {
-                    grid-row: 3;
-                }
                 &:nth-last-child(2) {
-                    grid-row: 4;
+                    display: none;
                 }
             }
 

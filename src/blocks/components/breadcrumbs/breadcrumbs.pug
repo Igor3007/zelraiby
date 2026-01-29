@@ -1,12 +1,13 @@
 mixin breadcrumbs(links)
     ul.breadcrumbs
-        li: a(href="/") Главная
+        li: a(href="/")
+                p Главная
                 +icon('ic_arr_round')
         each item, index in links
             if links.length !== (index+1)
                 li
                     a(href=item.url)
-                        != item.title
+                        p!= item.title
                         +icon('ic_arr_round')
             else
                 li: span!= item.title

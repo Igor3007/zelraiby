@@ -130,10 +130,10 @@
             align-items: flex-start;
             justify-content: flex-start;
             flex-wrap: wrap;
-            padding: 24px 0;
+            padding: 12px 0;
             gap: 8px;
             @media screen and (min-width: vars.$w680) {
-                gap: 24px;
+                padding: 24px 0;
             }
             @media screen and (min-width: vars.$w992) {
                 flex-wrap: nowrap;
@@ -171,6 +171,7 @@
                 padding-bottom: 6px;
             }
             &__info{
+
                 &.mail{
                     a{
                         display: block;
@@ -183,7 +184,7 @@
                     padding: 3px 0;
                 }
                 p{
-                    padding: 0;
+                    padding: 3px 0;
                     margin: 0;
                     @include vars.font-14;
                     color: var(--accent-02);
@@ -200,6 +201,7 @@
                 align-items: center;
                 justify-content: flex-start;
                 gap: 8px;
+                padding: 3px 0;
                 & .bgimage {
                     @include vars.bgimage-contain;
                     width: 32px;

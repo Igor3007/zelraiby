@@ -1,0 +1,53 @@
+
+mixin price-block
+    -
+        const priceData = [
+            {
+                href: '/files/document.docx',
+                iconType: 'ic_xls',
+                name: 'Прайс-лист «Хутор», осень 2025, РБ',
+                type: 'XLS',
+                size: '951 Кб',
+            },
+            {
+                href: '/files/document.docx',
+                iconType: 'ic_pdf',
+                name: 'Прайс-лист «Маленький рай», осень 2025',
+                type: 'PDF',
+                size: '958 Кб',
+            },
+            {
+                href: '/files/document.docx',
+                iconType: 'ic_word',
+                name: 'Прайс-лист «Грунт», осень 2025',
+                type: 'DOC',
+                size: '929 Кб',
+            },
+            {
+                href: '/files/document.docx',
+                iconType: 'ic_xls',
+                name: 'Прайс-лист «Новая посадка», осень 2025',
+                type: 'PDF',
+                size: '958 Кб',
+            },
+        ]
+    section.sectionPriceBlock
+        .container
+            .sectionPriceBlock__h1: h1 Актуальные прайс-листы питомника «Зелёный рай»
+            .sectionPriceBlock__content
+                .sectionPriceBlock__content_title Выберите прайс-лист для скачивания:
+                .sectionPriceBlock__content_items
+                    each item in priceData
+                        a.itemDownload(href=item.href download)
+                            +icon(item.iconType)
+                            .itemDownload__info
+                                .itemDownload__info_name= item.name
+                                .itemDownload__info_params
+                                    .params
+                                        .params__title Тип документа:
+                                        .params__info= item.type
+                                    .params
+                                        .params__title Размер:
+                                        .params__info= item.size
+                            .itemDownload__button: +icon('ic_download')
+
