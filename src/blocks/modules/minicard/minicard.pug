@@ -1,14 +1,15 @@
 mixin minicard(data)
     .minicard
         .minicard__image
-            +picture(data.image)
+            a(href='single-product.html')
+                +picture(data.image)
         .minicard__main
             .minicard__name
-                .minicard__title
-                    a(href='single-product.html')= data.title
-                .minicard__btn
-                    button.btn
-                        +icon('ic_arrow')
+                a(href='single-product.html')
+                    .minicard__title= data.title
+                    .minicard__btn
+                        button.btn
+                            +icon('ic_arrow')
             .minicard__price
                 .minicard__price-current от 120 руб.
                 .minicard__price-old от 140 руб.

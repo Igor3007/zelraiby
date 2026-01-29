@@ -1,10 +1,13 @@
 @use "vars"as vars;
 
 .minicard {
-
+    height: 100%;
     background-color: var(--bg-01);
     border-radius: 24px;
     padding: 12px;
+    &:hover{
+        background-color: var(--bg-02);
+    }
 
     @media screen and (min-width: vars.$w480) {
         padding: 16px;
@@ -29,17 +32,27 @@
         display: flex;
         gap: 12px;
         padding-bottom: 2px;
-
+        & a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
         @media screen and (min-width: vars.$w480) {
             padding-bottom: 16px;
         }
     }
-
     &__title {
-        & a {
-            @include vars.font-18;
-        }
+        flex: 1;
+        color: var(--accent-02);
+        @include vars.font-18;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
+
 
     &__btn {
 

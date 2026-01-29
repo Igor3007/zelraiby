@@ -1,0 +1,16 @@
+
+mixin page404-first
+    section.section404First
+        .container
+            .section404First__block
+                .section404First__block_img: +picture('/img/common/404-img')
+                .section404First__block_title Страница не найдена
+                .section404First__block_text Не волнуйтесь, вы всегда можете вернуться на главную <br> или перейти в каталог за отличными саженцами и растениями из питомника «Зелёный рай»:
+                .section404First__block_btns
+                    a(href='/'): button.btn
+                        +icon('ic_arr_round-left')
+                        span Вернуться на главную
+
+                    a(href='#'): button.btn.btn-dark
+                        +icon('ic_catalog')
+                        span Перейти в каталог
