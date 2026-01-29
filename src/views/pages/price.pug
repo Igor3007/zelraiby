@@ -1,0 +1,25 @@
+extends ../layouts/main
+
+block variables
+    include ../../data/data.pug
+    - const title = "zelrai.by"
+
+
+block main
+
+    include ../../blocks/modules/pricePage/price-download/price-download
+    include ../../blocks/modules/pricePage/price-faq/price-faq
+    include ../../blocks/modules/pricePage/price-form/price-form
+    include ../../blocks/components/breadcrumbs/breadcrumbs
+
+    .container
+        +breadcrumbs([
+            {title: 'Цены'}
+        ])
+    +price-block
+    +price-faq
+    +price-form
+
+
+block scripts
+    script(src="/js/index.js")
