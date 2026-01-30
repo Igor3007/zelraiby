@@ -1,9 +1,13 @@
 mixin card-category(data)
-    .card-category
+     a(href='#').card-category
+        .card-category__title: =data.title
         .card-category__row
-            .card-category__title: a(href='#')=data.title
-            .card-category__desc= data.desc
-        .card-category__icon: +bgimage(data.icon)
+            .card-category__content
+                .card-category__content_desc= data.desc
+                .card-category__content_text Подробнее
+                    +icon('ic_arr_round')
+            .card-category__icon: +icon(data.icon)
+
 
 mixin tile-category
     section.section-tile-category
@@ -12,7 +16,7 @@ mixin tile-category
                 .tile-category__head
                     .tile-category__title: h2 Выберите подходящую вам категорию
                     .tile-category__all
-                        a(href='#') 
+                        a(href='#')
                             span Смотреть все растения
                             +icon('ic_arr_round')
                 .tile-category__list
@@ -20,19 +24,19 @@ mixin tile-category
                         +card-category({
                             title: 'Хвойные растения',
                             desc: 'Ель, кедр, кипарисовик, лиственница и др.',
-                            icon: '/img/icons/cat03.svg',
+                            icon: 'ic_cat003',
                         })
                     .tile-category__item
                         +card-category({
                             title: 'Лиственные деревья',
                             desc: 'Берёза, вяз, дуб, ива, карагана, клён и др.',
-                            icon: '/img/icons/cat01.svg',
+                            icon: 'ic_cat001',
                         })
                     .tile-category__item
                         +card-category({
                             title: 'Декоративные кустарники',
                             desc: 'Азалия, актинидия, барбарис, бересклет и др.',
-                            icon: '/img/icons/cat02.svg',
+                            icon: 'ic_cat002',
                         })
 
                 .tile-category__all

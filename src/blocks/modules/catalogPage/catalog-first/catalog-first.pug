@@ -1,0 +1,25 @@
+include ../../tile-category/tile-category
+
+mixin catalog-first
+    section.sectionCatalogFirst
+        .container
+            .sectionCatalogFirst__h1: h1 Каталог растений
+            .sectionCatalogFirst__content
+                .sectionCatalogFirst__content_item
+                    +card-category({
+                        title: 'Хвойные растения',
+                        desc: 'Ель, кедр, кипарисовик, лиственница и др.',
+                        icon: 'ic_cat003',
+                    })
+                .sectionCatalogFirst__content_item
+                    +card-category({
+                        title: 'Лиственные деревья',
+                        desc: 'Берёза, вяз, дуб, ива, карагана, клён и др.',
+                        icon: 'ic_cat001',
+                    })
+                .sectionCatalogFirst__content_item
+                    +card-category({
+                        title: 'Декоративные кустарники',
+                        desc: 'Азалия, актинидия, барбарис, бересклет и др.',
+                        icon: 'ic_cat002',
+                    })

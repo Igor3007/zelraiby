@@ -1,0 +1,27 @@
+extends ../layouts/main
+
+block variables
+    include ../../data/data.pug
+    - const title = "zelrai.by"
+
+
+block main
+
+    include ../../blocks/modules/catalogPage/catalog-first/catalog-first
+    include ../../blocks/modules/catalogPage/catalog-faq/catalog-faq
+    include ../../blocks/modules/seotext-block/seotext-block
+
+    include ../../blocks/components/breadcrumbs/breadcrumbs
+
+    .container
+        +breadcrumbs([
+            {title: 'Каталог'}
+        ])
+    +catalog-first
+    +catalog-faq
+    +seotext-block
+
+
+
+block scripts
+    script(src="/js/index.js")

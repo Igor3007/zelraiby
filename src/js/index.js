@@ -1,4 +1,5 @@
 import "./common/common.js";
+import "./components/seotext-block.js";
 import { storiesSlider } from "./components/stories-slider.js";
 import { faq } from "./components/faq.js";
 import { teamslider } from "./components/team-slider.js";
