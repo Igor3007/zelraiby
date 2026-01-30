@@ -12,9 +12,35 @@
     background-color: var(--bg-02);
     border-radius: 20px;
     padding: 18px 20px;
-    display: flex;
-    color: var(--accent-02);
     height: 100%;
+    display: block;
+    transition: 0.3s ease;
+    &:hover{
+        background-color: var(--accent-02);
+        .card-category__title {
+            transition: 0.4s all;
+            color: var(--accent-01);
+
+        }
+        .card-category__icon {
+            & svg {
+                fill: var(--accent-01);;
+            }
+        }
+        .card-category__content{
+            &_desc {
+                color: var(--white);
+                transition: 0.4s all;
+            }
+            &_text{
+                height: auto;
+                z-index: 1;
+                opacity: 1;
+                padding-top: 24px;
+                transform: translateY(0);
+            }
+        }
+    }
 
     @media screen and (min-width: vars.$w1440) {
         padding: 32px;
@@ -23,42 +49,108 @@
 
     &__title {
         @include vars.font-h4;
-        padding-bottom: 8px;
+        color: var(--accent-02);
+        transition: 0.3s ease;
+        @media screen and (min-width: vars.$w760) {
+            padding-bottom: 8px;
+        }
     }
 
     &__icon {
-
-        margin-bottom: -20px;
+        position: relative;
+        bottom: -2px;
         align-self: flex-end;
-
+        @media screen and (min-width: vars.$w760) {
+            bottom: -10px;
+        }
         @media screen and (min-width: vars.$w1440) {
-            margin-bottom: -42px;
+            bottom: -31px;
         }
 
-        & span {
-            width: 112px;
-            height: 112px;
-            @include vars.bgimage-contain;
-
+        & svg {
+            transform: scale(1.4);
+            transition: 0.4s all;
+            width: 82px;
+            height: 72px;
+            fill: var(--accent-02);
+            @media screen and (min-width: vars.$w760) {
+                width: 112px;
+                height: 102px;
+                transform: scale(1);
+            }
             @media screen and (min-width: vars.$w1440) {
                 width: 160px;
-                height: 160px;
+                height: 140px;
             }
         }
     }
 
     &__row {
         display: flex;
-        flex-direction: column;
-        width: calc(100% - 120px);
+        flex-direction: row;
+        justify-content: space-between;
         padding-right: 12px;
     }
+    &__content{
+        max-width: 170px;
+        @media screen and (min-width: vars.$w760) {
+            max-width: 190px;
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
 
-    &__desc {
-        margin-top: auto;
-        font-size: 13px;
-        line-height: 158%;
+        &_desc {
+            color: var(--accent-02);
+            margin-top: auto;
+            font-size: 13px;
+            line-height: 158%;
+            transition: 0.4s all;
+        }
+        &_text{
+            @media screen and (min-width: vars.$w760) {
+                display: flex;
+            }
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 0;
+            z-index: -1;
+            opacity: 0;
+            overflow: hidden;
+            padding-top: 0;
+            transform: translateY(16px);
+            position: relative;
+            white-space: nowrap;
+            font: 600 20px/32px var(--font-wix);
+            color: var(--accent-01);
+            display: none;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 5px;
+            max-width: 132px;
+            padding-bottom: 2px;
+            svg{
+                width: 12px;
+                height: 18px;
+                position: relative;
+                z-index: 1;
+                fill: var(--accent-01);;
+
+            }
+            &:before{
+                transition: 0.3s ease;
+                content: "";
+                width: 100%;
+                height: 2px;
+                border-radius: 8px;
+                background-color: var(--border-01);
+                left: 0;
+                bottom: 0;
+                z-index: 0;
+                position: absolute;
+            }
+        }
     }
+
 
 }
 

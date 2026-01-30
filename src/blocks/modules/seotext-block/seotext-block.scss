@@ -1,11 +1,47 @@
 @use 'vars';
 
-.section-seotext-block {
-    padding: 40px;
-}
-
 .seotext-block {
-    &__text .formated-text {
+    padding-bottom: 50px;
+    @media screen and (min-width: vars.$w992) {
+        padding-bottom: 128px;
+    }
+    &.open{
+        .seotext-block__text{
+            max-height: 1600px;
+            @media screen and (min-width: vars.$w760) {
+                max-height: 1100px;
+            }
+            mask-image: none;
+            -webkit-mask-image: none;
+        }
+        .seotext-block__all{
+            & svg {
+                transform: rotateX(180deg);
+            }
+        }
+    }
+    &__title{
+        h3{
+            color: var(--accent-02);
+            @media screen and (max-width: vars.$w760) {
+                font-size: 20px;
+            }
+        }
+        padding-bottom: 16px;
+        @media screen and (min-width: vars.$w760) {
+            padding-bottom: 32px;
+         }
+    }
+    &__text {
+        transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+        max-height: 265px;
+        overflow: hidden;
+        opacity: 1;
+        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        overflow: hidden;
+
+
 
         & h1,
         & h2,
@@ -14,13 +50,18 @@
             color: var(--accent-02);
         }
 
+
         & .col2 {
             @media screen and (min-width: vars.$w576) {
                 column-count: 2;
                 color: var(--accent-02);
             }
 
-
+            @media screen and (max-width: vars.$w760) {
+                p{
+                    margin: 6px 0;
+                }
+            }
             & p:first-child {
                 margin-top: 0;
             }
@@ -28,13 +69,13 @@
     }
 
     &__all{
-
+        transition: 0.4s all;
         display: inline-flex;
         align-items: center;
         gap: 10px;
         color: var(--accent-02);
-        font-weight: 600;
-
+        margin-top: 32px;
+        font: 600 18px/28px var(--font-wix);
         &:hover {
             cursor: pointer;
             text-decoration: underline;
