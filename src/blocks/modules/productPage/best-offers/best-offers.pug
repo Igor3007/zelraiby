@@ -1,0 +1,70 @@
+include ../../minicard/minicard.pug
+
+mixin  best-offers
+
+    -
+        const bestOffers = [
+            {
+                image: '/img/objects/img-0',
+                title: 'Саженцы ели сербской Карел',
+                filterId: '1',
+                id: '1'
+            },
+            {
+                image: '/img/objects/img-1',
+                title: 'Саженцы туи западной Брабант',
+                filterId: '1',
+                id: '2'
+            },
+            {
+                image: '/img/objects/img-2',
+                title: 'Цветы гортензии древовидной Баунти',
+                filterId: '2',
+                id: '13'
+            },
+            {
+                image: '/img/objects/img-3',
+                title: 'Цветы дерена белого Гушольти',
+                filterId: '3',
+                id: '1342'
+            },
+            {
+                image: '/img/objects/img-4',
+                title: 'Саженцы ели обыкн. Купрессена ',
+                filterId: '3',
+                id: '5431'
+            },
+            {
+                image: '/img/objects/img-2',
+                title: 'Цветы дерена белого Гушольти',
+                filterId: '2',
+                id: '6571'
+            },
+
+        ]
+
+    section.sectionBestOffersProduct
+        .container
+            .best-offers
+                .best-offers__title Вам может понравиться
+                .best-offers__tabs
+                    ul
+                        li(data-filter="1").is-active: span Хиты продаж
+                        li(data-filter="2"): span Новинки
+                        li(data-filter="3"): span Акции
+
+                    .best-offers__nav
+                        .best-offers__nav-prev(data-slider-prev="offers"): +icon('ic_arr_round-left')
+                        .best-offers__nav-next(data-slider-next="offers"): +icon('ic_arr_round')
+
+
+
+                .best-offers__slider
+                    .splide(data-slider="offers")
+                        .splide__track
+                            .splide__list.splide__list--offers
+                                each item in bestOffers
+                                    .splide__slide(data-filter-id=item.filterId)
+                                        +minicard(item)
+
+

@@ -1,0 +1,54 @@
+-
+    const slides = [
+        {src: '/img/objects/img-1.jpg', thumb: '/img/objects/img-1.jpg', alt: 'Изображение 1'},
+        {src: '/img/objects/img-2.jpg', thumb: '/img/objects/img-2.jpg', alt: 'Изображение 2'},
+        {src: '/img/objects/img-3.jpg', thumb: '/img/objects/img-3.jpg', alt: 'Изображение 3'},
+        {src: '/img/objects/img-4.jpg', thumb: '/img/objects/img-4.jpg', alt: 'Изображение 4'},
+    ]
+
+mixin product-slider-thumb
+
+    section.sectionProductSlider
+        .containers
+            //.sectionProductSlider__title Slider
+            .sectionProductSlider__thumb
+                //- Секция с галереей
+                section.gallery-section
+                    .container
+                        //- Контейнер для основного слайдера (скрыт)
+                        #gallery-main-container(style="display: none;")
+
+                        //- Основной слайдер (будешь перемещаться в модалку)
+                        .splide(data-slider="gallery-main")
+                            .splide__track
+                                ul.splide__list
+                                    li.splide__slide
+                                        img(src="/img/objects/img-1.jpg" alt="" loading="lazy")
+                                    li.splide__slide
+                                        img(src="/img/objects/img-2.jpg" alt="" loading="lazy")
+                                    //- ... остальные слайды
+
+                        //- Миниатюры
+                        .gallery-thumbs
+                            .splide(data-slider="gallery-thumbs")
+                                .splide__track
+                                    ul.splide__list
+                                        li.splide__slide
+                                            img(src="/img/objects/img-1.jpg" alt="" loading="lazy")
+                                        li.splide__slide
+                                            img(src="/img/objects/img-2.jpg" alt="" loading="lazy")
+                                        //- ... остальные миниатюры
+
+                                //- Навигация для миниатюр
+                                .splide-nav
+                                    button.splide-nav__prev(data-splide-prev="gallery-thumbs")
+                                    button.splide-nav__next(data-splide-next="gallery-thumbs")
+
+                //- Модальное окно
+                .gallery-modal.modal
+                    .modal__overlay
+                    .modal__container
+                        button.modal__close(type="button")
+                            +icon('close')
+                        .modal__body
+                            //- Сюда будет перемещен основной слайдер

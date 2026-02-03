@@ -1,0 +1,226 @@
+@use 'vars'as vars;
+
+.sectionProductSlider {
+
+    @media screen and (min-width: vars.$w1200) {
+        width: 555px;
+    }
+    &__titleDouble {
+        @include vars.font-h2;
+        padding-bottom: 32px;
+        display: block;
+        @media screen and (min-width: vars.$w1200) {
+            display: none;
+        }
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        .sectionProductSlider__title{
+            display: none;
+        }
+    }
+
+    &__wrapper {
+        @media screen and (min-width: vars.$w760) {
+            display: grid;
+            grid-template-columns: 88px 1fr;
+            gap: 20px;
+            align-items: start;
+            overflow: hidden;
+        }
+    }
+
+    &__thumbs {
+        .splide__track {
+            overflow: visible;
+            @media screen and (min-width: vars.$w769) {
+                overflow: hidden;
+            }
+        }
+        @media screen and (min-width: vars.$w1024) {
+            height: 680px;
+            overflow: hidden;
+        }
+
+        .splide__slide {
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            @media screen and (min-width: vars.$w769) {
+                &.is-active {
+                    transition: all 0.3s ease;
+                    border-color: var(--accent-02);
+                    padding: 2px;
+                    & picture, img {
+                        border-radius: 20px;
+                        overflow: hidden;
+                    }
+                }
+
+                &:hover {
+                    transition: all 0.3s ease;
+                    border-color: var(--accent-01);
+                    padding: 2px;
+                    & picture, img {
+                        border-radius: 20px;
+                        overflow: hidden;
+                    }
+                }
+            }
+
+            & picture, img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__main {
+        .splide__slide {
+            overflow: hidden;
+            cursor: zoom-in;
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 32px;
+            border: 8px solid var(--accent);
+            &:after{
+                transition: all 0.3s ease;
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                top: 0;
+                left: 0;
+                z-index: 1;
+                opacity: 0;
+            }
+
+            .open{
+                transition: all 0.3s ease;
+                position: absolute;
+                right: 24px;
+                bottom: 24px;
+                opacity: 0;
+                width: 56px;
+                height: 56px;
+                border-radius: 20px;
+                background: var(--accent-01);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                & svg{
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+            &:hover{
+                transition: all 0.3s ease;
+                &:after{
+                    opacity: 1;
+                }
+                .open{
+                    opacity: 1;
+                    z-index: 2;
+                }
+            }
+            & picture{
+                border: 8px solid var(--accent-02);
+                border-radius: 24px;
+                overflow: hidden;
+            }
+
+            & picture, img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+            }
+        }
+    }
+}
+
+.gallery-modal.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+
+    .modal__container {
+        position: relative;
+        width: 90%;
+        max-width: 1200px;
+        height: 90vh;
+        margin: 5vh auto;
+    }
+
+    .modal__close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all 0.3s ease;
+        width: 56px;
+        height: 56px;
+        border-radius: 20px;
+        background: var(--accent-01);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 11;
+        border: none;
+        cursor: pointer;
+        &:hover {
+            background: var(--accent-03);
+            svg{
+                fill: var(--accent-01);
+            }
+        }
+    }
+
+    .modal__body {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .splide {
+        width: 100%;
+        max-width: 1000px;
+
+        &__slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70vh;
+            & picture{
+
+            }
+            & picture, img {
+                border-radius: 32px;
+                overflow: hidden;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__arrow {
+            &:hover {
+                background: var(--accent-03);
+            }
+        }
+    }
+}

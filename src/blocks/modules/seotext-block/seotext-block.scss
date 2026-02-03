@@ -14,8 +14,10 @@
             mask-image: none;
             -webkit-mask-image: none;
         }
-        .seotext-block__all{
-            & svg {
+    }
+    .seotext-block__all {
+        .icon {
+            &.rotated {
                 transform: rotateX(180deg);
             }
         }

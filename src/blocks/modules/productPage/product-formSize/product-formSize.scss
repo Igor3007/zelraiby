@@ -1,0 +1,104 @@
+@use 'vars'as vars;
+
+
+.sectionFormSize{
+
+    &__title{
+        @include vars.font-h4;
+        color: var(--accent-02);
+    }
+    &__desc{
+        color: var(--accent-04);
+        font: 400 14px/20px var(--font-wix);
+        padding-bottom: 8px;
+        padding-top: 6px;
+        @media screen and (min-width: vars.$w760) {
+            font: 400 16px/24px var(--font-wix);
+            padding-bottom: 16px;
+        }
+    }
+    &__form{
+        .form{
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            &> .btn{
+                margin-top: 12px;
+            }
+            &__items{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background: var(--bg-01);
+                border: 2px solid var(--bg-01);;
+                border-radius: 24px;
+                padding: 10px;
+                transition: all 0.3s ease;
+                &:hover{
+                    background: var(--white);
+                    border-color: var(--border-02);
+                }
+                &_info{
+                    display: flex;
+                    padding-left: 4px;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    flex-direction: column;
+                    gap: 2px;
+                    @media screen and (min-width: vars.$w760) {
+                        flex-direction: row;
+                        align-items: center;
+                        padding-left: 7px;
+                        gap: 12px;
+                    }
+                    &-size{
+                        color: var(--accent-02);
+                        font: 400 13px/16px var(--font-wix);
+                        @media screen and (min-width: vars.$w760) {
+                            font: 600 14px/20px var(--font-wix);
+                        }
+                    }
+                    &-price{
+                        color: var(--accent-03);
+                        font: 600 16px/24px var(--font-wix);
+                        @media screen and (min-width: vars.$w760) {
+                            font: 600 18px/28px var(--font-wix);
+                        }
+                    }
+                }
+                .form__counts{
+                    padding-left: 24px;
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    gap: 8px;
+
+                    .btn{
+                        width: 40px;
+                        height: 40px;
+                        padding: 12px;
+                        min-width: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 12px;
+                        svg {
+                            margin-left: 0!important;
+                        }
+                    }
+                    input{
+                        height: 40px;
+                        padding: 12px;
+                        max-width: 96px;
+                        text-align: center;
+                        border-radius: 12px;
+                        font-weight: 600;
+                        @media screen and (max-width: vars.$w760) {
+                            width: 80px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

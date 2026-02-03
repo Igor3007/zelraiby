@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const seotextBlocks = document.querySelectorAll('.seotext-block');
+    const seotextBlocks = document.querySelectorAll('.openBlock');
 
     seotextBlocks.forEach(block => {
-        const toggleBtn = block.querySelector('.seotext-block__all');
+        const toggleBtn = block.querySelector('.toggleBtn');
         if (!toggleBtn) return;
 
         const toggleText = toggleBtn.querySelector('span');
