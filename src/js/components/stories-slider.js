@@ -17,10 +17,11 @@ export function storiesSlider() {
                         gap: 24,
                     },
                     1024: {
-                        gap: 20
+                        gap: 16
                     },
                     768: {
                         pagination: false,
+                        arrows: false,
                     },
                 },
 

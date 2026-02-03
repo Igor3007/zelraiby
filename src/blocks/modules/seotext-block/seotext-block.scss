@@ -76,8 +76,12 @@
         align-items: center;
         gap: 10px;
         color: var(--accent-02);
-        margin-top: 32px;
-        font: 600 18px/28px var(--font-wix);
+        margin-top: 16px;
+        font: 600 16px/24px var(--font-wix);
+        @media screen and (min-width: vars.$w760) {
+            font: 600 18px/28px var(--font-wix);
+            margin-top: 32px;
+        }
         &:hover {
             cursor: pointer;
             text-decoration: underline;

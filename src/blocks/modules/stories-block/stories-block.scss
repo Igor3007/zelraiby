@@ -78,8 +78,17 @@
 
 .stories-block {
     & .splide {
-        max-width: calc(100% - 140px);
+
         margin: 0 auto;
+        & .splide__track{
+            overflow: visible;
+            @media screen and (min-width: vars.$w769) {
+                overflow: hidden;
+            }
+        }
+        @media screen and (min-width: vars.$w769) {
+            max-width: calc(100% - 140px);
+        }
 
         &__arrow {
             &--prev {
