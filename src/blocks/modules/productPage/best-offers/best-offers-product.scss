@@ -1,0 +1,8 @@
+@use 'vars'as vars;
+
+.sectionBestOffersProduct{
+    padding-bottom: 50px;
+    @media screen and (min-width: vars.$w992) {
+        padding-bottom: 128px;
+    }
+}

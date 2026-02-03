@@ -1,0 +1,52 @@
+-
+    const slides = [
+        {src: '/img/objects/img-1'},
+        {src: '/img/objects/img-2'},
+        {src: '/img/objects/img-3'},
+        {src: '/img/objects/img-4'},
+        {src: '/img/objects/img-3'},
+        {src: '/img/objects/img-4'},
+        {src: '/img/common/w760/img-contactPage'},
+    ]
+
+mixin slider-product
+    .sectionProductSlider
+        .sectionProductSlider__content
+            .sectionProductSlider__wrapper
+                //- Вертикальные миниатюры слева
+                .sectionProductSlider__thumbs
+                    .splide(data-slider="left-vertical-thumbs")
+                        .splide__track
+                            ul.splide__list
+                                each slide, index in slides
+                                    li.splide__slide(class= index === 0 ? 'is-active' : '')
+                                        +picture(slide.src)
+
+                //- Основной слайдер
+                .sectionProductSlider__main
+                    .splide(data-slider="main-slider")
+                        .splide__track
+                            ul.splide__list
+                                each slide in slides
+                                    li.splide__slide
+                                        +picture(slide.src)
+                                        .open: +icon('ic-maximize-dark')
+
+    //- Контейнер для основного слайдера (скрыт, будет перемещаться в модалку)
+    .gallery-main-container(style="display: none;")
+        .splide(data-slider="gallery-modal")
+            .splide__track
+                ul.splide__list
+                    each slide in slides
+                        li.splide__slide
+                            +picture(slide.src)
+
+    //- Модальное окно для просмотра
+    .gallery-modal.modal
+        .modal__overlay
+        .modal__container
+            button.modal__close(type="button" aria-label="Закрыть")
+                +icon('ic_close')
+            .modal__body
+                //- Сюда будет перемещен gallery-modal
+

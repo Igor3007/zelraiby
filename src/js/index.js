@@ -1,10 +1,12 @@
 import "./common/common.js";
-import "./components/seotext-block.js";
+import "./components/showTextBlock.js";
+import "./components/formCounts.js";
 import { storiesSlider } from "./components/stories-slider.js";
 import { faq } from "./components/faq.js";
 import { teamslider } from "./components/team-slider.js";
 import { offersSlider } from "./components/offers-slider.js";
 import { aboutUsSlider } from "./components/aboutUs-slider";
+import {initProductGallery} from "./components/productGallery.js";
 
 
 document.addEventListener('DOMContentLoaded', function (event) {
@@ -24,6 +26,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
     stories slider
     ==================================*/
     offersSlider()
+    /* ==================================
+    thumbSlider
+    ==================================*/
+    initProductGallery()
     /* ==================================
     stories slider
     ==================================*/

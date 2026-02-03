@@ -1,0 +1,50 @@
+mixin product-formSize
+    -
+        const productInfo = [
+            {
+                size: '0,40 ‒ 0,60 м',
+                price: '16,24 руб.',
+            },
+            {
+                size: '0,60 ‒ 0,80 м',
+                price: '64,32 руб.',
+            },
+            {
+                size: '0,80 ‒ 1,00 м',
+                price: '108,48 руб.',
+            },
+            {
+                size: '1,00 ‒ 1,20 м',
+                price: '125,24 руб.',
+            },
+            {
+                size: '1,20 ‒ 1,40 м',
+                price: '177,33 руб.',
+            },
+            {
+                size: '1,40 ‒ 1,60 м',
+                price: '250,77 руб.',
+            },
+        ]
+    section.sectionFormSize
+        .sectionFormSize__title Выберите подходящую высоту (размер):
+        .sectionFormSize__desc Можно выбрать несколько вариантов на ваше усмотрение
+        .sectionFormSize__form
+            form(action='#' method='POST')
+                .form
+                    each item in productInfo
+                        .form__items
+                            .form__items_info
+                                .form__items_info-size= item.size
+                                .form__items_info-price= item.price
+                            .form__counts
+                                .btn.count__down
+                                    +icon('ic-minus-dark')
+                                input(type="number" maxlength="5" name="" value="0" placeholder="0")
+                                .btn.count__up
+                                    +icon('ic-plus-dark')
+
+
+                    button.btn(type="submit")
+                        span Отправить заявку
+

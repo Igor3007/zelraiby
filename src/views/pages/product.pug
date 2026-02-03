@@ -1,0 +1,29 @@
+extends ../layouts/main
+
+block variables
+    include ../../data/data.pug
+    - const title = "zelrai.by"
+
+
+block main
+
+    include ../../blocks/modules/productPage/product-first/product-first
+    include ../../blocks/modules/productPage/best-offers/best-offers
+    include ../../blocks/modules/productPage/product-FAQ/product-FAQ
+    include ../../blocks/components/breadcrumbs/breadcrumbs
+
+
+    .container
+        +breadcrumbs([
+            {title: 'Каталог', href: '/catalog.html'},
+            {title: 'Саженцы хвойных деревьев', href: '/catalog.html'},
+            {title: 'Саженцы можжевельника', href: '/catalog.html'},
+            {title: 'Можжевельник скальный Блю Арроу'},
+    ])
+    +product-first
+    +best-offers
+    +product-FAQ
+
+
+block scripts
+    script(src="/js/index.js")
