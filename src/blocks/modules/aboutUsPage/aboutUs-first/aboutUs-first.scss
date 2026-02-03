@@ -120,6 +120,24 @@
             }@media screen and (min-width: vars.$w992) {
                 width: calc(25% - 16px);
             }
+            &:hover{
+                .item__title{
+                    color: var(--accent-02);
+                    & span {
+                        padding: 0 8px;
+                        &::before {
+                            height: calc(100% - 4px);
+                            background-color: var(--accent-01);
+                            display: block;
+                            position: absolute;
+                            left: 0;
+                            width: calc(100% + 10px);
+                            z-index: -1;
+                            border-radius: 32px;
+                        }
+                    }
+                }
+            }
             &__title{
                 @include vars.font-h3;
                 color: var(--accent-03);
@@ -131,14 +149,15 @@
                 & span {
                     position: relative;
                     z-index: 1;
-
+                    transition: 0.4s ease;
                     &::before {
                         content: '';
                         height: 8px;
                         background-color: rgba(173, 235, 103, 0.30);
                         display: block;
                         position: absolute;
-                        bottom: 5px;
+                        transition: 0.4s ease;
+                        bottom: 2px;
                         left: 0;
                         width: calc(100% + 10px);
                         z-index: -1;

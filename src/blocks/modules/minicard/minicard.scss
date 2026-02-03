@@ -5,6 +5,7 @@
     background-color: var(--bg-01);
     border-radius: 24px;
     padding: 12px;
+    transition: 0.3s ease;
     &:hover{
         background-color: var(--bg-02);
     }
@@ -37,12 +38,27 @@
             align-items: center;
             justify-content: space-between;
             gap: 12px;
+
+            &:hover{
+                .minicard__title{
+                    color: var(--accent-03);
+                }
+                .minicard__btn{
+                    .btn{
+                        background: var(--accent-02);
+                        svg{
+                            fill: var(--accent-01);
+                        }
+                    }
+                }
+            }
         }
         @media screen and (min-width: vars.$w480) {
             padding-bottom: 16px;
         }
     }
     &__title {
+        transition: 0.3s ease;
         flex: 1;
         color: var(--accent-02);
         @include vars.font-18;

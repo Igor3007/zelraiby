@@ -2,6 +2,7 @@ mixin catalog-widjet
     .catalog-widjet
         .catalog-widjet__main
             .catalog-widjet__title Каталог саженцев и растений
+                +icon('ic_arrow_right_big')
             .catalog-widjet__desc Благодаря широкому выбору вы всегда сможете выбрать достойное решение для реализации любой задумки
         .catalog-widjet__image
             +picture('/img/common/img-frame')
@@ -31,7 +32,9 @@ mixin first-block
                         +catalog-widjet
                     .first-block__buttons
                         .first-block__cat
-                            button.btn.btn-dark 
+                            button.btn.btn-dark
                                 span Перейти в каталог
                                 +icon('ic_leaf')
-                        .first-block__call: button.btn Связаться с нами
+                        .first-block__call
+                            button.btn Связаться с нами
+                                +icon('ic_arrow_right_big')
