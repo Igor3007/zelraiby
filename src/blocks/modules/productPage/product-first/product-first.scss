@@ -5,7 +5,7 @@
     padding-top: 8px;
     padding-bottom: 50px;
     @media screen and (min-width: vars.$w760) {
-        padding-top: 28px;
+        padding-top: 32px;
     }
     @media screen and (min-width: vars.$w991) {
         padding-bottom: 100px;
@@ -92,7 +92,7 @@
         @media screen and (min-width: vars.$w1200) {
             display: block;
             max-width: 600px;
-            @include vars.font-h2;
+            font: 700 40px/48px var(--font-wix);
             color: var(--accent-02);
             padding-bottom: 32px;
             padding-top: 22px;

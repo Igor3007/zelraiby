@@ -12,12 +12,10 @@ mixin aboutUs-form
                                 input(type="text" maxlength="25" name="" placeholder="Введите имя")
                             .form__subitem
                                 label Номер телефона:
-                                maxlength="25"
-                                input(type="text" name="" data-maska="+375(##)###-##-##" placeholder="Введите телефон")
+                                input(type="text" maxlength="25" name="" data-maska="+375(##)###-##-##" placeholder="Введите телефон")
                             .form__subitem
                                 label Сообщение или вопрос:
-                                maxlength="500"
-                                textarea(name="" placeholder="Текст сообщения")
+                                textarea(name="" maxlength="500" placeholder="Текст сообщения")
 
                         .form__item_submit
                             button.btn(type="submit")

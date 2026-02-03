@@ -14,6 +14,10 @@
         }
     }
     &__content{
+        @media screen and (min-width: vars.$w1200) {
+            position: sticky;
+            top: 60px;
+        }
         display: flex;
         flex-direction: column;
         .sectionProductSlider__title{

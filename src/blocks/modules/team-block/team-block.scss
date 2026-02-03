@@ -245,7 +245,6 @@
 }
 
 .card-member {
-
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -253,37 +252,39 @@
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     background-image: linear-gradient(0deg, rgba(239, 247, 230, 1) 0%, rgba(239, 247, 230, 0.1) 100%);
-
+    transition: 0.3s ease;
+    &:hover{
+        background-image: linear-gradient(0deg, rgba(228, 245, 208, 1) 0%, rgba(228, 245, 208, .1) 100%);
+        .card-member{
+            &__image {
+                & picture {
+                    transform: translateY(-10px);
+                    &::before {
+                        border: 6px solid rgba(173, 235, 103, 1);
+                    }
+                }
+            }
+        }
+    }
     &__image {
-
         max-width: 89%;
-
         & picture {
-
             @include vars.picture(149%, cover);
-
             overflow: hidden;
-
+            transition: 0.3s ease;
             &::before {
+                transition: 0.3s ease;
                 content: '';
                 @include vars.layer(3);
                 border: 6px solid rgba(173, 235, 103, 0.3);
                 border-radius: 20px;
-
             }
-
             & img {
                 border-radius: 20px;
                 display: block;
                 overflow: hidden;
             }
-
-
         }
-
-
-
-
     }
 
     &__main {

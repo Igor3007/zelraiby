@@ -98,22 +98,41 @@
     }
 
     &__cat {
-        @media screen and (min-width: vars.$w1440) {
+        @media screen and (min-width: vars.$w992) {
             display: none;
         }
     }
 
     &__call {
         & .btn {
-            @media screen and (min-width: vars.$w1200) {
+            .icon{
+                transition: 0.4s ease;
+                display: none;
+            }
+            @media screen and (min-width: vars.$w992) {
                 height: 68px;
                 font-size: 18px;
+                transition: 0.4s ease;
+                .icon{
+                    transition: 0.4s ease;
+                    width: 52px;
+                    height: 52px;
+                }
+                &:hover{
+                    transition: 0.4s ease;
+                    padding: 0.75em 1em 0.85em 1em;
+                    justify-content: space-between;
+                    .icon{
+                        display: block;
+                    }
+                }
             }
 
-            @media screen and (min-width: vars.$w1440) {
+            @media screen and (min-width: vars.$w1200) {
                 height: 104px;
                 font-size: 32px;
                 border-radius: 32px;
+
             }
         }
     }
@@ -161,11 +180,29 @@
     &__item {
         width: 33.33%;
         padding: 12px;
+        &:hover{
+            .first-digits__label{
+                color: var(--accent-02);
+                & span {
+                    padding: 0 8px;
+                    &::before {
+                        height: calc(100% - 4px);
+                        background-color: var(--accent-01);
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        width: calc(100% + 10px);
+                        z-index: -1;
+                        border-radius: 32px;
+                    }
+                }
+            }
+        }
     }
 
     &__label {
         @include vars.font-h3;
-
+        transition: 0.4s ease;
         @media screen and (min-width: vars.$w992) and (max-width: vars.$w1440) {
             font-size: 24px;
         }
@@ -173,14 +210,15 @@
         & span {
             position: relative;
             z-index: 1;
-
+            transition: 0.4s ease;
             &::before {
                 content: '';
                 height: 8px;
                 background-color: rgba(173, 235, 103, 0.30);
                 display: block;
                 position: absolute;
-                bottom: 5px;
+                transition: 0.4s ease;
+                bottom: 2px;
                 left: 0;
                 width: calc(100% + 10px);
                 z-index: -1;
@@ -207,17 +245,37 @@
     padding-left: 32px;
     border-radius: 32px;
     align-items: center;
+    transition: 0.4s ease;
+    &:hover{
+        background: var(--accent-02);
+        .catalog-widjet{
+            &__image{
+                border: 2px solid var(--accent-01);
+            }
+            &__title {
+                color: var(--accent-01);
+                .icon{
+                    opacity: 1;
+                    margin-left: 8px;
+                }
+            }
+
+            &__desc {
+                color: var(--border-02);
+            }
+        }
+    }
 
     &__image {
-
+        transition: 0.4s ease;
+        border-radius: 24px;
+        border: 2px solid var(--accent-02);
+        overflow: hidden;
         width: 34%;
-
-        & img {
-            border-radius: 12px;
-
-            @media screen and (min-width: vars.$w1200) {
-                border-radius: 24px;
-            }
+        & img, picture{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
         }
     }
 
@@ -226,12 +284,22 @@
     }
 
     &__title {
+        transition: 0.4s ease;
         @include vars.font-h4;
         color: var(--accent-02);
-        padding-bottom: 12px
+        padding-bottom: 12px;
+        display: flex;
+        align-items: center;
+        .icon{
+            transition: 0.4s ease;
+            width: 40px;
+            height: 40px;
+            opacity: 0;
+        }
     }
 
     &__desc {
+        transition: 0.4s ease;
         @include vars.font-16;
         color: var(--accent-04);
     }
