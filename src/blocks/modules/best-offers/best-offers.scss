@@ -72,7 +72,7 @@
                 }
 
                 & span {
-                    background-color: var(--accent);
+                    //background-color: var(--accent);
                     display: inline-flex;
                     min-height: 36px;
                     align-items: center;
@@ -82,18 +82,19 @@
                     transition: 0.3s ease;
                     color: var(--text-2);
                     border: 1px solid var(--border-02);
+                    background-color: var(--bg);
 
-                    &:hover {
-                        background-color: var(--bg);
-                    }
+                    //&:hover {
+                    //    background-color: var(--bg);
+                    //}
 
-                    @media screen and (min-width: vars.$w1200) {
+                    @media screen and (min-width: vars.$w992) {
                         padding: 11px 32px 12px 32px;
                         border-radius: 50px;
                         font-size: 16px;
                         letter-spacing: .02em;
                         font-weight: 400;
-                        background-color: var(--bg);
+
 
                         &:hover {
                             background-color: var(--accent);
@@ -133,7 +134,7 @@
         & .splide {
 
 
-            @media screen and (max-width: vars.$w576) {
+            @media screen and (max-width: vars.$w769) {
                 &:not(.is-initialized) {
                     visibility: visible;
 

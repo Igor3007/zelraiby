@@ -17,10 +17,9 @@
     & input {
         position: absolute;
         opacity: 0;
+        bottom: 0;
+        left: 4px;
         cursor: pointer;
-        height: 0;
-        width: 0;
-        appearance: none;
     }
 
     &__text {

@@ -49,7 +49,8 @@ mixin  best-offers
                 .best-offers__title Великолепные растения из питомника
                 .best-offers__tabs
                     ul
-                        li(data-filter="1").is-active: span Хиты продаж
+                        li(data-filter="0").is-active: span Все
+                        li(data-filter="1"): span Хиты продаж
                         li(data-filter="2"): span Новинки
                         li(data-filter="3"): span Акции
 
@@ -57,7 +58,7 @@ mixin  best-offers
                         .best-offers__nav-prev(data-slider-prev="offers"): +icon('ic_arr_round-left')
                         .best-offers__nav-next(data-slider-next="offers"): +icon('ic_arr_round')
 
-                    
+
 
                 .best-offers__slider
                     .splide(data-slider="offers")
@@ -79,4 +80,4 @@ mixin  best-offers
                                 span Выбрать растения
                                 +icon('ic_leaf')
 
-                    
+

@@ -77,6 +77,7 @@ export function initProductGallery() {
                 fixedHeight: 120,
                 focus: 'center',
                 cover: true,
+                wheel: true,
                 breakpoints: {
                     1199: {
                         height: 520,

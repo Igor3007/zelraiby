@@ -4,8 +4,12 @@
 .sectionProductFirst{
     padding-top: 8px;
     padding-bottom: 50px;
+    @media screen and (max-width: vars.$w760) {
+        overflow: hidden;
+    }
     @media screen and (min-width: vars.$w760) {
         padding-top: 32px;
+
     }
     @media screen and (min-width: vars.$w991) {
         padding-bottom: 100px;
@@ -138,7 +142,7 @@
             justify-content: flex-start;
             gap: 12px;
             font: 600 16px/24px var(--font-wix);
-            text-decoration: underline;
+            text-decoration: none;
             padding-top: 8px;
             svg{
                 width: 14px;
@@ -204,16 +208,19 @@
                 z-index: 0;
                 position: absolute;
             }
-            &:hover {
-                padding: 4px 18px;
-                color: var(--accent-03);
-                svg{
-                    fill: var(--accent-03);
-                }
-                &:before{
-                    height: 100%;
+            @media screen and (min-width: vars.$w991) {
+                &:hover {
+                    padding: 4px 18px;
+                    color: var(--accent-03);
+                    svg{
+                        fill: var(--accent-03);
+                    }
+                    &:before{
+                        height: 100%;
+                    }
                 }
             }
+
 
             & svg {
                 width: 14px;

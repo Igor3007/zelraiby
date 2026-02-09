@@ -13,7 +13,7 @@ export function offersSlider() {
         .forEach(slider => {
             slider['Splide'] = new Splide(slider, {
 
-                arrows: false,
+                arrows: true,
                 arrowPath: SLIDER_ARROW_PATH,
                 pagination: false,
                 gap: 12,
@@ -27,12 +27,12 @@ export function offersSlider() {
                 breakpoints: {
                     480: {
                         fixedWidth: '87.9vw',
-                        pagination: true,
+                        pagination: false,
                     },
 
                     640: {
                         fixedWidth: '343px',
-                        pagination: true,
+                        pagination: false,
                     },
 
                 }
@@ -68,7 +68,8 @@ export function offersSlider() {
                 slider: slider['Splide']
             })
 
-            if (document.body.clientWidth > 576) {
+            // slider['splide'].mount();
+            if (document.body.clientWidth > 769) {
                 slider['Splide'].mount();
             }
         })
