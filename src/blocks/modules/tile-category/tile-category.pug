@@ -4,7 +4,8 @@ mixin card-category(data)
         .card-category__row
             .card-category__content
                 .card-category__content_desc= data.desc
-                .card-category__content_text Подробнее
+                .card-category__content_text
+                    span Подробнее
                     +icon('ic_arr_round')
             .card-category__icon: +icon(data.icon)
 
