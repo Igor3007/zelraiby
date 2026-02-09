@@ -1,7 +1,7 @@
 @use 'vars'as vars;
 
 .sectionBestOffers404{
-    padding-bottom: 50px;
+    padding-bottom: 24px;
     @media screen and (min-width: vars.$w992) {
         padding-bottom: 128px;
     }

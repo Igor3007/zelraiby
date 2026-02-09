@@ -97,8 +97,9 @@
 
 
                         &:hover {
-                            background-color: var(--accent);
-                            color: var(--accent-02);
+                            border: 1px solid var(--accent-02);
+                            background-color: var(--accent-02);
+                            color: var(--white);
                         }
                     }
 

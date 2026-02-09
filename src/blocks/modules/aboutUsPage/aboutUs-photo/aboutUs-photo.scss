@@ -5,11 +5,19 @@
     .best-offers__tabs {
         margin-bottom: 12px;
     }
-    //.best-offers__bottom{
-    //    .btn{
-    //        width: 458px;
-    //    }
-    //}
+    .best-offers__bottom{
+        @media screen and (min-width: vars.$w760) and (max-width: vars.$w769) {
+            gap: 18px;
+            &>div{
+                width: calc(50% - 9px);
+                .btn{
+                    width: 100%;
+                }
+            }
+        }
+
+
+    }
     @media screen and (min-width: vars.$w992) {
         .best-offers__bottom{
             .btn{

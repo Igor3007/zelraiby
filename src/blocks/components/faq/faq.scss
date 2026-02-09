@@ -38,6 +38,7 @@
     }
     &:hover{
         transition: 0.4s ease;
+        @media screen and (min-width: vars.$w992) {
         background-color: var(--bg-02);
         .faq-item__title{
             color: var(--accent-03);
@@ -45,7 +46,7 @@
         .faq-item__question{
             //padding: 16px 28px;
             //transition: 0.4s ease;
-            @media screen and (min-width: vars.$w760) {
+            @media screen and (min-width: vars.$w992) {
                 padding: 24px 40px;
             }
         }
@@ -58,6 +59,7 @@
                     fill: var(--accent-01);
                 }
             }
+        }
         }
     }
     &__arrow {
@@ -80,9 +82,13 @@
         transition: 0.4s ease;
         background-color: var(--white);
         border: 2px solid var(--bg-02);
-        &:hover{
-            border-color: var(--accent-02);
+        @media screen and (min-width: vars.$w992) {
+            background-color: var(--white);
+            border: 2px solid var(--bg-02);
+            &:hover {
+                border-color: var(--accent-02);
 
+            }
         }
         & .faq-item {
             &__arrow {

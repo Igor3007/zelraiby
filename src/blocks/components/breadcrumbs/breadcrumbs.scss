@@ -2,7 +2,7 @@
 
 .breadcrumbs {
     display: flex;
-    margin-top: 48px;
+    margin-top: 22px;
     overflow-x: scroll;
     overflow-y: hidden;
     -ms-overflow-style: none;
@@ -10,6 +10,7 @@
     margin-right: -16px;
     @media screen and (min-width: vars.$w769) {
         margin-right: -24px;
+        margin-top: 48px;
     }
     &::-webkit-scrollbar {
         width: 0;
