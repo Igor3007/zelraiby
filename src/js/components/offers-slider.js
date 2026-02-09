@@ -13,7 +13,7 @@ export function offersSlider() {
         .forEach(slider => {
             slider['Splide'] = new Splide(slider, {
 
-                arrows: true,
+                arrows: false,
                 arrowPath: SLIDER_ARROW_PATH,
                 pagination: false,
                 gap: 12,
