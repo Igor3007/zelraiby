@@ -30,15 +30,20 @@
     }
     a{
         border-radius: 8px;
-        &:hover{
-            transition: 0.3s ease;
-            &:before{
-                bottom: 1px!important;
-                height: calc(100% - 2px)!important;
-            }
-            color: var(--accent-03);
-            svg{
-                fill: var(--accent-03);
+        @media screen and (min-width: vars.$w769) {
+            &:hover {
+                transition: 0.3s ease;
+
+                &:before {
+                    bottom: 1px !important;
+                    height: calc(100% - 2px) !important;
+                }
+
+                color: var(--accent-03);
+
+                svg {
+                    fill: var(--accent-03);
+                }
             }
         }
     }

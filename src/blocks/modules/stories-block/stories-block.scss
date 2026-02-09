@@ -54,26 +54,28 @@
     &__title {
         padding-top: 8px;
     }
+    @media screen and (min-width: vars.$w769) {
+        &:hover {
+            & .story-card {
+                &__preview {
 
-    &:hover {
-        & .story-card {
-            &__preview {
+                    &::before {
+                        filter: brightness(1);
+                    }
 
-                &::before {
-                    filter: brightness(1);
+                    & img {
+                        border-color: var(--accent-02);
+                    }
                 }
 
-                & img {
-                    border-color: var(--accent-02);
+                &__title {
+                    transform: translateY(4px);
+                    color: var(--accent-03);
                 }
-            }
-
-            &__title {
-                transform: translateY(4px);
-                color: var(--accent-03);
             }
         }
     }
+
 }
 
 .stories-block {

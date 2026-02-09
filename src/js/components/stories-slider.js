@@ -10,18 +10,27 @@ export function storiesSlider() {
             slider['splide'] = new Splide(slider, {
                 fixedWidth: 112,
                 perMove: 1,
+                perPage: 10,
                 gap: 16,
                 pagination: false,
                 breakpoints: {
                     1440: {
                         gap: 24,
+                        perPage: 9,
+                    },
+                    1224: {
+                        perPage: 7,
                     },
                     1024: {
-                        gap: 16
+                        gap: 16,
+                        perPage: 6,
                     },
                     768: {
                         pagination: false,
                         arrows: false,
+                    },
+                    584: {
+                        perPage: 3,
                     },
                 },
 
