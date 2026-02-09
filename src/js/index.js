@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     ==================================*/
     aboutUsSlider()
     /* ==================================
-   FAQ()
+    FAQ()
     ==================================*/
     faq()
 

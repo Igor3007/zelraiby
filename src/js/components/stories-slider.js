@@ -1,7 +1,6 @@
 import Splide from "@splidejs/splide";
-import {
-    getTopArrowButtons
-} from "./splide_ext";
+import { getTopArrowButtons } from "./splide_ext";
+ 
 
 export function storiesSlider() {
 
