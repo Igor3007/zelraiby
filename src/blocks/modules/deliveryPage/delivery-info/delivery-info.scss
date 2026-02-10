@@ -1,0 +1,69 @@
+@use 'vars'as vars;
+
+.sectionDeliveryInfo{
+    @media screen and (min-width: vars.$w991) {
+        padding-bottom: 15px;
+    }
+    &__box{
+        background: var(--bg-01);
+        border-radius: 32px;
+        padding: 24px;
+        @media screen and (min-width: vars.$w991) {
+            padding: 40px;
+        }
+        .sectionAboutUsFirst__items{
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-top: 36px;
+        }
+    }
+    &__title{
+        @include vars.font-h2;
+        padding-bottom: 12px;
+        @media screen and (min-width: vars.$w760) {
+            padding-bottom: 28px;
+        }
+    }
+    &__content{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+        gap: 12px;
+        @media screen and (min-width: vars.$w760) {
+            gap: 24px;
+        }
+        @media screen and (min-width: vars.$w1200) {
+            flex-direction: row;
+            gap: 32px;
+        }
+
+        &_text{
+            flex: 1;
+            .textItem{
+                position: relative;
+                padding-left: 30px;
+                svg{
+                    fill: var(--accent-03);
+                    position: absolute;
+                    left: -1px;
+                    top: 8px;
+                }
+                p{
+                    padding: 7px 0;
+                    margin: 0;
+                    font: 400 14px/22px var(--font-wix);
+                    @media screen and (min-width: vars.$w760) {
+                        font: 400 16px/24px var(--font-wix);
+                    }
+                    b{
+                        font-weight: bold;
+                        padding-right: 3px;
+                        //display: inline-block;
+                    }
+                }
+            }
+        }
+        &_slider{}
+    }
+}

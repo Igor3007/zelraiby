@@ -1,0 +1,22 @@
+mixin delivery-form
+    .sectionDeliveryForm
+        .form-order
+            .form-order__title Оставьте заявку, мы перезвоним!
+            .form-order__form
+                form(action='#' method='POST')
+                    .form
+                        .form__item
+                            .form__subitem
+                                input(type="text" maxlength="25" name="" required placeholder="Ваше имя")
+                            .form__subitem
+                                input(type="text" maxlength="25" data-maska="+375(##)###-##-##" name="" required placeholder="Номер телефона")
+                            .form__subitem
+                                textarea(name=""  maxlength="500" placeholder="Сообщение (необязательно)")
+                            .form__subitem.form__subitem--submit
+                                button.btn(type="submit")
+                                    span Отправить заявку
+                                    +icon('ic_arrow-min')
+                        .form__item
+                            .form__subitem
+                                .form__note
+                                    +checkbox('Нажимая на кнопку «Отправить заявку», я соглашаюсь с <a href="/policy.html">Политикой конфиденциальности</a>', 'policy', {required: true})
