@@ -71,9 +71,11 @@ export function initProductGallery() {
                 isNavigation: true,
                 fixedWidth: 88,
                 fixedHeight: 120,
-                focus: 'center',
+                focus: 'top',
                 cover: true,
                 wheel: true,
+                snap: false,
+                wheelSleep: 600,
                 breakpoints: {
                     1199: {
                         height: 520,

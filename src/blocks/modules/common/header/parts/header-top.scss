@@ -150,8 +150,8 @@
 }
 
 .ic-color-max {
-    & .bgimage:hover {
-        opacity: .5!important;
+    & .bgimage:not(:hover) {
+        background-color: #9a2fde!important;
     }
 }
 

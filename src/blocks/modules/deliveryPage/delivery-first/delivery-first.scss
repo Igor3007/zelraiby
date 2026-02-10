@@ -56,9 +56,6 @@
                 }
             }
         }
-        //@media screen and (min-width: vars.$w760) {
-        //    padding: 56px;
-        //}
     }
     &__title{
         & h1 {
@@ -87,18 +84,15 @@
         justify-content: flex-start;
         flex-direction: column;
         gap: 14px;
-        & .ic-color-tg .bgimage {
-            border-radius: 50%;
-        }
         & .bgimage {
             @include vars.bgimage-contain;
             width: 32px;
             min-width: 32px;
             height: 32px;
+            border-radius: 50%;
             background-color: var(--accent-02);
             transition: 0.4s ease;
         }
-        //padding-bottom: 24px;
         @media screen and (max-width: vars.$w991) {
             .btn{
                 width: 100%;
@@ -107,8 +101,6 @@
         @media screen and (min-width: vars.$w992) {
             flex-direction: row;
             align-items: center;
-            //padding-bottom: 48px;
-            //gap: 24px;
         }
         .message{
             display: flex;
@@ -116,7 +108,6 @@
             gap: 12px;
         }
         .text{
-            //font: 600 16px/24px var(--font-wix);
             @include vars.font-h4;
             color: var(--white);
             gap: 12px;
