@@ -1,6 +1,6 @@
 import Splide from "@splidejs/splide";
 import { getTopArrowButtons } from "./splide_ext";
- 
+import { StoriesViewer } from "./storiesViewer";
 
 export function storiesSlider() {
 
@@ -46,6 +46,16 @@ export function storiesSlider() {
             })
 
             slider['splide'].mount();
+
+            /* =================================
+            init StoriesViewer
+            =================================*/
+
+            new StoriesViewer({
+                container: slider
+            })
         })
+
+       
     }
-}
+}  

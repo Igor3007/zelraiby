@@ -51,11 +51,8 @@
     ]
 
 
-
-
-
 mixin story-card(data)
-    .story-card
+    .story-card(data-video="/static/movie.mp4")
         .story-card__preview
             +picture(data.image)
         .story-card__title=data.text
