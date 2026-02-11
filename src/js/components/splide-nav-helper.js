@@ -1,7 +1,5 @@
 export class SplideNavHelper {
-
     constructor(params) {
-
         this.params = params
         this.slider = params.slider
         this.btn = params.btn
@@ -16,7 +14,10 @@ export class SplideNavHelper {
     init() {
         this.prevButton = this.container.querySelector('[data-slider-prev="' + this.btn + '"]')
         this.nextButton = this.container.querySelector('[data-slider-next="' + this.btn + '"]')
-        this.prevButton.setAttribute('disabled', 'disabled')
+
+        if (this.prevButton) {
+            this.prevButton.setAttribute('disabled', 'disabled')
+        }
 
         this.addEvent()
     }
@@ -44,25 +45,34 @@ export class SplideNavHelper {
     }
 
     addEvent() {
-        this.prevButton.addEventListener('click', e => {
-            this.slider.go('<')
-        })
+        if (this.prevButton) {
+            this.prevButton.addEventListener('click', e => {
+                this.slider.go('<')
+            })
+        }
 
-        this.nextButton.addEventListener('click', e => {
-            this.slider.go('>')
-        })
-
-
+        if (this.nextButton) {
+            this.nextButton.addEventListener('click', e => {
+                this.slider.go('>')
+            })
+        }
 
         this.slider.on('mounted refresh', () => {
+            if (this.nextButton) {
+                this.nextButton.removeAttribute('disabled')
+            }
 
-            this.nextButton.removeAttribute('disabled')
             let is_overflow = !this.slider.root.classList.contains('is-overflow')
-            this.nextButton.classList.toggle('is-hide', is_overflow)
-            this.prevButton.classList.toggle('is-hide', is_overflow)
+
+            if (this.nextButton) {
+                this.nextButton.classList.toggle('is-hide', is_overflow)
+            }
+
+            if (this.prevButton) {
+                this.prevButton.classList.toggle('is-hide', is_overflow)
+            }
 
             setTimeout(() => {
-
                 if (this.container.querySelector('.splide-counter')) {
                     //скрыть счетчик если нету стрелок
                     this.container.querySelector('.splide-counter').classList.toggle('is-hide', is_overflow)
@@ -74,36 +84,45 @@ export class SplideNavHelper {
                 }
 
             }, 100)
-
-            
         })
 
-
         this.slider.on('move', (newIndex, prevIndex, destIndex) => {
+            if (this.nextButton) {
+                this.nextButton.removeAttribute('disabled')
+            }
 
-            this.nextButton.removeAttribute('disabled')
-            this.prevButton.removeAttribute('disabled')
+            if (this.prevButton) {
+                this.prevButton.removeAttribute('disabled')
+            }
 
             if (this.slider.options.type == 'loop') {
                 return false
             }
 
-            if (destIndex == 0) {
-                this.prevButton.setAttribute('disabled', 'disabled')
+            // Используем правильное свойство для общего количества слайдов
+            const totalSlides = this.slider.Components.Elements.slides.length;
+            const perPage = this.slider.options.perPage || 1;
+            const isEnd = (destIndex + perPage) >= totalSlides;
+            const isStart = destIndex === 0;
+
+            if (this.prevButton) {
+                if (isStart) {
+                    this.prevButton.setAttribute('disabled', 'disabled')
+                } else {
+                    this.prevButton.removeAttribute('disabled')
+                }
             }
 
-            let slideTotal = (destIndex + this.slider.options.perPage)
-
-            if (this.slider.options.offsetPagination) {
-                slideTotal = slideTotal + this.slider.options.offsetPagination
-            }
-
-            if (this.slider.length == slideTotal && newIndex != 0) {
-                this.nextButton.setAttribute('disabled', 'disabled')
+            if (this.nextButton) {
+                if (isEnd) {
+                    this.nextButton.setAttribute('disabled', 'disabled')
+                } else {
+                    this.nextButton.removeAttribute('disabled')
+                }
             }
 
             if (typeof this.params.onChange != 'undefined') {
-                this.params.onChange(destIndex + 1, this.slider.length)
+                this.params.onChange(destIndex + 1, totalSlides)
             }
 
             if(this.dynamicMode) {
@@ -112,7 +131,6 @@ export class SplideNavHelper {
             }
         })
     }
-
 }
 
 export const SLIDER_ARROW_PATH = 'M16.204 12.396a1 1 0 011.4-.192l5.618 4.267a4.391 4.391 0 010 7.058l-5.617 4.267a1 1 0 11-1.21-1.592l5.617-4.268c1.317-1 1.317-2.872 0-3.872l-5.616-4.268a1 1 0 01-.192-1.4z';

@@ -1,0 +1,163 @@
+@use 'vars'as vars;
+
+.sectionDeliveryFirst {
+    &__block{
+        background-image: url(/img/common/img-optom-first.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 32px;
+        border: 8px solid var(--accent-01);
+        padding: 16px;
+        margin-top: 48px;
+        margin-bottom: 48px;
+        min-height: 690px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        @media screen and (min-width: vars.$w1024) {
+            flex-direction: row;
+        }
+        &_left{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        @media screen and (min-width: vars.$w991) {
+            padding: 32px;
+        }
+        @media screen and (min-width: vars.$w1200) {
+            padding: 38px 46px;
+        }
+        .breadcrumbs{
+            margin: 0;
+            padding: 0 0 4px;
+            li{
+                a{
+                    color: var(--accent-01);
+                    &:hover{
+                        svg{
+                            fill: var(--accent-01);
+                        }
+                    }
+                    &:before{
+                        opacity: .4;
+                        background-color: var(--accent-01);
+                    }
+                }
+                color: var(--accent-01);
+                svg{
+                    fill: var(--accent-01);
+                }
+                &:last-child {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+    &__title{
+        & h1 {
+            @include vars.font-h1;
+            color: var(--white);
+            margin-top: 0;
+            margin-bottom: 10px;
+            @media screen and (min-width: vars.$w760) {
+                font-size: 48px;
+            }
+        }
+    }
+    &__text{
+        color: var(--white);
+        font: 400 14px/24px var(--font-wix);
+        padding-bottom: 18px;
+        @media screen and (min-width: vars.$w769) {
+            padding-bottom: 32px;
+            font: 400 16px/24px var(--font-wix);
+        }
+    }
+
+    &__info{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        & .bgimage {
+            @include vars.bgimage-contain;
+            width: 32px;
+            min-width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--accent-02);
+            transition: 0.4s ease;
+        }
+        @media screen and (max-width: vars.$w991) {
+            .btn{
+                width: 100%;
+            }
+        }
+        @media screen and (min-width: vars.$w992) {
+            flex-direction: row;
+            align-items: center;
+        }
+        .message{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .text{
+            @include vars.font-h4;
+            color: var(--white);
+            gap: 12px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            a{
+                @include vars.font-h4;
+                color: var(--accent-01);
+                &:hover{
+                    color: var(--accent-03);
+                }
+            }
+        }
+    }
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        .item{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            padding: 16px;
+            gap: 12px;
+            backdrop-filter: blur(24px);
+            background: rgba(174, 235, 103, 0.08);
+            border-radius: 24px;
+            @media screen and (min-width: vars.$w760) {
+                width: calc(50% - 6px);
+                padding: 24px 32px;
+                gap: 24px;
+                &:last-child{
+                    width: 100%;
+                }
+            }
+            svg{
+                width: 44px;
+                height: 44px;
+            }
+            &__text{
+                flex: 1;
+                font: 600 14px/22px var(--font-wix);
+                color: var(--white);
+                @media screen and (min-width: vars.$w760) {
+                    font: 600 16px/24px var(--font-wix);
+                }
+            }
+        }
+    }
+}

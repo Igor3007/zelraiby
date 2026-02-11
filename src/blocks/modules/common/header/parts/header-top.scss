@@ -149,6 +149,12 @@
     }
 }
 
+.ic-color-max {
+    & .bgimage:not(:hover) {
+        background-color: #9a2fde!important;
+    }
+}
+
 .ic-color-vb {
     & .bgimage:not(:hover) {
         background-color: #7360F2!important;

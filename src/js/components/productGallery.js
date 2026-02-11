@@ -39,19 +39,15 @@ export function initProductGallery() {
                 pagination: false,
                 gap: 6,
                 start: 0,
-                fixedWidth: '343px',
                 perMove: 1,
                 flickMaxPages: 1,
                 flickPower: 100,
                 offsetPagination: 2,
                 omitEnd: true,
                 focus: 'center',
-                breakpoints: {
-                    640: {
-                        height: 400,
-                        fixedWidth: '296px',
-                    }
-                }
+                height: '400px',
+                width: '296px',
+
             }).mount();
         } else {
             verticalThumbsEl.style.display = 'block';
@@ -75,9 +71,11 @@ export function initProductGallery() {
                 isNavigation: true,
                 fixedWidth: 88,
                 fixedHeight: 120,
-                focus: 'center',
+                focus: 'top',
                 cover: true,
                 wheel: true,
+                snap: false,
+                wheelSleep: 600,
                 breakpoints: {
                     1199: {
                         height: 520,

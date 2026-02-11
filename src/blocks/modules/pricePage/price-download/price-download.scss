@@ -40,29 +40,43 @@
                 position: relative;
                 gap: 12px;
                 transition: 0.4s ease;
+                @media screen and (min-width: vars.$w769) {
+                    &:hover {
+                        padding: 16px 80px 16px 28px;
+                        background: var(--accent-02);
 
-                &:hover{
-                    padding: 16px 80px 16px 28px;
-                    background: var(--accent-02);
-                    .itemDownload__info{
-                        &_name{
-                            transition: 0.4s ease;
-                            color: var(--accent-01);
-                        }
-                        &_params{
-                            .params{
+                        .itemDownload__info {
+                            &_name {
                                 transition: 0.4s ease;
-                                color: var(--border-02);
+                                color: var(--accent-01);
+                            }
+
+                            &_params {
+                                .params {
+                                    transition: 0.4s ease;
+                                    color: var(--border-02);
+                                }
                             }
                         }
-                    }
-                    .itemDownload__button{
-                        right: 28px;
-                        transition: 0.4s ease;
-                        background: var(--accent-01);
-                        svg{
+
+                        .itemDownload__button {
+                            right: 28px;
                             transition: 0.4s ease;
-                            fill: var(--accent-02);
+                            background: var(--accent-01);
+
+                            &:hover {
+                                background: var(--accent-02);
+
+                                svg {
+                                    transition: 0.4s ease;
+                                    fill: var(--accent-01);
+                                }
+                            }
+
+                            svg {
+                                transition: 0.4s ease;
+                                fill: var(--accent-02);
+                            }
                         }
                     }
                 }

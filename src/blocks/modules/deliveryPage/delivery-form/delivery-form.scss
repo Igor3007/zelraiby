@@ -1,0 +1,58 @@
+@use 'vars'as vars;
+
+.sectionDeliveryForm{
+
+    @media screen and (min-width: vars.$w1024) {
+        width: 424px;
+    }
+
+    .form-order{
+        background: var(--white);
+        height: 100%;
+        padding: 24px 12px;
+        @media screen and (min-width: vars.$w760) {
+            padding: 24px 24px;
+        }
+        @media screen and (min-width: vars.$w769) {
+            padding: 36px 26px;
+        }
+        &__title {
+            font-size: 24px;
+            padding-bottom: 12px;
+            @media screen and (min-width: vars.$w769) {
+                padding-bottom: 32px;
+            }
+            @media screen and (min-width: vars.$w760) {
+                font-size: 32px;
+            }
+        }
+        .form__item{
+            margin: 0;
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            .form__subitem{
+                width: 100%;
+                max-width: 100%;
+                padding: 6px 0;
+                .form__note {
+                    padding-top: 6px;
+                }
+                @media screen and (max-width: vars.$w760) {
+                    margin-bottom: 0;
+                    input, textarea{
+                        font-size: 15px;
+                    }
+                }
+                textarea {
+                    min-height: 48px;
+                    margin-bottom: 0;
+                    @media screen and (min-width: vars.$w760) {
+                        min-height: 112px;
+                        margin-bottom: 18px;
+                    }
+                }
+            }
+        }
+    }
+}

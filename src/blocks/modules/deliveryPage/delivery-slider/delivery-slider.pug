@@ -1,0 +1,59 @@
+-
+    const slides = [
+        {src: '/img/delivery/greencompo-case-09'},
+        {src: '/img/delivery/greencompo-case-02'},
+        {src: '/img/delivery/greencompo-case-03'},
+        {src: '/img/delivery/greencompo-case-04'},
+        {src: '/img/delivery/greencompo-case-05'},
+        {src: '/img/delivery/greencompo-case-06'},
+        {src: '/img/delivery/greencompo-case-07'},
+        {src: '/img/delivery/greencompo-case-08'},
+        {src: '/img/delivery/greencompo-case-01'},
+        {src: '/img/delivery/greencompo-case-10'},
+        {src: '/img/delivery/greencompo-case-11'},
+        {src: '/img/delivery/greencompo-case-12'},
+        {src: '/img/delivery/greencompo-case-13'},
+
+    ]
+
+mixin delivery-slider
+    .sectionDeliverySlider
+        .sectionProductSlider__wrapper
+
+            //- Основной слайдер
+            .sectionProductSlider__main
+                .splide(data-slider="main-slider")
+                    .splide__track
+                        ul.splide__list
+                            each slide in slides
+                                li.splide__slide
+                                    +picture(slide.src)
+                                    .open: +icon('ic-maximize-dark')
+
+            //- Вертикальные миниатюры справа
+            .sectionProductSlider__thumbs
+                .splide(data-slider="left-vertical-thumbs")
+                    .splide__track
+                        ul.splide__list
+                            each slide, index in slides
+                                li.splide__slide(class= index === 0 ? 'is-active' : '')
+                                    +picture(slide.src)
+
+
+    //- Контейнер для основного слайдера (скрыт, будет перемещаться в модалку)
+    .gallery-main-container(style="display: none;")
+        .splide(data-slider="gallery-modal")
+            .splide__track
+                ul.splide__list
+                    each slide in slides
+                        li.splide__slide
+                            +picture(slide.src)
+
+    //- Модальное окно для просмотра
+    .gallery-modal.modal
+        .modal__overlay
+        .modal__container
+            button.modal__close(type="button" aria-label="Закрыть")
+                +icon('ic_close')
+            .modal__body
+                //- Сюда будет перемещен gallery-modal

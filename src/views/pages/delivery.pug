@@ -1,0 +1,26 @@
+extends ../layouts/main
+
+block variables
+    include ../../data/data.pug
+    - const title = "zelrai.by"
+
+
+block main
+
+    include ../../blocks/modules/deliveryPage/delivery-first/delivery-first
+    include ../../blocks/modules/deliveryPage/delivery-info/delivery-info
+    include ../../blocks/modules/about-company/about-company
+    include ../../blocks/modules/team-block/team-block
+    include ../../blocks/modules/form-order/form-order
+    include ../../blocks/modules/seotext-block/seotext-block
+
+    +delivery-first
+    +delivery-info
+    +about-company
+    +team-block
+    +form-order
+    +seotext-block
+
+
+block scripts
+    script(src="/js/index.js")

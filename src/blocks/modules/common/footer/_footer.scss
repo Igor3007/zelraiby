@@ -108,7 +108,10 @@ footer {
 
     &__contacts {
         border-bottom: 1px solid var(--border-02);
-        padding-bottom: 46px;
+        padding-bottom: 24px;
+        @media screen and (min-width: vars.$w992) {
+            padding-bottom: 46px;
+        }
 
         @media screen and (min-width: vars.$w760) and (max-width: vars.$w1200) {
             & .footer {
@@ -164,10 +167,12 @@ footer {
     }
 
     &__msgr {
-        margin-top: 24px;
         display: flex;
         align-items: center;
         margin-left: auto;
+        @media screen and (min-width: vars.$w992) {
+            margin-top: 24px;
+        }
 
         @media screen and (min-width: vars.$w576) {
             margin-left: 0;
@@ -231,6 +236,11 @@ footer {
     &__develop {
         width: calc(50% - 6px);
         text-align: right;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
 
         @media screen and (min-width: vars.$w992) {
             width: calc(33.33% - 8px);
@@ -239,7 +249,7 @@ footer {
         & a {
             text-decoration: underline;
             color: var(--accent-03);
-
+            padding-left: 4px;
             &:hover {
                 color: var(--accent-04);
             }

@@ -1,0 +1,18 @@
+@use 'vars'as vars;
+
+.sectionDeliverySlider{
+    @media screen and (min-width: vars.$w1200) {
+        width: 555px;
+        position: sticky;
+        top: 60px;
+    }
+    .sectionProductSlider__wrapper {
+        @media screen and (min-width: vars.$w760) {
+            display: grid;
+            grid-template-columns: 1fr 88px;
+            gap: 20px;
+            align-items: start;
+            overflow: hidden;
+        }
+    }
+}

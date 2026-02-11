@@ -16,7 +16,7 @@ mixin price-form
                                     input(type="text" maxlength="25" data-maska="+375(##)###-##-##" name="" required placeholder="Введите телефон")
                                 .form__subitem
                                     label Сообщение (необязательно):
-                                    input(type="text" maxlength="160" name="" placeholder="Текст сообщения")
+                                    textarea(name="" maxlength="500" placeholder="Текст сообщения")
                                 .form__subitem.form__subitem--submit
                                     button.btn(type="submit")
                                         span Отправить заявку
