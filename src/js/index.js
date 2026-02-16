@@ -1,6 +1,11 @@
 import "./common/common.js";
 import "./components/showTextBlock.js";
 import "./components/formCounts.js";
+import "./components/customSelect.js";
+import "./components/navigationMenu.js";
+import "./components/rangeSlider.js";
+import "./components/contentNavigation";
+import "./components/sectionCategoryInfo";
 import { storiesSlider } from "./components/stories-slider.js";
 import { faq } from "./components/faq.js";
 import { teamslider } from "./components/team-slider.js";

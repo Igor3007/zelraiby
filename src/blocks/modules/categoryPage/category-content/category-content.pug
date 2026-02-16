@@ -1,0 +1,111 @@
+include ../../categoryPage/contentNavigation/contentNavigation
+include ../../categoryPage/contentSort/contentSort
+include ../../stories-block/stories-block
+include ../../minicard/minicard
+include ../../../components/pagination/pagination
+
+-
+    const bestOffers = [
+        {
+            image: '/img/objects/img-0',
+            title: 'Саженцы ели сербской Карел',
+        },
+        {
+            image: '/img/objects/img-1',
+            title: 'Саженцы туи западной Брабант',
+        },
+        {
+            image: '/img/objects/img-2',
+            title: 'Цветы гортензии древовидной Баунти',
+        },
+        {
+            image: '/img/objects/img-3',
+            title: 'Цветы дерена белого Гушольти',
+        },
+        {
+            image: '/img/objects/img-4',
+            title: 'Саженцы ели обыкн. Купрессена ',
+        },
+        {
+            image: '/img/objects/img-2',
+            title: 'Цветы дерена белого Гушольти',
+        },
+        {
+            image: '/img/objects/img-2',
+            title: 'Цветы дерена белого Гушольти',
+        },
+        {
+            image: '/img/objects/img-3',
+            title: 'Цветы дерена белого Гушольти',
+        },
+        {
+            image: '/img/objects/img-2',
+            title: 'Цветы дерена белого Гушольти',
+        },
+        {
+            image: '/img/objects/img-4',
+            title: 'Цветы дерена белого Гушольти',
+        },
+        {
+            image: '/img/objects/img-2',
+            title: 'Цветы дерена белого Гушольти',
+        },
+        {
+            image: '/img/objects/img-1',
+            title: 'Цветы дерена белого Гушольти',
+        },
+        {
+            image: '/img/objects/img-2',
+            title: 'Цветы дерена белого Гушольти',
+        },
+        {
+            image: '/img/objects/img-4',
+            title: 'Цветы дерена белого Гушольти',
+        },
+        {
+            image: '/img/objects/img-1',
+            title: 'Цветы дерена белого Гушольти',
+        },
+        {
+            image: '/img/objects/img-2',
+            title: 'Цветы дерена белого Гушольти',
+        },
+        {
+            image: '/img/objects/img-4',
+            title: 'Цветы дерена белого Гушольти',
+        },
+        {
+            image: '/img/objects/img-1',
+            title: 'Цветы дерена белого Гушольти',
+        },
+        {
+            image: '/img/objects/img-2',
+            title: 'Цветы дерена белого Гушольти',
+        },
+        {
+            image: '/img/objects/img-4',
+            title: 'Цветы дерена белого Гушольти',
+        },
+        {
+            image: '/img/objects/img-1',
+            title: 'Цветы дерена белого Гушольти',
+        },
+    ]
+
+mixin category-content
+    section.sectionCategoryContent
+        .container
+            +contentNavigation
+            .contentMain
+                .contentMainSort
+                    .contentMainSort__number Найдено:
+                        span 144 товара
+                    +contentSort
+                .contentMainItems
+                    .blockSlider
+                        +stories-block
+                    each item in bestOffers
+                        +minicard(item)
+
+                +pagination-showmore
+

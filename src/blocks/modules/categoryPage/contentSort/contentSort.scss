@@ -1,0 +1,136 @@
+@use 'vars'as vars;
+.contentSort{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    @media (max-width: 1025px) {
+        padding-bottom: 16px;
+    }
+    &__title{
+        font: 400 14px/20px var(--font-wix);
+        color: var(--accent-04);
+        padding-bottom: 12px;
+        @media (min-width: 1026px) {
+            font: 400 16px/24px var(--font-wix);
+            padding-bottom: 0;
+        }
+    }
+    &__select{
+        /* Десктоп */
+        @media (min-width: 1026px) {
+            position: relative;
+            width: 336px;
+            .custom-select-trigger {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                height: 56px;
+                padding: 16px 24px;
+                background: var(--bg-02);
+                border: 2px solid var(--bg-02);
+                border-radius: 20px;
+                font: 600 16px/24px var(--font-wix);
+                color: var(--accent-02);
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+                z-index: 2;
+                &:before{
+                    content: '';
+                    position: absolute;
+                    top: calc(50% - 4px);
+                    right: 24px;
+                    width: 14px;
+                    height: 8px;
+                    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE0IDgiICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTMuNjU0MyAwLjE4MTA4NEMxNC4wMzkxIDAuNDc4MDQ3IDE0LjExNCAxLjAzNTAxIDEzLjgyMTcgMS40MjU5M0wxMC4wODgzIDYuNDE5MjFDOC41MTIwNiA4LjUyNjkzIDUuNDg3OTQgOC41MjY5MyAzLjkxMTcxIDYuNDE5MjFMMC4xNzgyNTUgMS40MjU5M0MtMC4xMTQwMTkgMS4wMzUwMSAtMC4wMzkwNTIgMC40NzgwNDYgMC4zNDU3NDQgMC4xODEwODNDMC43MzA1NjEgLTAuMTE1ODI4IDEuMjc4ODIgLTAuMDM5NjcxMyAxLjU3MTE1IDAuMzUxMjNMNS4zMDU0NiA1LjM0MzY0QzYuMTgxMzQgNi41MTQ4MSA3LjgxODY2IDYuNTE0ODEgOC42OTQ1NCA1LjM0MzY0TDEyLjQyODkgMC4zNTEyM0MxMi43MjEyIC0wLjAzOTY3MDUgMTMuMjY5NCAtMC4xMTU4MjcgMTMuNjU0MyAwLjE4MTA4NFoiIC8+Cjwvc3ZnPg==");
+                    background-repeat: no-repeat;
+                }
+
+                &:hover{
+                    border: 2px solid var(--border-02);
+                }
+
+                &.active {
+                    background: var(--white);
+                    border-color: var(--accent-02);
+                    border-radius: 20px 20px 0 0;
+                    transition: all 0.3s ease;
+                    &:before {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            ul {
+                position: absolute;
+                top: 80%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                border: 2px solid var(--accent-02);
+                border-top: 0;
+                border-radius: 0 0 20px 20px;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                height: 0;
+                opacity: 0;
+                z-index: 1;
+                transition: all 0.3s ease;
+                overflow: hidden;
+                &.show {
+                    top: 100%;
+                    transition: all 0.3s ease;
+                    height: max-content;
+                    opacity: 1;
+                }
+                li {
+                    padding: 16px 24px;
+                    font: 600 16px/24px var(--font-wix);
+                    color: var(--accent-02);
+                    cursor: pointer;
+                    &:hover {
+                        background-color: var(--bg-01);
+                    }
+                    &.active {
+                        background: var(--bg-02);
+                        position: relative;
+                    }
+                }
+            }
+        }
+        /* Мобилка */
+        @media (max-width: 1025px) {
+             ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex!important;
+                align-items: center;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 8px;
+                overflow: hidden;
+                 li {
+                     display: inline-flex;
+                     min-height: 36px;
+                     align-items: center;
+                     padding: 5px 16px;
+                     border-radius: 30px;
+                     color: var(--text-2);
+                     border: 1px solid var(--border-02);
+                     background-color: var(--bg);
+                     &.active {
+                         border: 1px solid var(--accent-02);
+                         background-color: var(--accent-02);
+                         color: var(--white);
+                         position: relative;
+                     }
+                 }
+            }
+        }
+    }
+}
+
+
+

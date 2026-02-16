@@ -1,0 +1,82 @@
+
+mixin navigation-menu
+    .contentNavigation__menu
+        .contentNavigation__menu_item.active
+            .contentNavigation__menu_item-title
+                +icon('ic_cat_mini_03')
+                span Хвойные растения
+            .contentNavigation__menu_item-content
+                .contentNavigation__menu_item-subtitle Ель (22)
+                .contentNavigation__menu_item-subtitle Кедр (1)
+                .contentNavigation__menu_item-subtitle Кипарисовик (5)
+                .contentNavigation__menu_item-subtitle Лиственница (5)
+                .contentNavigation__menu_item-subtitle.active Метасеквойя (1)
+                .contentNavigation__menu_item-subtitle Микробиота (1)
+                .contentNavigation__menu_item-subtitle Можжевельник (37)
+                .contentNavigation__menu_item-subtitle Пихта (7)
+                .contentNavigation__menu_item-subtitle Сосна (38)
+                .contentNavigation__menu_item-subtitle Тис (4)
+                .contentNavigation__menu_item-subtitle Тсуга (1)
+                .contentNavigation__menu_item-subtitle Туя (22)
+        .contentNavigation__menu_item
+            .contentNavigation__menu_item-title
+                +icon('ic_cat_mini_01')
+                span Лиственные деревья
+            .contentNavigation__menu_item-content
+                .contentNavigation__menu_item-subtitle Ель (22)
+                .contentNavigation__menu_item-subtitle Кедр (1)
+                .contentNavigation__menu_item-subtitle Кипарисовик (5)
+                .contentNavigation__menu_item-subtitle Лиственница (5)
+                .contentNavigation__menu_item-subtitle Метасеквойя (1)
+                .contentNavigation__menu_item-subtitle Микробиота (1)
+                .contentNavigation__menu_item-subtitle Можжевельник (37)
+                .contentNavigation__menu_item-subtitle Пихта (7)
+        .contentNavigation__menu_item
+            .contentNavigation__menu_item-title
+                +icon('ic_cat_mini_02')
+                span Декор. кустарники
+            .contentNavigation__menu_item-content
+                .contentNavigation__menu_item-subtitle Метасеквойя (1)
+                .contentNavigation__menu_item-subtitle Микробиота (1)
+                .contentNavigation__menu_item-subtitle Можжевельник (37)
+                .contentNavigation__menu_item-subtitle Пихта (7)
+                .contentNavigation__menu_item-subtitle Сосна (38)
+                .contentNavigation__menu_item-subtitle Тис (4)
+                .contentNavigation__menu_item-subtitle Тсуга (1)
+                .contentNavigation__menu_item-subtitle Туя (22)
+
+
+
+mixin contentNavigation
+    .contentNavigation
+        .btn.openMobileCategory
+            +icon('ic_filter_plus')
+            span Категории и фильтр
+        .contentNavigationBox
+            .contentNavigationBox__header
+                .contentNavigationBox__header_title Категории и фильтр
+                .btn.contentNavigationBox__header_close: +icon('ic_close')
+            +contentSort
+            +navigation-menu
+            .navigation-form
+                form.form
+                    .toggle-row
+                        .toggle-row__label Сейчас на акции
+                            span
+                        .toggle-switch
+                            input(type="checkbox" id="toggle" class="toggle-switch__input")
+                            label(for="toggle" class="toggle-switch__label")
+                    .range-slider
+                        .range-slider__header
+                            .range-slider__title Цена, руб:
+                            .range-slider__inputs
+                                .range-slider__input-wrapper
+                                    input.range-slider__input.range-slider__input--min(type="text" id="minInput" value="40" inputmode="numeric")
+                                .range-slider__input-wrapper
+                                    input.range-slider__input.range-slider__input--max(type="text" id="maxInput" value="1680" inputmode="numeric")
+
+                        .range-slider__container
+                            .range-slider__track
+                                .range-slider__range(id="rangeTrack")
+                                .range-slider__thumb.range-slider__thumb--left(id="thumbLeft" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="2000" aria-valuenow="40" aria-label="Минимальная цена")
+                                .range-slider__thumb.range-slider__thumb--right(id="thumbRight" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="2000" aria-valuenow="1680" aria-label="Максимальная цена")
