@@ -1,0 +1,20 @@
+-
+    const category_list = [
+        {name: 'Зелёные хвойные',},
+        {name: 'Голубые хвойные',},
+        {name: 'Низкорослые',},
+        {name: 'До 200 рублей',},
+        {name: 'Только акционные',},
+        {name: 'Только в наличии',},
+        {name: 'Популярные хвойные',},
+
+    ]
+
+mixin category-info
+    section.sectionCategoryInfo
+        .container
+            .sectionCategoryInfo__h1: h1 Саженцы хвойных деревьев оптом
+            .sectionCategoryInfo__content
+                each item in category_list
+                    .item= item.name
+            .showMore Показать ещё

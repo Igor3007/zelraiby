@@ -1,0 +1,30 @@
+extends ../layouts/main
+
+block variables
+    include ../../data/data.pug
+    - const title = "zelrai.by"
+
+
+block main
+
+    include ../../blocks/modules/categoryPage/category-info/category-info
+    include ../../blocks/modules/categoryPage/category-content/category-content
+    include ../../blocks/modules/categoryPage/category-FAQ/category-FAQ
+    include ../../blocks/modules/seotext-block/seotext-block
+
+    include ../../blocks/components/breadcrumbs/breadcrumbs
+
+    .container
+        +breadcrumbs([
+            {title: 'Каталог', href: '/catalog.html'},
+            {title: 'Саженцы хвойных деревьев'},
+        ])
+    +category-info
+    +category-content
+    +category-FAQ
+    +seotext-block
+
+
+
+block scripts
+    script(src="/js/index.js")

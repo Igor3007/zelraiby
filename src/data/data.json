@@ -6,5 +6,55 @@
     {"text": "Саженцы оптом", "link": "/optom.html"},
     {"text": "О компании", "link": "/aboutUs.html"},
     {"text": "Контакты", "link": "/contact.html"}
-   ]
+   ],
+    "stories": [
+        {
+            "image": "/img/stories/shorts-block",
+            "text": "Новые хвойные у нас"
+        },
+        {
+            "image": "/img/stories/shorts-block-1",
+            "text": "Широкий ассортимент"
+        },
+        {
+            "image": "/img/stories/shorts-block-2",
+            "text": "Лиственные кустарники"
+        },
+        {
+            "image": "/img/stories/shorts-block-3",
+            "text": "Отзыв довольного клиента"
+        },
+        {
+            "image": "/img/stories/shorts-block-4",
+            "text": "Готовы к вам"
+        },
+        {
+            "image": "/img/stories/shorts-block-5",
+            "text": "Лучшие условия"
+        },
+        {
+            "image": "/img/stories/shorts-block-6",
+            "text": "Более 20 лет опыта"
+        },
+        {
+            "image": "/img/stories/shorts-block-7",
+            "text": "Идеальный уход за растениями"
+        },
+        {
+            "image": "/img/stories/shorts-block-8",
+            "text": "Новинки сезона"
+        },
+        {
+            "image": "/img/stories/shorts-block-9",
+            "text": "Работаем для вас"
+        },
+        {
+            "image": "/img/stories/shorts-block-8",
+            "text": "Новинки сезона"
+        },
+        {
+            "image": "/img/stories/shorts-block-9",
+            "text": "Работаем для вас"
+        }
+    ]
 }
