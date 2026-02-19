@@ -8,7 +8,6 @@ export function initProductGallery() {
     const mainSliderEl = document.querySelector('[data-slider="main-slider"]');
 
     if (!verticalThumbsEl || !mainSliderEl) {
-        console.log('Слайдеры не найдены');
         return;
     }
 

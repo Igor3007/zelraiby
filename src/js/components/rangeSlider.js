@@ -238,10 +238,14 @@ class RangeSlider {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    new RangeSlider({
-        min: 0,
-        max: 2000,
-        step: 1,
-        format: 'ru-RU'
-    });
+    const sliderContainer = document.querySelector('.range-slider__container');
+
+    if (sliderContainer) {
+        new RangeSlider({
+            min: 0,
+            max: 2000,
+            step: 1,
+            format: 'ru-RU'
+        });
+    }
 });

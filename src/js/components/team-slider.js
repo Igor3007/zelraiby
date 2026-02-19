@@ -21,12 +21,14 @@ export function teamslider() {
                     },
                     1024: {
                         perPage: 3,
-
+                        arrows: false,
                     },
                     768: {
                         fixedWidth: 300,
                         perPage: 1,
-                        pagination: true,
+                    },
+                    480: {
+                        destroy: true
                     },
                 },
 

@@ -1,8 +1,13 @@
 @use 'vars'as vars;
 
 .section-tile-category {
-    padding: 50px 0;
-
+    padding: 8px 0;
+    @media screen and (min-width: vars.$w760) {
+        padding: 24px 0;
+    }
+    @media screen and (min-width: vars.$w769) {
+        padding: 50px 0;
+    }
     @media screen and (min-width: vars.$w1440) {
         padding: 86px 0 40px 0;
     }
@@ -173,11 +178,7 @@
 .tile-category {
 
     &__title {
-        padding-bottom: 24px;
 
-        @media screen and (min-width: vars.$w1440) {
-            padding-bottom: 42px;
-        }
 
         & h2 {
             @include vars.font-h2;
@@ -186,10 +187,12 @@
 
     &__list {
         margin: -4px;
-        padding-bottom: 24px;
+        padding-bottom: 14px;
         display: flex;
         flex-wrap: wrap;
-
+        @media screen and (min-width: vars.$w760) {
+            padding-bottom: 24px;
+        }
     }
 
     &__item {
@@ -204,50 +207,7 @@
             display: none;
         }
 
-        & a {
-            width: 100%;
-            position: relative;
-            white-space: nowrap;
-            font: 600 20px/32px var(--font-wix);
-            color: var(--accent-02);
-            align-items: center;
-            justify-content: flex-start;
-            gap: 5px;
-            padding: 4px;
-            & span, svg{
-                z-index: 1;
-            }
-            svg{
-                width: 10px;
-                height: 16px;
-                position: relative;
-                z-index: 1;
-                fill: var(--accent-02);;
 
-            }
-            &:before{
-                transition: 0.3s ease;
-                content: "";
-                width: 100%;
-                height: 2px;
-                border-radius: 8px;
-                background-color: var(--border-01);
-                left: 0;
-                bottom: 0;
-                z-index: 0;
-                position: absolute;
-            }
-            &:hover {
-                padding: 4px 18px;
-                color: var(--accent-03);
-                svg{
-                    fill: var(--accent-03);
-                }
-                &:before{
-                    height: 100%;
-                }
-            }
-        }
 
         & .btn {
             width: 100%;
@@ -255,10 +215,14 @@
     }
 
     &__head {
-
+        padding-bottom: 16px;
+        @media screen and (min-width: vars.$w760) {
+            padding-bottom: 24px;
+        }
         @media screen and (min-width: vars.$w992) {
+            padding-bottom: 42px;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
         }
 
         & .tile-category {
@@ -266,25 +230,54 @@
                 display: none;
                 margin-left: auto;
 
-                @media screen and (min-width: vars.$w760) {
+                @media screen and (min-width: vars.$w992) {
                     display: block;
                 }
 
                 & a {
+                    width: 100%;
+                    position: relative;
+                    white-space: nowrap;
+                    font: 600 20px/32px var(--font-wix);
                     color: var(--accent-02);
-                    font-weight: 600;
-                    font-size: 20px;
-                    display: inline-flex;
+                    display: flex;
                     align-items: center;
-                    gap: 10px;
-                    line-height: 110%;
+                    justify-content: flex-start;
+                    gap: 5px;
+                    padding: 4px;
+                    & span, svg{
+                        z-index: 1;
+                    }
+                    svg{
+                        width: 10px;
+                        height: 16px;
+                        position: relative;
+                        z-index: 1;
+                        fill: var(--accent-02);;
 
-                }
-
-                & svg {
-                    fill: var(--accent-02);
-                    width: 10px;
-                    margin-bottom: -3px;
+                    }
+                    &:before{
+                        transition: 0.3s ease;
+                        content: "";
+                        width: 100%;
+                        height: 2px;
+                        border-radius: 8px;
+                        background-color: var(--border-01);
+                        left: 0;
+                        bottom: 0;
+                        z-index: 0;
+                        position: absolute;
+                    }
+                    &:hover {
+                        padding: 4px 18px;
+                        color: var(--accent-03);
+                        svg{
+                            fill: var(--accent-03);
+                        }
+                        &:before{
+                            height: 100%;
+                        }
+                    }
                 }
             }
         }

@@ -1,9 +1,9 @@
 @use 'vars'as vars;
 
 .sectionBestOffersProduct {
-    padding-bottom: 50px;
+    padding-bottom: 34px;
     @media screen and (min-width: vars.$w992) {
-        padding-bottom: 128px;
+        padding-bottom: 74px;
     }
     .best-offers__slider{
 

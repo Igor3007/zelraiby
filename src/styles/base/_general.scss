@@ -38,18 +38,18 @@
     }
 
     @media screen and (min-width: vars.$w992) {
-        --container-padding: 40px;
-        --container-out: -40px;
+        --container-padding: 32px;
+        --container-out: -23px;
     }
 
     @media screen and (min-width: vars.$w1200) {
-        --container-padding: 40px;
-        --container-out: -40px;
+        --container-padding: 32px;
+        --container-out: -32px;
     }
 
     @media screen and (min-width: vars.$w1440) {
-        --container-padding: 40px;
-        --container-out: -40px;
+        --container-padding: 32px;
+        --container-out: -32px;
     }
 }
 
@@ -238,7 +238,7 @@ input[type="date"] {
     }
 
     @media screen and (min-width: vars.$w1440) {
-        max-width: 1488px;
+        max-width: 1472px;
     }
 }
 

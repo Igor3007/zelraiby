@@ -1,14 +1,149 @@
 @use "vars"as vars;
 
+body{
+    &.open{
+        overflow: hidden;
+        .header-top-fixed {
+            @media screen and (max-width: vars.$w1024) {
+                &:after{
+                    content: '';
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    z-index: 16;
+                }
+            }
+        }
+    }
+}
+
+header {
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 22;
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    @media screen and (min-width: vars.$w1200) {
+        height: 178px;
+    }
+
+    &.open {
+        transition: all 0.3s ease;
+        height: 100% !important;
+        background-color: rgba(0, 0, 0, 0.7);
+
+        .openMenu {
+            transition: all 0.3s ease;
+            background-color: var(--accent-02);
+            color: var(--accent);
+
+            & svg {
+                fill: var(--accent);
+            }
+        }
+
+    }
+
+    &.scroll {
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        @media screen and (min-width: vars.$w1024) {
+            height: 98px;
+            .header__menu_tabs,.header__menu_content{
+                border-width: 1px;
+            }
+            .header-top {
+                padding: 10px;
+                border: 1px solid var(--border-01);
+                border-radius: 24px;
+                .search-field {
+                    height: 52px;
+                    .btn{
+                        height: 52px;
+                        min-width: 52px;
+                        width: 52px;
+                    }
+                }
+                &__logo .bgimage {
+                    width: 180px;
+                    height: 52px;
+                }
+            }
+
+        }
+
+        @media screen and (min-width: vars.$w1200) {
+            .header-top__find {
+                .openMenu {
+                    width: 149px;
+                }
+            }
+
+            .header-nav {
+                height: 0;
+                opacity: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+
+                .btn {
+                    height: 0;
+                }
+            }
+
+            .container {
+                border-radius: 32px;
+            }
+        }
+    }
+
+    .container {
+        background-color: rgba(255, 255, 255, 1);
+        border-radius: 0 0 32px 32px;
+    }
+}
+
+main,
+header + * {
+    padding-top: 72px;
+    transition: padding-top 0.3s ease;
+    @media screen and (min-width: vars.$w1024) {
+        padding-top: 102px;
+    }
+    @media screen and (min-width: vars.$w1200) {
+        padding-top: 161px;
+    }
+}
+
+.header-top-fixed {
+    position: relative;
+    background: var(--white);
+    transition: all 0.3s ease;
+    @media screen and (min-width: vars.$w1024) {
+        padding: 12px 0;
+    }
+}
+
 .header-top {
     display: flex;
     align-items: center;
     gap: 24px;
-    padding: 12px 0;
-
-    @media screen and (min-width: vars.$w480) {
-        padding: 20px 0;
+    padding: 10px 0;
+    background: var(--white);
+    z-index: 15;
+    position: relative;
+    border: 1px solid var(--white);
+    transition: all 0.3s ease;
+    @media screen and (max-width: vars.$w1024) {
+        justify-content: space-between;
+        padding: 9px 0;
     }
+    //@media screen and (min-width: vars.$w480) {
+    //    padding: 10px;
+    //}
 
     &__logo {
         & .bgimage {
@@ -18,7 +153,6 @@
             background-repeat: no-repeat;
             background-position: left center;
             background-size: contain;
-
 
 
             @media screen and (min-width: vars.$w1200) {
@@ -33,7 +167,33 @@
         }
     }
 
+
     &__find {
+        @media screen and (max-width: vars.$w1024) {
+            display: none;
+        }
+        form {
+            flex: 1;
+        }
+
+        & > .btn {
+            font-weight: 600;
+            font-size: 18px;
+            height: 52px;
+            //padding: 12px;
+            @media screen and (min-width: vars.$w1200) {
+                width: 0;
+                padding: 0;
+                min-width: 0;
+            }
+
+            & svg {
+                &:first-child {
+                    margin-right: 0.8em;
+                }
+            }
+        }
+
         flex-grow: 1;
         display: none;
 
@@ -42,13 +202,15 @@
         }
 
         @media screen and (min-width: vars.$w576) {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
     }
 
     &__contact {
 
-        @media screen and (max-width: 830px) {
+        @media screen and (max-width: vars.$w1024) {
             display: none;
         }
 
@@ -64,7 +226,22 @@
         display: flex;
         align-items: center;
         margin-left: auto;
-
+        gap: 12px;
+        .btn{
+            width: 44px;
+            min-width: 44px;
+            height: 44px;
+            padding: 8px;
+            border-radius: 16px;
+            svg{
+                margin-left: 0;
+            }
+        }
+        @media screen and (min-width: vars.$w1024) {
+            .btn{
+                display: none;
+            }
+        }
         @media screen and (min-width: vars.$w576) {
             margin-left: 0;
         }
@@ -124,7 +301,8 @@
 
         & a {
             color: var(--accent-02);
-            &:hover{
+
+            &:hover {
                 color: var(--accent-03);
             }
         }
@@ -139,24 +317,24 @@
 
 .ic-color-tg {
     & .bgimage:not(:hover) {
-        background-color: #039BE5!important;
+        background-color: #039BE5 !important;
     }
 }
 
 .ic-color-wa {
     & .bgimage:not(:hover) {
-        background-color: #4CAF50!important;
+        background-color: #4CAF50 !important;
     }
 }
 
 .ic-color-max {
     & .bgimage:not(:hover) {
-        background-color: #9a2fde!important;
+        background-color: #9a2fde !important;
     }
 }
 
 .ic-color-vb {
     & .bgimage:not(:hover) {
-        background-color: #7360F2!important;
+        background-color: #7360F2 !important;
     }
 }

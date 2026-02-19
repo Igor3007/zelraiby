@@ -13,7 +13,7 @@ export function offersSlider() {
         .forEach(slider => {
             slider['Splide'] = new Splide(slider, {
 
-                arrows: false,
+                arrows: true,
                 arrowPath: SLIDER_ARROW_PATH,
                 pagination: false,
                 gap: 12,
@@ -26,15 +26,16 @@ export function offersSlider() {
                 omitEnd: true,
                 breakpoints: {
                     480: {
+                        arrows: false,
                         fixedWidth: '87.9vw',
                         pagination: false,
                     },
 
-                    640: {
+                    992: {
+                        arrows: false,
                         fixedWidth: '343px',
                         pagination: false,
                     },
-
                 }
 
             });
@@ -55,11 +56,11 @@ export function offersSlider() {
             })
 
             // init splide nav
-            new SplideNavHelper({
-                slider: slider['Splide'],
-                btn: 'offers',
-                container: slider.closest('section')
-            })
+            // new SplideNavHelper({
+            //     slider: slider['Splide'],
+            //     btn: 'offers',
+            //     container: slider.closest('section')
+            // })
 
             //init filter
 

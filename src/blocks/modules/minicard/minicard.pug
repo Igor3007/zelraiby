@@ -1,20 +1,20 @@
 mixin minicard(data)
     .minicard
         .minicard__image
-            a(href='single-product.html')
+            a(href=data.link)
                 +picture(data.image)
         .minicard__main
             .minicard__name
-                a(href='single-product.html')
+                a(href=data.link)
                     .minicard__title= data.title
                     .minicard__btn
                         button.btn
                             +icon('ic_arrow')
             .minicard__price
-                .minicard__price-current от 120 руб.
-                .minicard__price-old от 140 руб.
+                .minicard__price-current от #{data.priceCurrent}
+                .minicard__price-old= data.priceOld
             .minicard__prop
                 ul
                     li
                         small Размеры:
-                        span 1,20 ‒ 1,40 м
+                        span= data.size

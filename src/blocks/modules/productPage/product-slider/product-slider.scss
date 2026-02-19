@@ -23,7 +23,7 @@
     &__content{
         @media screen and (min-width: vars.$w1200) {
             position: sticky;
-            top: 60px;
+            top: 110px;
         }
         display: flex;
         flex-direction: column;

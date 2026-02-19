@@ -1,35 +1,186 @@
+mixin headerMenuDesktop
+    .header__menu
+        .header__menu_tabs
+            .tab.active
+                +icon('ic_cat_mini_03')
+                span Хвойные растения
+            .tab
+                +icon('ic_cat_mini_01')
+                span Лиственные деревья
+            .tab
+                +icon('ic_cat_mini_02')
+                span Декоративные кустарники
+        .header__menu_content
+            .tabPanel.active
+                .items
+                    .item Ель (22)
+                    .item Ель канадская (6)
+                    .item Ель колючая (4)
+                    .item Ель обыкновенная (9)
+                    .item Ель сербская (3)
+                .items
+                    .item Кедр (1)
+                .items
+                    .item Кипарисовик (5)
+                .items
+                    .item Лиственница (5)
+                .items
+                    .item Метасеквойя (1)
+                .items
+                    .item Микробиота (1)
+                .items
+                    .item Можжевельник (37)
+                    .item Можжевельник виргинский (2)
+                    .item Можжевельник горизонтальный (7)
+                    .item Можжевельник казацкий (1)
+                    .item Можжевельник китайский (3)
+                    .item Можжевельник лежачий (1)
+                    .item Можжевельник прибрежный (1)
+                    .item Можжевельник пфитцериана (2)
+                    .item Можжевельник скальный (2)
+                    .item Можжевельник чешуйчатый (4)
+                .items
+                    .item Пихта (7)
+                .items
+                    .item Сосна (38)
+                    .item Сосна белокорая (1)
+                    .item Сосна Веймутова (1)
+                    .item Сосна горная (11)
+                    .item Сосна Тунберга (1)
+                .items
+                    .item Тис (4)
+                .items
+                    .item Тсуга (1)
+                .items
+                    .item Туя (22)
+                    .item Туя Брабант (2)
+                    .item Туя западная (16)
+                    .item Туя складчатая (3)
+                    .item Туя Смарагд (1)
+            .tabPanel
+                .items
+                    .item Можжевельник (37)
+                    .item Можжевельник виргинский (2)
+                    .item Можжевельник горизонтальный (7)
+                    .item Можжевельник казацкий (1)
+                    .item Можжевельник китайский (3)
+                    .item Можжевельник лежачий (1)
+                    .item Можжевельник прибрежный (1)
+                    .item Можжевельник пфитцериана (2)
+                    .item Можжевельник скальный (2)
+                    .item Можжевельник чешуйчатый (4)
+
+            .tabPanel
+                .items
+                    .item Ель (22)
+                    .item Ель канадская (6)
+                    .item Ель колючая (4)
+                    .item Ель обыкновенная (9)
+                    .item Ель сербская (3)
+
+mixin headerMenuMob
+    .MenuMobile
+        .MenuMobile__header
+            .MenuMobile__header_logo
+                a(href='/'): +bgimage('/img/common/logo.svg')
+            .btn.closeMenuMob: +icon('ic_close')
+        .MenuMobile__main
+            form(action='#' method='POST')
+                .search-field
+                    input(type="text" placeholder="Найти в каталоге...")
+                    button.btn: +icon('ic_search')
+            .MenuMobile__main_links
+                .link
+                    +icon('ic_cat_mini_03')
+                    span Хвойные растения
+                .link
+                    +icon('ic_cat_mini_01')
+                    span Лиственные деревья
+                .link
+                    +icon('ic_cat_mini_02')
+                    span Декор. кустарники
+            .MenuMobile__main_menu
+                nav
+                    ul
+                        each item in mainMenu
+                            li: a(href=item.link)= item.text
+
+
+            .MenuMobile__main_contact
+                .MenuMobile__main_contact-title: a(href='tel:+375 (29) 646-86-86') +375 (29) 646-86-86
+                .MenuMobile__main_contact-sub C 8:00 до 17:00, ПН-ПТ
+
+            .MenuMobile__main_contact
+                .MenuMobile__main_contact-title: a(href='tel:+7 (926) 878-65-38') +7 (926) 878-65-38
+                .MenuMobile__main_contact-sub: a(href='mailto:info-zelrai@tut.by') info-zelrai@tut.by
+
+            .MenuMobile__main_msgr
+                ul
+                    li.ic-color-tg: a(href='#'): +bgimage('/img/icons/msgr-tg.svg')
+                    li.ic-color-wa: a(href='#'): +bgimage('/img/icons/msgr-wa.svg')
+
+mixin bottomNavigationMob
+    .navigationMob
+        .navigationMob__content
+            a(href='#').navigationMob__item
+                .navigationMob__item_icon: +icon('ic_telegram')
+                .navigationMob__item_name Телеграм
+            a(href='#').navigationMob__item
+                .navigationMob__item_icon: +icon('ic_whatsapp')
+                .navigationMob__item_name WhatsApp
+            .navigationMob__item.openMenuMob
+                .navigationMob__item_icon: +icon('ic_menu-search-dark')
+                .navigationMob__item_name Меню
+            a(href='/price.html').navigationMob__item
+                .navigationMob__item_icon: +icon('ic_coins')
+                .navigationMob__item_name Цены
+            a(href='tel:+375 (29) 646-86-86').navigationMob__item
+                .navigationMob__item_icon: +icon('ic_phoneMenu')
+                .navigationMob__item_name Звонить
+
 .container
-  .header-top-fixed
-    .header-top
-      .header-top__logo
-        a(href='#'): +bgimage('/img/common/logo.svg')
-      .header-top__find
-        form(action='#' method='POST')
-          .search-field
-            input(type="text" placeholder="Найти в каталоге...")
-            button.btn: +icon('ic_search')
-      .header-top__contact
-        .header-contact
-          .header-contact__title: a(href='tel:+375 (29) 646-86-86') +375 (29) 646-86-86
-          .header-contact__sub C 8:00 до 17:00, ПН-ПТ
+    .header-top-fixed
+        .header-top
+            .header-top__logo
+                a(href='/'): +bgimage('/img/common/logo.svg')
+            .header-top__find
+                button.btn.openMenu
+                    +icon('ic_catalog')
+                    span Каталог
+                form(action='#' method='POST')
+                    .search-field
+                        input(type="text" placeholder="Найти в каталоге...")
+                        button.btn: +icon('ic_search')
+            .header-top__contact
+                .header-contact
+                    .header-contact__title: a(href='tel:+375 (29) 646-86-86') +375 (29) 646-86-86
+                    .header-contact__sub C 8:00 до 17:00, ПН-ПТ
 
-      .header-top__contact.header-top__contact--email
-        .header-contact
-          .header-contact__title: a(href='tel:+7 (926) 878-65-38') +7 (926) 878-65-38
-          .header-contact__sub: a(href='mailto:info-zelrai@tut.by') info-zelrai@tut.by
+            .header-top__contact.header-top__contact--email
+                .header-contact
+                    .header-contact__title: a(href='tel:+7 (926) 878-65-38') +7 (926) 878-65-38
+                    .header-contact__sub: a(href='mailto:info-zelrai@tut.by') info-zelrai@tut.by
 
-      .header-top__msgr
-        ul
-          li.ic-color-tg: a(href='#'): +bgimage('/img/icons/msgr-tg.svg')
-          li.ic-color-wa: a(href='#'): +bgimage('/img/icons/msgr-wa.svg')
+            .header-top__msgr
+                ul
+                    li.ic-color-tg: a(href='#'): +bgimage('/img/icons/msgr-tg.svg')
+                    li.ic-color-wa: a(href='#'): +bgimage('/img/icons/msgr-wa.svg')
+                .btn.openMenuMob: +icon('ic_menu_dark')
 
-    .header-nav
-      .header-nav__catalog
-        button.btn
-          +icon('ic_catalog')
-          span Каталог
-      .header-nav__menu
-        nav
-          ul
-            each item in mainMenu
-              li: a(href=item.link)= item.text
+        .header-nav
+            .header-nav__catalog
+                button.btn.openMenu
+                    +icon('ic_catalog')
+                    span Каталог
+            .header-nav__menu
+                nav
+                    ul
+                        each item in mainMenu
+                            li: a(href=item.link)= item.text
+
+        +headerMenuDesktop
+
+    +headerMenuMob
+
++bottomNavigationMob
+

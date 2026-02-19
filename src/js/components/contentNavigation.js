@@ -28,13 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && navigation.classList.contains('open')) {
+        if (navigation && e.key === 'Escape' && navigation?.classList.contains('open')) {
             closeNavigation();
         }
     });
 
     document.addEventListener('click', function(e) {
-        if (!navigation.contains(e.target) && navigation.classList.contains('open')) {
+        if (navigation && !navigation.contains(e.target) && navigation?.classList.contains('open')) {
             closeNavigation();
         }
     });
