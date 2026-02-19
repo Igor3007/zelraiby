@@ -1,0 +1,124 @@
+@use 'vars'as vars;
+
+.popup-form {
+    padding: 0;
+    max-width: 480px;
+
+    &__title {
+        @include vars.font-h3;
+        padding-bottom: 12px;
+        color: var(--accent-02);
+    }
+
+    &__desc {
+        line-height: 150%;
+        padding-bottom: 5px;
+        font-size: 16px;
+        color: var(--accent-04);
+        @media screen and (min-width: vars.$w680) {
+            padding-bottom: 25px;
+        }
+    }
+
+    &__name {
+        font-weight: bold;
+        color: var(--green);
+        font-size: 18px;
+        padding-bottom: 12px;
+        line-height: 130%;
+    }
+
+    & .form {
+
+        &__subitem {
+
+            @media screen and (min-width: vars.$w680) {
+                padding: 16px 6px;
+                margin-bottom: 0;
+            }
+            &>label {
+                background-color: #fff;
+            }
+
+            & .btn {
+                width: 100%;
+            }
+            .form__note{
+                margin-top: 0;
+                padding-bottom: 0;
+            }
+            textarea{
+                min-height: 48px;
+                margin-bottom: 0;
+                &::-webkit-scrollbar {
+                    width: 0;
+                    height: 0;
+                }
+                @media screen and (min-width: vars.$w680) {
+                    min-height: 118px;
+                }
+                @media screen and (min-width: vars.$w992) {
+                    min-height: 56px;
+                    padding-top: 14px;
+                    padding-bottom: 14px;
+
+                }
+            }
+        }
+
+
+
+        &__note {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        & input[type=date],
+        & input[type=tel],
+        & input[type=password],
+        & input[type=text],
+        & input[type=email] {
+            @media screen and (min-width: vars.$w1440) {
+                height: 58px;
+            }
+        }
+    }
+}
+
+.popup-success {
+    padding: 20px 15px;
+    max-width: 490px;
+
+    @media screen and (min-width: vars.$w576) {
+        padding: 24px;
+    }
+
+    &__title {
+        @include vars.font-h4;
+        padding-bottom: 12px;
+        color: var(--gray-20);
+        text-align: center;
+    }
+
+    &__desc {
+        line-height: 150%;
+        padding-bottom: 25px;
+        font-size: 18px;
+        text-align: center;
+
+        @media screen and (min-width: vars.$w480) {
+            font-size: 20px;
+        }
+
+        color: var(--gray-36);
+    }
+
+
+
+    &__btn {
+        & .btn {
+            width: 100%;
+        }
+    }
+
+}

@@ -1,6 +1,7 @@
 import {
     MaskInput
 } from "maska";
+import {afLightbox} from "../vendor/af-lightbox.js";
 
 document.addEventListener('DOMContentLoaded', function (event) {
 
@@ -332,7 +333,95 @@ document.addEventListener('DOMContentLoaded', function (event) {
     if (document.querySelector('[data-menu="open"]')) {
         window.MainMenu = new MainMenu(document)
     }
+    /* =================================================
+        popups
+        =================================================*/
 
+    function popupSuccess() {
+
+        const instansePopup = new afLightbox({
+            mobileInBottom: true
+        })
+
+        instansePopup.open(`
+
+           <div class="popup-thanks" >
+
+           <h2> Спасибо! </h2>
+           <p>Мы свяжемся с вами в ближайшее время!</p>
+
+           </div>
+
+            `, false)
+
+    }
+
+    if (document.querySelector('[data-modal]')) {
+        const items = document.querySelectorAll('[data-modal]')
+
+        items.forEach(item => {
+            item.addEventListener('click', e => {
+
+                window.ajax({
+                    type: 'GET',
+                    url: item.dataset.modal
+                }, (status, response) => {
+
+                    const instansePopup = new afLightbox({
+                        mobileInBottom: true
+                    })
+
+                    instansePopup.open(response, (instanse) => {
+                        initMaska()
+
+                        if (instanse.querySelector('form')) {
+                            const form = instanse.querySelector('form')
+
+                            form.addEventListener('submit', e => {
+
+                                e.preventDefault()
+
+                                const formData = new FormData(e.target)
+                                let params = {}
+                                let btn = form.querySelector('.btn')
+
+                                for (let [name, value] of formData) {
+                                    params[name] = value
+                                }
+
+                                btn.classList.add('btn-loading')
+
+                                window.ajax({
+                                    type: 'POST',
+                                    url: form.getAttribute('action'),
+                                    data: params
+
+                                }, (status, response) => {
+
+                                    if (status == 200) {
+                                        popupSuccess();
+                                        !btn.classList.contains('btn-loading') || btn.classList.remove('btn-loading')
+                                        instansePopup.close()
+                                    }
+
+
+                                })
+                            })
+                        }
+
+                        if (item.dataset.title) {
+                            instanse.querySelector('.popup-form__title').innerHTML = item.dataset.title
+                        }
+
+                        if (item.dataset.desc) {
+                            instanse.querySelector('.popup-form__desc').innerHTML = item.dataset.desc
+                        }
+                    })
+                })
+
+            })
+        })
+    }
 
 
 

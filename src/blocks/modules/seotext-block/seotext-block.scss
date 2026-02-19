@@ -1,5 +1,13 @@
 @use 'vars';
 
+.section-seotext-block{
+    padding-top: 24px;
+
+    @media screen and (min-width: vars.$w769) {
+        padding-top: 44px;
+    }
+}
+
 .seotext-block {
     padding-bottom: 50px;
     @media screen and (min-width: vars.$w992) {

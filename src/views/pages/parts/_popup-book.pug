@@ -1,0 +1,31 @@
+include ../../helpers/mixins.pug
+
+.popup-form
+    .popup-form__wrp
+        .popup-form__title Связаться с нами
+        .popup-form__desc В рабочее время отвечаем в течение 15 минут.
+        .popup-form__form
+            form(action="/action.php")
+                .form
+                    .form__item
+                        .form__subitem
+                            label Ваше имя:
+                            input(type="text" maxlength="25" name="" required placeholder="Введите имя")
+                    .form__item
+                        .form__subitem
+                            label Номер телефона:
+                            input(type="text" maxlength="25" data-maska="+375(##)###-##-##" name="" required placeholder="Введите телефон")
+                    .form__item
+                        .form__subitem
+                            label Сообщение (необязательно):
+                            textarea(name="" maxlength="500" placeholder="Текст сообщения")
+                    .form__item
+                        .form__subitem.form__subitem--submit
+                            button.btn(type="submit")
+                                span Отправить заявку
+                                +icon('ic_arrow-min')
+                    .form__item
+                        .form__subitem
+                            .form__note
+                                +checkbox('Нажимая на кнопку «Отправить заявку», я соглашаюсь с <a href="/policy.html">Политикой конфиденциальности</a>', 'policy', {required: true})
+

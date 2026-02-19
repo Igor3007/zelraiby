@@ -15,16 +15,15 @@
     font-size: 16px;
     text-align: center;
     background-color: var(--accent);
-    border-radius: 20px;
+    border-radius: 16px;
     position: relative;
     overflow: hidden;
     transition: 0.3s ease;
     cursor: pointer;
     line-height: 140%;
     @media screen and (min-width: vars.$w760) {
+        border-radius: 20px;
         padding: 0.75em 3em 0.85em 3em;
-    }
-    @media screen and (min-width: vars.$w760) {
         height: 56px;
         font-size: 18px;
 
@@ -37,8 +36,6 @@
         height: 56px;
         font-size: 18px;
     }
-
-
 
     & span,
     & svg {

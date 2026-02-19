@@ -13,7 +13,21 @@ mixin first-block
             .first-block
                 .first-block__left
                     .first-block__video
-                        .video-responsive: video(poster="/img/common/img-big.jpg")
+                        .video-responsive
+                            video(
+                                poster="/img/common/img-big.jpg"
+                                autoplay
+                                preload="metadata"
+                                width="100%"
+                                height="auto"
+                                loop
+                                muted
+                                playsinline
+                                )
+                                source(src="https://zelrai.by/wp-content/themes/green-paradise/img/video/zeleny_rai.mp4" type="video/mp4")
+                            .buttonsControls
+                                .btn.btnPlay: +icon("ic_pause_dark")
+                                .btn.btnFull: +icon("ic_maximize_dark")
                     .first-block__digits
                         .first-digits
                             .first-digits__item
@@ -36,5 +50,5 @@ mixin first-block
                                 span Перейти в каталог
                                 +icon('ic_leaf')
                         .first-block__call
-                            button.btn Связаться с нами
+                            .btn(data-modal="/parts/_popup-book.html") Связаться с нами
                                 +icon('ic_arrow_right_big')

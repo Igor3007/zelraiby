@@ -115,7 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const sortContainers = document.querySelectorAll('.contentSort');
 
     if (sortContainers.length === 0) {
-        console.warn('Не найдено элементов с классом .contentSort');
         return;
     }
 

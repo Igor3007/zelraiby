@@ -2,14 +2,9 @@
 
 .section-best-offers {
     background-color: var(--bg);
-    padding: 29px 0;
-
-    @media screen and (min-width: vars.$w760) {
-        padding: 48px 0;
-    }
-
-    @media screen and (min-width: vars.$w1440) {
-        padding: 36px 0;
+    padding: 24px 0 0;
+    @media screen and (min-width: vars.$w991) {
+        padding: 38px 0 0;
     }
 
     & .is-hide {
@@ -20,17 +15,8 @@
 
 .best-offers {
     &__title {
-        padding-bottom: 12px;
+        padding-bottom: 6px;
         @include vars.font-h2;
-
-        @media screen and (min-width: vars.$w760) {
-            padding-bottom: 6px;
-
-        }
-
-        @media screen and (min-width: vars.$w1440) {
-            padding-bottom: 6px;
-        }
     }
 
     &__tabs {
@@ -38,7 +24,7 @@
         border-radius: 8px;
         display: flex;
         overflow-x: auto;
-        margin-bottom: 24px;
+        margin-bottom: 6px;
 
         @media screen and (max-width: vars.$w480) {
             margin-right: -16px;
@@ -46,8 +32,8 @@
 
         @media screen and (min-width: vars.$w992) {
             background-color: #fff;
-            margin-bottom: 9px;
             border-radius: 17px;
+            margin-bottom: 20px;
         }
 
         @media screen and (min-width: vars.$w1200) {
@@ -56,23 +42,21 @@
 
         & ul {
             display: flex;
-            margin: 0 -5px;
-            gap: 6px;
+            margin: 0;
+            gap: 4px;
+            padding-right: 8px;
 
             @media screen and (min-width: vars.$w1200) {
                 margin: 0;
+                gap: 8px;
+                padding-right: 0;
             }
 
             & li {
                 white-space: nowrap;
-                padding: 0 5px;
-
-                @media screen and (min-width: vars.$w1200) {
-                    padding: 0;
-                }
+                padding: 0;
 
                 & span {
-                    //background-color: var(--accent);
                     display: inline-flex;
                     min-height: 36px;
                     align-items: center;
@@ -83,10 +67,11 @@
                     color: var(--text-2);
                     border: 1px solid var(--border-02);
                     background-color: var(--bg);
-
-                    //&:hover {
-                    //    background-color: var(--bg);
-                    //}
+                    @media screen and (min-width: vars.$w760) {
+                        padding: 9px 24px 10px 25px;
+                        border-radius: 50px;
+                        font-size: 16px;
+                    }
 
                     @media screen and (min-width: vars.$w992) {
                         padding: 11px 32px 12px 32px;
@@ -95,12 +80,14 @@
                         letter-spacing: .02em;
                         font-weight: 400;
 
-
-                        &:hover {
-                            border: 1px solid var(--accent-02);
-                            background-color: var(--accent-02);
-                            color: var(--white);
+                        @media screen and (min-width: vars.$w769) {
+                            &:hover {
+                                border: 1px solid var(--accent-02);
+                                background-color: var(--accent-02);
+                                color: var(--white);
+                            }
                         }
+
                     }
 
                     @media screen and (min-width: vars.$w1440) {
@@ -114,10 +101,11 @@
                         background-color: var(--accent-02);
                         border-color: var(--accent-02);
                         color: #fff;
-
-                        &:hover {
-                            background-color: var(--accent-02);
-                            color: #fff;
+                        @media screen and (min-width: vars.$w769) {
+                            &:hover {
+                                background-color: var(--accent-02);
+                                color: #fff;
+                            }
                         }
                     }
                 }
@@ -126,6 +114,20 @@
     }
 
     &__slider {
+
+        .splide__arrow {
+            top: -90px;
+            transform: inherit;
+            &--prev {
+                left: inherit;
+                right: 66px;
+            }
+            &--next{
+                right: 2px;
+            }
+        }
+
+
         padding-bottom: 16px;
 
         @media screen and (min-width: vars.$w1200) {
@@ -203,11 +205,19 @@
         justify-content: flex-end;
         flex-wrap: wrap;
         gap: 12px;
+        @media screen and (max-width: vars.$w769) {
+
+            &>div{
+                flex: 1;
+            }
+        }
 
         & .btn {
-
             @media screen and (min-width: vars.$w1200) {
                 min-width: 343px;
+            }
+            @media screen and (max-width: vars.$w769) {
+                min-width: 100%;
             }
 
             @media screen and (max-width: vars.$w480) {

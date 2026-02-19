@@ -6,6 +6,11 @@ import "./components/navigationMenu.js";
 import "./components/rangeSlider.js";
 import "./components/contentNavigation";
 import "./components/sectionCategoryInfo";
+import "./components/video-first-block";
+import "./components/header";
+
+import "./vendor/fslightbox.min";
+import "./vendor/af-lightbox";
 import { storiesSlider } from "./components/stories-slider.js";
 import { faq } from "./components/faq.js";
 import { teamslider } from "./components/team-slider.js";
