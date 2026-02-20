@@ -1,0 +1,21 @@
+extends ../layouts/main
+
+block variables
+    include ../../data/data.pug
+    - const title = "zelrai.by"
+
+
+block main
+
+    include ../../blocks/modules/salesPage/sales-first/sales-first
+    include ../../blocks/modules/salesPage/sales-block/sales-block
+    include ../../blocks/modules/salesPage/sales-faq/sales-faq
+
+
+    +sales-first
+    +sales-block
+    +sales-faq
+
+
+block scripts
+    script(src="/js/index.js")

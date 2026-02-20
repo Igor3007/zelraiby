@@ -1,0 +1,53 @@
+mixin  sales-block
+    -
+        const priceData = [
+            {
+                href: '/files/document.docx',
+                iconType: 'ic_xls',
+                name: 'Прайс-лист «Хутор», осень 2025, РБ',
+                type: 'XLS',
+                size: '951 Кб',
+            },
+            {
+                href: '/files/document.docx',
+                iconType: 'ic_pdf',
+                name: 'Прайс-лист «Маленький рай», осень 2025',
+                type: 'PDF',
+                size: '958 Кб',
+            },
+            {
+                href: '/files/document.docx',
+                iconType: 'ic_word',
+                name: 'Прайс-лист «Грунт», осень 2025',
+                type: 'DOC',
+                size: '929 Кб',
+            },
+            {
+                href: '/files/document.docx',
+                iconType: 'ic_xls',
+                name: 'Прайс-лист «Новая посадка», осень 2025',
+                type: 'PDF',
+                size: '958 Кб',
+            },
+        ]
+    section.sectionSalesBlock
+        .container
+            .sectionSalesBlock__content
+                .sectionSalesBlock__content_title Акции и спецпредложения питомника «Зелёный рай»
+                .sectionSalesBlock__content_items
+                    .itemSales
+                        +picture('/img/catalogOpt/img-size-2')
+                        .itemSales__info
+                            .itemSales__info_date 31.01.2026
+                            .itemSales__info_name Туя западная Смарагд (Smaragd)
+                            .itemSales__info_params Размер: 20-30 см — отличного качества!
+                            .itemSales__info_params: strong ТОЛЬКО ОПТОМ!
+                    .itemSales
+                        +picture('/img/catalogOpt/img-size-1')
+                        .itemSales__info
+                            .itemSales__info_date 26.12.2025
+                            .itemSales__info_name Саженцы можжевельника скального Блю Арроу
+                            .itemSales__info_params Размер: 40-70 см — отличного качества!
+                            .itemSales__info_params: strong ТОЛЬКО ОПТОМ!
+
+

@@ -1,9 +1,27 @@
 mixin about-company
+    -
+        const about_list = [
+            {
+                image: '/img/common/video-img',
+            },
+            {
+                image: '/img/common/img-contactPage',
+            },
+            {
+                image: '/img/common/img-payment',
+            }
+        ]
     section.section-about-company
         .container
             .about-company
                 .about-company__left
-                    .about-company__media: +picture('/img/common/video-img')
+                    .about-company__media
+                        .splide(data-slider="aboutCompany")
+                            .splide__track
+                                .splide__list
+                                    each item in about_list
+                                        .splide__slide
+                                            +picture(item.image)
                 .about-company__right
                     .about-company__main
                         .about-company__h2 «Зелёный рай» — <span>современный питомник растений выбирай!</span>
@@ -14,4 +32,4 @@ mixin about-company
                             a(href='#'): button.btn
                                 span Подробнее о компании
                                 +icon('ic_arr_round')
-                    .about-company__pic: +picturePng('/img/team/img-director')
+                    .about-company__pic: +picturePng('/img/team/img-directorMen')

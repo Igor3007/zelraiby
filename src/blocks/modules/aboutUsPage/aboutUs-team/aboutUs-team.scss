@@ -26,7 +26,7 @@
         @media screen and (min-width: vars.$w576) {
             grid-template-columns: repeat(3, 1fr);
         }
-        @media screen and (min-width: vars.$w760) {
+        @media screen and (min-width: vars.$w769) {
             grid-template-columns: repeat(4, 1fr);
         }
         &>div{

@@ -53,9 +53,6 @@
             height: 680px;
             overflow: hidden;
         }
-        //.splide__list{
-        //    overflow: scroll;
-        //}
 
         .splide__slide {
             cursor: pointer;
@@ -64,7 +61,7 @@
             overflow: hidden;
             transition: all 0.3s ease;
             @media screen and (max-width: vars.$w760) {
-                &:not(.is-visible) {
+                &:not(.is-active) {
                     opacity: 0.5;
                 }
             }

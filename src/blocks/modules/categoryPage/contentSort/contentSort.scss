@@ -83,17 +83,22 @@
                     transition: all 0.3s ease;
                     height: max-content;
                     opacity: 1;
+                    padding: 2px 12px;
                 }
                 li {
-                    padding: 16px 24px;
+                    padding: 10px 12px;
+                    border-radius: 16px;
                     font: 600 16px/24px var(--font-wix);
                     color: var(--accent-02);
+                    margin: 2px 0;
                     cursor: pointer;
                     &:hover {
-                        background-color: var(--bg-01);
+                        background: var(--bg-02);
+                        color: var(--accent-03);
                     }
                     &.active {
                         background: var(--bg-02);
+                        color: var(--accent-03);
                         position: relative;
                     }
                 }

@@ -1,0 +1,43 @@
+include ../../../components/breadcrumbs/breadcrumbs
+include ../../deliveryPage/delivery-form/delivery-form
+
+mixin sales-first
+    -
+        const info_list = [
+            {
+                icon: 'ic-opt-6',
+                desc: 'Цены без лишних надбавок',
+            },
+            {
+                icon: 'ic-opt-5',
+                desc: 'Предсказуемые сроки поставки',
+            },
+            {
+                icon: 'ic-opt-4',
+                desc: 'Полное сопровождение сделки менеджерами питомника',
+            },
+
+        ]
+    section.sectionSalesFirst
+        .container
+            .sectionSalesFirst__block
+                .sectionSalesFirst__block_left
+                    +breadcrumbs([
+                        {title: 'Спецпредложения'}
+                    ])
+                    .sectionSalesFirst__context
+                        .sectionSalesFirst__title: h1 Спецпредложения
+                        .sectionSalesFirst__text Более 20 лет занимаемся организацией поставок посадочного материала из европейских питомников
+                        .sectionSalesFirst__info
+                            .text Оформить заказ можно по телефону:
+                                a(href='tel:+7 (926) 878-65-38') +7 (926) 878-65-38
+                            .message
+                                .ic-color-tg: a(href='#'): +bgimage('/img/icons/msgr-tg.svg')
+                                .ic-color-max: a(href='https://max.ru/u/f9LHodD0cOIXK6ke_TJPwBi3mg70andJkzoR6n2ZY1HQT6LCFznPQ5nfTt4'): +bgimage('/img/icons/msgr-max.svg')
+                    .sectionSalesFirst__content
+                        each item in info_list
+                            .item
+                                +icon(item.icon)
+                                .item__text= item.desc
+                +delivery-form
+

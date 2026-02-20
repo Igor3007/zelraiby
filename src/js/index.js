@@ -12,6 +12,7 @@ import "./components/header";
 import "./vendor/fslightbox.min";
 import "./vendor/af-lightbox";
 import { storiesSlider } from "./components/stories-slider.js";
+import { aboutCompany } from "./components/aboutCompany.js";
 import { faq } from "./components/faq.js";
 import { teamslider } from "./components/team-slider.js";
 import { offersSlider } from "./components/offers-slider.js";
@@ -31,6 +32,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
     stories slider
     ==================================*/
     storiesSlider()
+
+    /*============aboutCompany======================*/
+    aboutCompany()
 
     /* ==================================
     stories slider

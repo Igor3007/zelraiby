@@ -103,3 +103,19 @@
         }
     }
 }
+
+.gallery-modal.modal {
+    .modal__container{
+        .splide__slide{
+            video{
+                border-radius: 16px;
+            }
+        }
+        .splide__progress{
+            background: var(--accent-04);
+            &__bar{
+                background: var(--accent-01);
+            }
+        }
+    }
+}

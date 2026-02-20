@@ -1,0 +1,81 @@
+@use 'vars'as vars;
+
+.sectionSalesBlock{
+    padding-bottom: 44px;
+    padding-top: 12px;
+    @media screen and (min-width: vars.$w992) {
+        padding-bottom: 84px;
+        padding-top: 34px;
+    }
+    &__content{
+        background: var(--bg-02);
+        padding: 24px;
+        border-radius: 32px;
+        @media screen and (min-width: vars.$w992) {
+            padding: 32px;
+        }
+        &_title{
+            @include vars.font-h3;
+            color: var(--accent-02);
+            padding-bottom: 22px;
+        }
+        &_items {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            .itemSales {
+                border-radius: 16px;
+                background: var(--white);
+                padding: 16px 20px;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                position: relative;
+                gap: 12px;
+                transition: 0.4s ease;
+                @media screen and (max-width: vars.$w576) {
+                    flex-direction: column;
+                }
+                &>picture,img{
+                    width: 100%;
+                    height: 146px;
+                    object-fit: cover;
+                    border-radius: 12px;
+                    @media screen and (min-width: vars.$w576) {
+                        width: 124px;
+                        height: 124px;
+                    }
+                }
+                &__info{
+                    flex: 1;
+                    position: relative;
+                    &_date{
+                        color: var(--accent-03);
+                        font: 700 16px/24px var(--font-wix);
+                        padding-bottom: 4px;
+                        text-align: right;
+                    }
+                    &_name{
+                        transition: 0.4s ease;
+                        color: var(--accent-02);
+                        font: 600 18px/24px var(--font-wix);
+                        padding-bottom: 4px;
+                        @media screen and (min-width: vars.$w576) {
+                            font: 600 20px/28px var(--font-wix);
+                        }
+                    }
+                    &_params{
+                        font: 400 14px/22px var(--font-wix);
+                        color: var(--accent-04);
+                        strong{
+                            color: var(--accent-03);
+                        }
+                        @media screen and (min-width: vars.$w576) {
+                            font: 400 16px/24px var(--font-wix);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
