@@ -31,7 +31,7 @@
                 align-items: flex-start;
                 justify-content: flex-start;
                 position: relative;
-                gap: 12px;
+                gap: 16px;
                 transition: 0.4s ease;
                 @media screen and (max-width: vars.$w576) {
                     flex-direction: column;
@@ -54,6 +54,11 @@
                         font: 700 16px/24px var(--font-wix);
                         padding-bottom: 4px;
                         text-align: right;
+                        @media screen and (min-width: vars.$w769) {
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                        }
                     }
                     &_name{
                         transition: 0.4s ease;
