@@ -329,8 +329,10 @@ header + * {
 
 .ic-color-max {
     & .bgimage:not(:hover) {
-        background-color: #9a2fde !important;
+        background-color: transparent !important;
     }
+    background: linear-gradient(90deg,rgba(65, 187, 253, 1) 0%, rgba(141, 62, 224, 1) 100%);
+    border-radius: 50%;
 }
 
 .ic-color-vb {

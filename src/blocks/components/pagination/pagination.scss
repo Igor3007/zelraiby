@@ -44,10 +44,18 @@
             color: var(--accent-02);
             border-radius: 12px;
             cursor: pointer;
-            transition: .3s;
+            transition: 0.3s ease;
             height: 40px;
+            a{
+                transition: 0.3s ease;
+                color: var(--accent-02);
+            }
             @include vars.hover {
-                background: var(--accent-01);
+                background: var(--bg-02);
+                color: var(--accent-03);
+                a{
+                    color: var(--accent-03);
+                }
             }
             &:has(span) {
                 pointer-events: none;
@@ -56,6 +64,9 @@
             &.active {
                 background: var(--accent-03);
                 color: var(--accent-01);
+                a{
+                    color: var(--accent-01);
+                }
                 pointer-events: none;
             }
 

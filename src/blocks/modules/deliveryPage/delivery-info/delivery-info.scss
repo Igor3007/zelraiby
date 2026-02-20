@@ -4,6 +4,9 @@
     @media screen and (min-width: vars.$w991) {
         padding-bottom: 15px;
     }
+    @media screen and (max-width: 767px) {
+        overflow: hidden;
+    }
     &__box{
         background: var(--bg-01);
         border-radius: 32px;

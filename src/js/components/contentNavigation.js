@@ -19,12 +19,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (openBtn) {
         openBtn.addEventListener('click', openNavigation);
-        openBtn.addEventListener('touchstart', openNavigation, { passive: true });
     }
 
     if (closeBtn) {
         closeBtn.addEventListener('click', closeNavigation);
-        closeBtn.addEventListener('touchstart', closeNavigation, { passive: true });
     }
 
     document.addEventListener('keydown', function(e) {

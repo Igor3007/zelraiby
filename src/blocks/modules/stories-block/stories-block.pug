@@ -16,3 +16,30 @@ mixin stories-block
                                 each item in stories
                                     .splide__slide: +story-card(item)
 
+        .gallery-main-container(style="display: none;")
+            .splide(data-slider="gallery-modal-video")
+                .splide__track
+                    ul.splide__list
+                        each slide in stories
+                            li.splide__slide
+                                video(
+                                    autoplay
+                                    preload="metadata"
+                                    width="100%"
+                                    height="auto"
+                                    loop
+                                    muted
+                                    playsinline
+                                )
+                                    source(src=(slide.video) type="video/mp4")
+
+    //- Модальное окно для просмотра
+    .gallery-modal.modal
+        .modal__overlay
+        .modal__container
+            button.modal__close(type="button" aria-label="Закрыть")
+                +icon('ic_close')
+            .modal__body
+                //- Сюда будет перемещен gallery-modal
+
+

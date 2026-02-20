@@ -1,6 +1,12 @@
 @use 'vars'as vars;
 
 .sectionCategoryFAQ{
+    @media screen and (max-width: vars.$w760) {
+        .faq{
+            padding-bottom: 24px;
+        }
+
+    }
     &__title {
         @include vars.font-h2;
         padding-bottom: 0.2em;
