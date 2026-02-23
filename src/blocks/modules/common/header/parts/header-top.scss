@@ -22,7 +22,7 @@ body{
 
 header {
     transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 1);
+    //background-color: rgba(255, 255, 255, 1);
     z-index: 22;
     position: fixed;
     width: 100%;
@@ -45,11 +45,16 @@ header {
                 fill: var(--accent);
             }
         }
-
+        &.scroll{
+            .container {
+                background-color: rgba(255, 255, 255, 1);
+                --container-padding: 12px;
+                --container-out: -12px;
+            }
+        }
     }
 
     &.scroll {
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
         @media screen and (min-width: vars.$w1024) {
             height: 98px;
@@ -62,6 +67,9 @@ header {
                 border-radius: 24px;
                 .search-field {
                     height: 52px;
+                    & input{
+                        height: 52px;
+                    }
                     .btn{
                         height: 52px;
                         min-width: 52px;
@@ -98,11 +106,19 @@ header {
                 border-radius: 32px;
             }
         }
+        .container {
+            @media screen and (min-width: vars.$w1024) {
+                background-color: transparent;
+                --container-padding: 12px;
+                --container-out: -12px;
+            }
+        }
     }
 
     .container {
         background-color: rgba(255, 255, 255, 1);
         border-radius: 0 0 32px 32px;
+
     }
 }
 
@@ -120,7 +136,7 @@ header + * {
 
 .header-top-fixed {
     position: relative;
-    background: var(--white);
+    //background: var(--white);
     transition: all 0.3s ease;
     @media screen and (min-width: vars.$w1024) {
         padding: 12px 0;
@@ -266,25 +282,25 @@ header + * {
 }
 
 .search-field {
-
+    position: relative;
     display: flex;
     align-items: stretch;
-    background-color: var(--bg-02);
     border-radius: 20px;
 
     & input {
         border: none;
         background: transparent;
-        padding-left: 24px;
+        padding-left: 58px;
         padding-right: 24px;
         flex-grow: 1;
     }
 
     & .btn {
+        position: absolute;
+        right: -1px;
         padding-inline: 0;
         width: 56px;
         min-width: 56px;
-        min-width: auto;
 
         & svg {
             margin-left: 0 !important;
@@ -333,6 +349,9 @@ header + * {
     }
     background: linear-gradient(90deg,rgba(65, 187, 253, 1) 0%, rgba(141, 62, 224, 1) 100%);
     border-radius: 50%;
+    span{
+        background-size: 24px!important;
+    }
 }
 
 .ic-color-vb {

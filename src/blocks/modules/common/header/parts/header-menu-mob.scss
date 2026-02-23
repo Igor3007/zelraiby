@@ -50,6 +50,7 @@
             input{
                 font-size: 16px;
                 padding-left: 18px;
+                padding-right: 54px;
             }
             .btn {
                 padding-inline: 0;
@@ -104,7 +105,7 @@
             }
         }
         &_contact{
-            padding: 22px 0;
+            padding-top: 18px;
             &-title {
                 font: 600 20px/32px var(--font-wix);
                 color: var(--accent-02);
@@ -124,7 +125,7 @@
             align-items: center;
             margin-left: auto;
             gap: 12px;
-
+            padding-top: 18px;
             & ul {
                 display: flex;
                 align-items: center;

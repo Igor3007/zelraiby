@@ -1,5 +1,13 @@
 @use "vars"as vars;
 
+.scroll{
+    .header__menu{
+        &.open{
+            padding-bottom: 0;
+        }
+    }
+}
+
 .header__menu{
     z-index: 11;
     position: relative;
@@ -48,11 +56,15 @@
             & svg{
                 width: 28px;
                 height: 28px;
+                fill: var(--accent-03);
             }
             &.active{
                 background: var(--accent-02);
                 transition: all 0.3s ease;
                 color: var(--accent-01);
+                & svg{
+                    fill: var(--accent-01);
+                }
                 @media (min-width: 1026px) {
                     &:hover {
                         background: var(--accent-02);

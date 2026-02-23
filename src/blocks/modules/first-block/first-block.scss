@@ -303,6 +303,7 @@
     border-radius: 32px;
     align-items: center;
     transition: 0.4s ease;
+    cursor: pointer;
     &:hover{
         background: var(--accent-02);
         .catalog-widjet{

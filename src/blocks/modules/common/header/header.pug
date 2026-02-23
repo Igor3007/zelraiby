@@ -85,7 +85,7 @@ mixin headerMenuMob
                 a(href='/'): +bgimage('/img/common/logo.svg')
             .btn.closeMenuMob: +icon('ic_close')
         .MenuMobile__main
-            form(action='#' method='POST')
+            form(action='#' method='POST').form
                 .search-field
                     input(type="text" placeholder="Найти в каталоге...")
                     button.btn: +icon('ic_search')
@@ -148,7 +148,7 @@ mixin bottomNavigationMob
                 button.btn.openMenu
                     +icon('ic_catalog')
                     span Каталог
-                form(action='#' method='POST')
+                form(action='#' method='POST').form
                     .search-field
                         input(type="text" placeholder="Найти в каталоге...")
                         button.btn: +icon('ic_search')

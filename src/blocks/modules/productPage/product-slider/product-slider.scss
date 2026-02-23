@@ -134,6 +134,13 @@
                     width: 28px;
                     height: 28px;
                 }
+                &:hover{
+                    background: var(--accent-02);
+                    & svg{
+                        fill: var(--accent-01);
+                    }
+                }
+
             }
             &:hover{
                 transition: all 0.3s ease;
