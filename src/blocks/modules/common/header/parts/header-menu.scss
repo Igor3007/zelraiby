@@ -51,6 +51,9 @@
                 &:hover {
                     background: var(--accent-02);
                     color: var(--accent-01);
+                    & svg{
+                        fill: var(--accent-01);
+                    }
                 }
             }
             & svg{
