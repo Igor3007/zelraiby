@@ -3,15 +3,15 @@
 .breadcrumbs {
     display: flex;
     margin-top: 22px;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
     margin-right: -16px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    scrollbar-width: none!important;
+    -ms-overflow-style: none!important;
     &::-webkit-scrollbar {
-        display: none;
+        display: none!important;
     }
     @media screen and (min-width: vars.$w769) {
         margin-right: -24px;
