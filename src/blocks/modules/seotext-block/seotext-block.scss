@@ -19,8 +19,8 @@
             @media screen and (min-width: vars.$w760) {
                 max-height: 1100px;
             }
-            mask-image: none;
-            -webkit-mask-image: none;
+            mask-image: none!important;
+            -webkit-mask-image: none!important;
         }
     }
     .seotext-block__all {
@@ -43,13 +43,16 @@
          }
     }
     &__text {
-        transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
-        max-height: 265px;
-        overflow: hidden;
-        opacity: 1;
-        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-        -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-        overflow: hidden;
+        &:not(&.textOnly){
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+            max-height: 265px;
+            overflow: hidden;
+            opacity: 1;
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            overflow: hidden;
+        }
+
 
 
 

@@ -121,7 +121,15 @@
         display: none!important;
         @include vars.splide-nav;
         margin-left: auto;
-
+        .team-block__nav-prev,.team-block__nav-next{
+            &.is-hide{
+                opacity: 0.7;
+                box-shadow: none;
+                background-color: #D3DBE1;
+                cursor: default;
+                pointer-events: none;
+            }
+        }
         & svg {
             fill: var(--accent-02);
         }

@@ -78,6 +78,11 @@
         padding: 4px 8px;
         &_item{
             margin: 4px 0;
+            .contentNavigation__menu_item-title{
+                svg{
+                    fill: var(--accent-03);
+                }
+            }
             .contentNavigation__menu_item-content{
                 height: 0;
                 opacity: 0;
@@ -90,6 +95,9 @@
                     background: var(--accent-02);
                     transition: all 0.3s ease;
                     color: var(--accent-01);
+                    svg{
+                        fill: var(--accent-01);
+                    }
                     @media (min-width: 1026px) {
                         &:hover {
                             background: var(--accent-02);
@@ -196,6 +204,7 @@
     position: relative;
     width: var(--toggle-width);
     height: var(--toggle-height);
+    transition: all 0.2s ease-in;
     &__input {
         position: absolute;
         opacity: 0;
@@ -203,6 +212,10 @@
         height: 0;
         &:checked + .toggle-switch__label {
             background-color: var(--bg-on);
+            &:hover{
+                background-color: rgba(32, 51, 10, .9);
+                box-shadow: 0 0 3px 0 var(--handle-color-on);
+            }
             &::after {
                 background-color: var(--handle-color-on);
                 transform: translateX(calc(var(--toggle-width) - var(--toggle-height)));
@@ -231,6 +244,10 @@
         border-radius: var(--toggle-radius);
         cursor: pointer;
         transition: background-color 0.2s ease;
+        &:hover{
+            background-color: #f8faf5;
+            box-shadow: 0 0 2px 0 var(--handle-color);
+        }
         &::after {
             content: '';
             position: absolute;

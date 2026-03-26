@@ -5,6 +5,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const toggleBtn = block.querySelector('.toggleBtn');
         if (!toggleBtn) return;
 
+        const textBlock = block.querySelector('.seotext-block__text .col2');
+
+        if (textBlock) {
+            const textContent = textBlock.textContent || textBlock.innerText;
+            const charCount = textContent.length;
+
+            if (charCount < 1422) {
+                const currentTextBlock = block.querySelector('.seotext-block__text');
+                if (currentTextBlock) {
+                    currentTextBlock.classList.add('textOnly');
+                }
+                toggleBtn.style.display = 'none';
+                return;
+            }
+        }
+
         const toggleText = toggleBtn.querySelector('span');
         const icon = toggleBtn.querySelector('svg, i');
 

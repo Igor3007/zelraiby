@@ -4,6 +4,7 @@
     padding-bottom: 32px;
     @media screen and (min-width: vars.$w760) {
         padding-bottom: 76px;
+        overflow: visible;
     }
     &__h1 {
         & h1 {
@@ -74,6 +75,8 @@
             position: relative;
             @media screen and (min-width: vars.$w992) {
                 width: 27%;
+                position: sticky;
+                bottom: 0;
             }
             &:after{
                 content: '';
