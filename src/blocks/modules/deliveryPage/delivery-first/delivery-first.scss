@@ -146,9 +146,12 @@
                     width: 100%;
                 }
             }
-            svg{
+            svg, picture{
                 width: 44px;
                 height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             &__text{
                 flex: 1;
