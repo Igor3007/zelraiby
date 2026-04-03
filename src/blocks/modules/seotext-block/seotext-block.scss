@@ -15,7 +15,7 @@
     }
     &.open{
         .seotext-block__text{
-            max-height: 1600px;
+            max-height: 1600px!important;
             @media screen and (min-width: vars.$w760) {
                 max-height: 1100px;
             }

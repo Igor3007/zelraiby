@@ -101,6 +101,7 @@
         @media screen and (min-width: vars.$w992) {
             flex-direction: row;
             align-items: center;
+            flex-wrap: wrap;
         }
         .message{
             display: flex;

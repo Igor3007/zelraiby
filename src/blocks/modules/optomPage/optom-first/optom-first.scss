@@ -129,9 +129,12 @@
             background: rgba(174, 235, 103, 0.08);
             border-radius: 24px;
             @media screen and (min-width: vars.$w760) {
-                width: calc(50% - 6px);
+                flex: 0 0 calc(50% - 6px);
                 padding: 24px 32px;
                 gap: 24px;
+            }
+            &:last-child:nth-child(odd) {
+                flex: 0 0 100%;
             }
             svg{
                 width: 44px;
